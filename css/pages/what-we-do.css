@@ -728,6 +728,9 @@
   }
 }
 @media (max-width: 1100px) {
+  .what-we-do-page .wwd-hero p {
+    white-space: normal;
+  }
   .what-we-do-page .wwd-capability-copy .wwd-practice-line,
   .what-we-do-page .wwd-capability-copy .wwd-system-gap-line,
   .what-we-do-page .wwd-capability-copy .wwd-system-practice-line,

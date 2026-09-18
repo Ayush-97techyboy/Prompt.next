@@ -588,7 +588,7 @@ h1 {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   gap: 24px;
-  width: calc(100%+20px);
+  width: calc(100% + 20px);
   max-width: none;
   margin: 54px 0 0 -10px;
   text-align: left;
@@ -612,11 +612,11 @@ h1 {
   grid-column: 4 / span 2;
 }
 .capability:nth-child(4) {
-  width: calc(100%+120px);
+  width: calc(100% + 120px);
   margin-left: -140px;
 }
 .capability:nth-child(5) {
-  width: calc(100%+120px);
+  width: calc(100% + 120px);
   margin-left: 10px;
 }
 .cap-number {
@@ -1034,6 +1034,24 @@ h1 {
   .contact-point h2,
   .article h3 span {
     white-space: normal;
+  }
+  .footer-column:nth-child(4) a:first-of-type {
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+}
+@media (max-width: 800px) {
+  .footer-grid,
+  .wwd-footer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .footer-grid > *,
+  .wwd-footer-grid > * {
+    min-width: 0;
+  }
+  body[class$="-page"] .wwd-footer-grid > div:nth-child(4) a:first-of-type {
+    white-space: normal !important;
+    overflow-wrap: anywhere;
   }
 }
 @media (max-width: 600px) {
