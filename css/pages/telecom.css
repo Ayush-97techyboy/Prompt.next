@@ -147,12 +147,12 @@
   z-index: 1;
   width: min(1280px, calc(100% - 64px));
   margin: 0 auto;
-  padding: 84px 0 0;
+  padding: 115px 0 0;
   display: flex;
   flex-direction: column;
 }
 .telecom-page .telecom-breadcrumb {
-  margin: 0 0 52px;
+  margin: 0 0 48px;
   font-size: 14px;
   color: #858895;
   text-align: left;
