@@ -478,6 +478,9 @@ h1 {
 .capabilities .section-subtitle {
   font-size: 20px;
 }
+.methodology .section-subtitle {
+  font-size: 20px;
+}
 .intro-grid {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
@@ -1127,6 +1130,9 @@ h1 {
   }
   .capabilities .section-subtitle {
     font-size: 14px;
+  }
+  .methodology .section-subtitle {
+    font-size: 13px;
   }
   .section-kicker {
     height: 22px;
