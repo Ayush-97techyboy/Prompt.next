@@ -1,54 +1,185 @@
-# Prompt Next CSS Structure
+# Prompt Next — Corporate Website
 
-## What was done
+> **From Intent To Outcome** — Prompt Next runs complex technology programmes for enterprises, coordinating every party from decision to live production.
 
-- Split the former `Style.css` monolith into one global stylesheet and one stylesheet per page family.
-- Kept the landing-page rules in `css/global.css` so the existing cascade and visual behavior remain unchanged.
-- Moved page-scoped rules into `css/pages/`:
-  - `what-we-do.css`
-  - `industries.css`
-  - `government.css`
-  - `healthcare.css`
-  - `hospitality.css`
-  - `manufacturing.css`
-  - `telecom.css`
-  - `bfsi.css`
-- Updated all HTML pages to load `css/global.css` plus the appropriate page stylesheet.
-- Both `Telecommunication.html` and `Telecommunications.html` use the shared `telecom.css` file.
-- Rebased image and font URLs for the new CSS directory depth.
-- Removed CSS comments and unnecessary whitespace from the generated files while preserving selectors, media queries, and declarations.
-- Retained `Style.css` as a compatibility entry point that imports the new files for any external or legacy reference.
+This repository contains the static front-end source code for the **Prompt Next** corporate website, built entirely with **HTML5** and **CSS3** — no JavaScript frameworks, no build tools, no server required.
 
-## Directory layout
+---
+
+## Table of Contents
+
+- [Overview](#overview)
+- [Tech Stack](#tech-stack)
+- [Project Structure](#project-structure)
+- [Pages](#pages)
+- [CSS Architecture](#css-architecture)
+- [Getting Started](#getting-started)
+- [Responsive Design](#responsive-design)
+- [Assets & Fonts](#assets--fonts)
+- [Contributing](#contributing)
+- [License](#license)
+
+---
+
+## Overview
+
+Prompt Next is a technology-execution firm serving six key industries: **BFSI**, **Telecommunications**, **Healthcare**, **Government & Public Sector**, **Manufacturing**, and **Hospitality**. The website communicates the company's capabilities, methodology, industry expertise, insights, and partner ecosystem through a series of well-structured static pages.
+
+---
+
+## Tech Stack
+
+| Layer      | Technology                  |
+| ---------- | --------------------------- |
+| Markup     | HTML5 (semantic elements)   |
+| Styling    | CSS3 (Flexbox, Grid, media queries) |
+| Typography | Custom fonts via `@font-face`; Inter (Google Fonts on select pages) |
+| Build      | None — static files, open directly in any browser |
+
+---
+
+## Project Structure
 
 ```text
-css/
-  global.css
-  pages/
-    bfsi.css
-    government.css
-    healthcare.css
-    hospitality.css
-    industries.css
-    manufacturing.css
-    telecom.css
-    what-we-do.css
+Prompt Next/
+│
+├── LandingPage.html            # Home / main entry point
+├── WhatWeDo.html               # Services & capabilities
+├── HowWeWork.html              # Methodology & process
+├── Industries.html             # Industry overview hub
+│
+├── BFSI.html                   # Banking, Financial Services & Insurance
+├── Healthcare.html             # Healthcare industry page
+├── Government.html             # Government & Public Sector
+├── Hospitality.html            # Hospitality industry page
+├── Manufacturing.html          # Manufacturing industry page
+├── Telecommunication.html      # Telecom industry page
+├── Telecommunications.html     # Telecom (alternate entry)
+│
+├── Style.css                   # Legacy compatibility entry point
+│
+├── css/
+│   ├── global.css              # Shared site-wide styles (header, footer, hero, utilities)
+│   └── pages/
+│       ├── what-we-do.css
+│       ├── industries.css
+│       ├── bfsi.css
+│       ├── government.css
+│       ├── healthcare.css
+│       ├── hospitality.css
+│       ├── manufacturing.css
+│       └── telecom.css
+│
+├── assets/
+│   ├── fonts/                  # Self-hosted typefaces
+│   ├── logo.png                # Brand logo
+│   ├── hero-bg.png             # Landing page hero background
+│   ├── Card.png                # Methodology process card
+│   ├── article-*.png           # Insight article thumbnails
+│   ├── icon-*.png              # Industry icons
+│   ├── *-hero.png              # Industry hero images
+│   └── ...                     # Other UI assets and icons
+│
+└── README.md                   # ← You are here
 ```
 
-## Maintenance
+---
 
-When editing shared landing styles, update `css/global.css`. When editing an individual page, update its matching file in `css/pages/`. Keep asset references relative to the stylesheet location: global CSS uses `../assets/`, and page CSS uses `../../assets/`.
+## Pages
 
-No build step is required; the pages remain static HTML and can be opened directly in a browser.
+| File | Description |
+| ---- | ----------- |
+| `LandingPage.html` | Hero section, company statistics, capabilities grid, industry overview, methodology card, partner ecosystem, insights, and CTA |
+| `WhatWeDo.html` | Detailed breakdown of the five core capabilities |
+| `HowWeWork.html` | Step-by-step methodology and engagement process |
+| `Industries.html` | Industry hub linking to individual sector pages |
+| `BFSI.html` | Banking, Financial Services & Insurance deep-dive |
+| `Telecommunication.html` | Telecommunications deep-dive |
+| `Healthcare.html` | Healthcare deep-dive |
+| `Government.html` | Government & Public Sector deep-dive |
+| `Manufacturing.html` | Manufacturing deep-dive |
+| `Hospitality.html` | Hospitality deep-dive |
 
-## Responsive updates
+---
 
-- Audited all nine populated pages at `1440px`, `1024px`, `768px`, and `390px` widths.
-- Added a shared medium-screen navigation breakpoint at `1100px` so desktop navigation collapses before it can overflow.
-- Kept the responsive hamburger control and navigation layout CSS-only; no JavaScript is used.
-- Removed tablet-only `nowrap` overflow from the Landing page and What We Do content layouts.
-- Confirmed no horizontal overflow at the tested viewport sizes.
+## CSS Architecture
 
-## Asset cleanup
+The styling was originally a single `Style.css` monolith. It has since been refactored into a modular structure:
 
-Removed seven unreferenced images from `assets/`: the five `crop_*` files, `method-panel.png`, and `what-hero-no-nav-final3.png`. All remaining images, icons, and font files are referenced by an HTML page or stylesheet.
+1. **`css/global.css`** — Contains all shared/site-wide rules: navigation bar, footer, hero section, typography, buttons, utility classes, and responsive breakpoints.
+2. **`css/pages/*.css`** — Each page (or page family) has its own scoped stylesheet loaded alongside `global.css`.
+3. **`Style.css`** — Retained as a legacy compatibility entry point that imports the new files.
+
+### Loading pattern
+
+Every HTML page loads stylesheets in this order:
+
+```html
+<link rel="stylesheet" href="css/global.css" />
+<link rel="stylesheet" href="css/pages/<page-name>.css" />
+```
+
+### Maintenance rules
+
+- **Shared styles** → edit `css/global.css`
+- **Page-specific styles** → edit the matching file in `css/pages/`
+- **Asset paths** → global CSS uses `../assets/`; page CSS uses `../../assets/`
+
+---
+
+## Getting Started
+
+No build step, package manager, or server is needed.
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/Ayush-97techyboy/Prompt.next.git
+   ```
+2. **Open in browser**
+   - Open `LandingPage.html` directly in any modern browser (Chrome, Firefox, Safari, Edge).
+3. **Edit**
+   - Use any text editor or IDE (VS Code recommended).
+   - Changes are reflected immediately on page refresh.
+
+---
+
+## Responsive Design
+
+The site has been audited and optimised at four viewport widths:
+
+| Breakpoint | Target |
+| ---------- | ------ |
+| **1440 px** | Desktop / large monitors |
+| **1024 px** | Small laptops / landscape tablets |
+| **768 px** | Tablets (portrait) |
+| **390 px** | Mobile phones |
+
+Key responsive features:
+
+- **CSS-only hamburger menu** — navigation collapses at `≤ 1100 px` with no JavaScript.
+- **Fluid grid layouts** — capability cards, industry cards, and article grids reflow from multi-column to single-column.
+- **No horizontal overflow** — verified at all tested viewport widths.
+
+---
+
+## Assets & Fonts
+
+- All images and icons live in `assets/`.
+- Custom fonts are self-hosted under `assets/fonts/` and loaded via `@font-face` declarations in `global.css`.
+- Some pages additionally load the **Inter** typeface from Google Fonts for supplementary weights.
+- Unreferenced images have been cleaned up; every file in `assets/` is referenced by at least one HTML page or stylesheet.
+
+---
+
+## Contributing
+
+1. Create a feature branch from `main`.
+2. Make your changes following the existing CSS architecture (global vs. page-scoped).
+3. Test at all four responsive breakpoints before submitting.
+4. Open a pull request with a clear description of the changes.
+
+---
+
+## License
+
+© Prompt Next Group Pte. Ltd. All rights reserved.
