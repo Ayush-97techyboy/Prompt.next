@@ -1,0 +1,359 @@
+/* How We Work Page - fully scoped styles */
+.how-we-work-page {
+  background: #08090b;
+  color: #f4f5f7;
+  font-family: var(--font-sans);
+}
+
+.how-we-work-page a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.how-we-work-page .wwd-header {
+  position: absolute;
+  z-index: 5;
+  inset: 0 0 auto;
+  height: 78px;
+  background: transparent;
+}
+
+.how-we-work-page .wwd-nav {
+  width: min(1280px, calc(100% - 64px));
+  height: 78px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.how-we-work-page .wwd-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: #f6f7fa;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: .9;
+  letter-spacing: -.5px;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.how-we-work-page .wwd-brand .nav-logo {
+  height: 46px;
+  width: auto;
+  object-fit: contain;
+}
+
+.how-we-work-page .wwd-nav-links {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 35px;
+  margin-left: 16px;
+}
+
+.how-we-work-page .wwd-nav-links a {
+  position: relative;
+  color: #92949a;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 400;
+  white-space: nowrap;
+  transition: color .2s ease;
+}
+
+.how-we-work-page .wwd-nav-links a::after {
+  position: absolute;
+  right: 0;
+  bottom: -13px;
+  left: 0;
+  height: 2px;
+  content: "";
+  border-radius: 2px;
+  background: #1f6cff;
+  opacity: 0;
+  transition: opacity .2s ease;
+}
+
+.how-we-work-page .wwd-nav-links a:hover,
+.how-we-work-page .wwd-nav-links a:focus-visible,
+.how-we-work-page .wwd-nav-links a[aria-current="page"] {
+  color: #fff;
+}
+
+.how-we-work-page .wwd-nav-links a:hover::after,
+.how-we-work-page .wwd-nav-links a:focus-visible::after,
+.how-we-work-page .wwd-nav-links a[aria-current="page"]::after {
+  opacity: 1;
+}
+
+.how-we-work-page .wwd-top-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 214px;
+  height: 44px;
+  border-radius: 8px;
+  background: #1f5df0;
+  color: #fff;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: .02em;
+  white-space: nowrap;
+}
+
+.how-we-work-page .hww-hero {
+  position: relative;
+  min-height: 636px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #08090b url("../../assets/images/how-hero-bg.svg") center top / cover no-repeat;
+  text-align: center;
+  padding: 160px 24px 80px;
+  box-sizing: border-box;
+}
+
+.how-we-work-page .hww-hero-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.how-we-work-page .hww-hero h1 {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 65px;
+  line-height: 88px;
+  letter-spacing: 0px;
+  text-align: center;
+  color: #ffffff;
+  margin: 0 0 28px;
+}
+
+.how-we-work-page .hww-hero p {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 32px;
+  letter-spacing: 0px;
+  text-align: center;
+  color: #B0B0B0;
+  /* max-width: 860px; */
+  margin: 0 auto;
+}
+
+.how-we-work-page .hww-stages-section {
+  padding: 130px 0 110px;
+  background: #000000;
+}
+
+.how-we-work-page .hww-stages-container {
+  width: min(1280px, calc(100% - 160px));
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 136px;
+}
+
+.how-we-work-page .hww-stage-item {
+  display: grid;
+  grid-template-columns: 460px 1fr;
+  column-gap: 48px;
+  align-items: flex-start;
+}
+
+.how-we-work-page .hww-stage-number-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.how-we-work-page .hww-stage-bar {
+  width: 67px;
+  height: 3px;
+  background: #1652f0;
+  border-radius: 2px;
+}
+
+.how-we-work-page .hww-stage-num {
+  font-family: var(--font-sans);
+  font-size: 52px;
+  font-weight: 600;
+  line-height: 1;
+  color: #1652f0;
+  letter-spacing: -.02em;
+}
+
+.how-we-work-page .hww-stage-content-col {
+  padding-top: 17px;
+}
+
+.how-we-work-page .hww-stage-content-col h2 {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 88px;
+  letter-spacing: 0px;
+  color: #ffffff;
+  margin: 0 0 24px;
+  max-width: 760px;
+}
+
+.how-we-work-page .hww-stage-content-col p {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: 0px;
+  color: #B0B0B0;
+  margin: 0 0 22px;
+  max-width: 760px;
+}
+
+.how-we-work-page .hww-stage-content-col p:last-child {
+  margin-bottom: 0;
+}
+
+.how-we-work-page .hww-pre-engagement-section {
+  padding: 120px 24px 130px;
+  background: #000000;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, .05);
+}
+
+.how-we-work-page .hww-pre-engagement-inner {
+  /* max-width: 860px; */
+  margin: 0 auto;
+}
+
+.how-we-work-page .hww-pre-engagement-section h2 {
+  font-size: clamp(34px, 4.4vw, 54px);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -.03em;
+  color: #ffffff;
+  margin: 0 0 22px;
+}
+
+.how-we-work-page .hww-pre-engagement-section p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #9698a0;
+  margin: 0 auto 44px;
+  max-width: 800px;
+}
+
+.how-we-work-page .hww-strategy-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 250px;
+  height: 48px;
+  padding: 0 34px;
+  border-radius: 24px;
+  background: #1f6cff;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  transition: background .2s ease, transform .15s ease;
+}
+
+.how-we-work-page .hww-strategy-button:hover {
+  background: #357aff;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 900px) {
+  .how-we-work-page .wwd-nav-links {
+    display: none;
+  }
+
+  .how-we-work-page .wwd-nav {
+    justify-content: space-between;
+  }
+
+  .how-we-work-page .wwd-top-button {
+    margin-left: auto;
+  }
+
+  .how-we-work-page .hww-stages-container {
+    width: min(100% - 64px, 1280px);
+    gap: 100px;
+  }
+
+  .how-we-work-page .hww-stage-item {
+    grid-template-columns: 280px 1fr;
+    column-gap: 36px;
+  }
+
+  .how-we-work-page .hww-stage-num {
+    font-size: 44px;
+  }
+
+  .how-we-work-page .hww-stage-content-col h2 {
+    font-size: 34px;
+  }
+}
+
+@media (max-width: 768px) {
+  .how-we-work-page .hww-hero {
+    min-height: 480px;
+    padding: 100px 18px 50px;
+  }
+
+  .how-we-work-page .hww-hero h1 {
+    font-size: 30px;
+  }
+
+  .how-we-work-page .hww-stage-item {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .how-we-work-page .hww-stage-number-col {
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .how-we-work-page .hww-stage-num {
+    font-size: 36px;
+  }
+
+  .how-we-work-page .hww-stage-content-col h2 {
+    font-size: 28px;
+  }
+
+  .how-we-work-page .hww-pre-engagement-section h2 {
+    font-size: 28px;
+  }
+
+  .how-we-work-page .hww-stages-container {
+    gap: 70px;
+  }
+}
+
+@media (max-width: 600px) {
+  .how-we-work-page .wwd-header {
+    height: 62px;
+  }
+
+  .how-we-work-page .wwd-nav {
+    width: calc(100% - 34px);
+    height: 62px;
+  }
+
+  .how-we-work-page .wwd-top-button {
+    display: none;
+  }
+}

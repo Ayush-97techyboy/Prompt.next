@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prompt Next — Contact Us</title>
+    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700,900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/pages/contact-us.css" />
+</head>
+<body class="contact-us-page">
+  <!-- Semantic Header -->
+  <header class="wwd-header">
+    <div class="wwd-nav">
+      <a class="wwd-brand" href="LandingPage.html">
+        <img src="assets/images/logo.png" alt="Prompt Next" class="nav-logo" />
+      </a>
+      <nav class="wwd-nav-links" aria-label="Primary navigation">
+        <a href="WhatWeDo.html">What We Do</a>
+        <a href="Industries.html">Industries</a>
+        <a href="HowWeWork.html">How We Work</a>
+        <a href="Partners.html">Partners</a>
+        <a href="Insights.html">Insights</a>
+        <a href="AboutUs.html">About Us</a>
+        <a href="ContactUs.html" aria-current="page">Contact Us</a>
+      </nav>
+      <a class="wwd-top-button" href="ContactUs.html">START A CONVERSATION</a>
+      <button class="menu-button" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- Hero Section -->
+    <section class="contact-hero" aria-label="Contact Prompt Next">
+      <div class="contact-hero-inner">
+        <!-- <div class="contact-badge">
+          <img src="assets/images/badge-what-icon.png" alt="" class="badge-icon" />
+          <span>GET IN TOUCH</span>
+        </div> -->
+        <h1>Start a conversation.</h1>
+        <p>Not a sales call. A strategy conversation. We will ask about your outcome, your environment, and your timeline. We will tell you what we think is realistic, where we have relevant experience, and where we do not. If we are not the right partner, we will say so.</p>
+      </div>
+    </section>
+
+    <!-- Two-Column Contact Options -->
+    <section class="contact-main-section" aria-label="Engagement channels">
+      <div class="contact-container contact-cards-grid">
+        
+        <!-- Left Card: Strategy Call Booking -->
+        <article class="contact-card strategy-card">
+          <div class="contact-card-header">
+            <div class="contact-card-tags">
+              <span class="card-tag">STRATEGY CALL</span>
+              <span class="card-tag-badge">RECOMMENDED</span>
+            </div>
+            <h2>Book a 30-minute strategy call.</h2>
+            <p>No commitment. No agenda. Just an honest conversation about your programme.</p>
+          </div>
+
+          <!-- Interactive Date & Time Picker Mockup -->
+          <div class="calendar-widget">
+            <div class="calendar-header">
+              <span class="calendar-title">Select Date</span>
+              <span class="calendar-tz">Asia/Singapore (GMT+8)</span>
+            </div>
+            <div class="calendar-days-row" role="radiogroup" aria-label="Available Dates">
+              <button type="button" class="cal-day-btn" data-day="Mon">
+                <span class="day-name">MON</span>
+                <span class="day-num">16</span>
+              </button>
+              <button type="button" class="cal-day-btn active" data-day="Tue">
+                <span class="day-name">TUE</span>
+                <span class="day-num">17</span>
+              </button>
+              <button type="button" class="cal-day-btn" data-day="Wed">
+                <span class="day-name">WED</span>
+                <span class="day-num">18</span>
+              </button>
+              <button type="button" class="cal-day-btn" data-day="Thu">
+                <span class="day-name">THU</span>
+                <span class="day-num">19</span>
+              </button>
+              <button type="button" class="cal-day-btn" data-day="Fri">
+                <span class="day-name">FRI</span>
+                <span class="day-num">20</span>
+              </button>
+            </div>
+
+            <div class="calendar-header" style="margin-top: 1.25rem;">
+              <span class="calendar-title">Select Time Slot</span>
+            </div>
+            <div class="time-slots-grid" role="radiogroup" aria-label="Available Time Slots">
+              <button type="button" class="time-slot-btn active">09:30 AM</button>
+              <button type="button" class="time-slot-btn">11:00 AM</button>
+              <button type="button" class="time-slot-btn">02:30 PM</button>
+              <button type="button" class="time-slot-btn">04:30 PM</button>
+            </div>
+          </div>
+
+          <!-- Quick Details Form -->
+          <form class="contact-form" onsubmit="event.preventDefault(); alert('Thank you! Your strategy session request has been received. Our team will send a calendar invite shortly.');">
+            <div class="form-group">
+              <label for="strat-name">YOUR NAME</label>
+              <input type="text" id="strat-name" name="name" placeholder="Alexander Wright" required />
+            </div>
+            <div class="form-group">
+              <label for="strat-company">COMPANY</label>
+              <input type="text" id="strat-company" name="company" placeholder="DBS Bank / Singtel" required />
+            </div>
+            <div class="form-group">
+              <label for="strat-email">WORK EMAIL</label>
+              <input type="email" id="strat-email" name="email" placeholder="alexander@company.com" required />
+            </div>
+            <button type="submit" class="contact-submit-btn">CONFIRM STRATEGY SESSION</button>
+          </form>
+        </article>
+
+        <!-- Right Card: Direct Message Form -->
+        <article class="contact-card message-card">
+          <div class="contact-card-header">
+            <div class="contact-card-tags">
+              <span class="card-tag">DIRECT MESSAGE</span>
+            </div>
+            <h2>Prefer to write first?</h2>
+            <p>Send us a brief message and we will respond within one business day.</p>
+          </div>
+
+          <form class="contact-form" onsubmit="event.preventDefault(); alert('Thank you! Your message has been sent to Prompt Next Group. We will reply within one business day.');">
+            <div class="form-group">
+              <label for="msg-name">NAME</label>
+              <input type="text" id="msg-name" name="name" placeholder="Alexander Wright" required />
+            </div>
+            <div class="form-group">
+              <label for="msg-company">COMPANY</label>
+              <input type="text" id="msg-company" name="company" placeholder="Organization name" required />
+            </div>
+            <div class="form-group">
+              <label for="msg-email">EMAIL ADDRESS</label>
+              <input type="email" id="msg-email" name="email" placeholder="alexander@company.com" required />
+            </div>
+            <div class="form-group">
+              <label for="msg-text">MESSAGE (OPTIONAL)</label>
+              <textarea id="msg-text" name="message" rows="4" placeholder="Tell us briefly about your current initiative, regulatory landscape, or target milestone..."></textarea>
+            </div>
+            <button type="submit" class="contact-submit-btn">SEND MESSAGE</button>
+          </form>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Bottom Information Strip (4 Columns) -->
+    <section class="contact-info-strip-section" aria-label="Corporate details">
+      <div class="contact-container">
+        <div class="contact-info-grid">
+          
+          <!-- Column 1: Email -->
+          <div class="contact-info-col">
+            <div class="info-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+              </svg>
+            </div>
+            <span class="info-label">EMAIL US</span>
+            <a href="mailto:info@promptnext.com.sg" class="info-link">info@promptnext.com.sg</a>
+          </div>
+
+          <!-- Column 2: Registered Address -->
+          <div class="contact-info-col">
+            <div class="info-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+            </div>
+            <span class="info-label">REGISTERED ADDRESS</span>
+            <address class="info-address">
+              Prompt Next Group Pte Ltd<br />
+              21 Tan Quee Lan Street, #02-04,<br />
+              Heritage Place, Singapore 188108.
+            </address>
+          </div>
+
+          <!-- Column 3: LinkedIn -->
+          <div class="contact-info-col">
+            <div class="info-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                <rect width="4" height="12" x="2" y="9"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+            </div>
+            <span class="info-label">LINKEDIN</span>
+            <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" class="info-link">Prompt Next Group &#8599;</a>
+          </div>
+
+          <!-- Column 4: WhatsApp -->
+          <div class="contact-info-col">
+            <div class="info-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+              </svg>
+            </div>
+            <span class="info-label">WHATSAPP</span>
+            <a href="https://wa.me/6580000000" target="_blank" rel="noopener noreferrer" class="info-link">+65 8000 0000 &#8599;</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="wwd-footer">
+    <div class="wwd-footer-grid">
+      <div>
+        <a class="wwd-brand" href="LandingPage.html"><img src="assets/images/logo.png" alt="Prompt Next" class="nav-logo" /></a>
+      </div>
+      <div>
+        <b>Company</b>
+        <a href="WhatWeDo.html">What we do</a>
+        <a href="HowWeWork.html">How we work</a>
+        <a href="Partners.html">Partners</a>
+        <a href="AboutUs.html">About Us</a>
+        <a href="ContactUs.html">Contact Us</a>
+      </div>
+      <div>
+        <b>Services</b>
+        <a href="WhatWeDo.html">Technology Execution</a>
+        <a href="WhatWeDo.html">AI Deployment</a>
+        <a href="WhatWeDo.html">System Integration</a>
+        <a href="WhatWeDo.html">Capability Building</a>
+      </div>
+      <div>
+        <b>Industries</b>
+        <a href="Industries.html#banking">Banking, Financial Services &amp; Insurance</a>
+        <a href="Industries.html#healthcare">Healthcare</a>
+        <a href="Industries.html#telecommunications">Telecommunications</a>
+        <a href="Industries.html#government">Government and Public Sector</a>
+        <a href="Industries.html#hospitality">Hospitality</a>
+        <a href="Industries.html#manufacturing">Manufacturing</a>
+      </div>
+      <div>
+        <b>Resources</b>
+        <a href="Insights.html">Insights</a>
+      </div>
+    </div>
+    <div class="wwd-footer-bottom">
+      <span>&copy; Prompt Next Group Pte. Ltd</span>
+      <span><a href="#top">Privacy Policy</a><a href="#top">Terms of Service</a><a href="#top">Security</a></span>
+    </div>
+  </footer>
+
+  <script>
+    // Simple interactive selection for calendar days and time slots
+    document.querySelectorAll('.cal-day-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.cal-day-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+      });
+    });
+    document.querySelectorAll('.time-slot-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.time-slot-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+      });
+    });
+  </script>
+  <script src="nav.js"></script>
+</body>
+</html>
