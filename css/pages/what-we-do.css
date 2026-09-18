@@ -398,10 +398,10 @@
 }
 .what-we-do-page .wwd-model-card > img {
   display: block;
-  width: 52px;
-  height: 60px;
+  width: 32px;
+  height: 32px;
   max-width: none;
-  margin: 0 0 10px;
+  margin: 0 0 12px;
   object-fit: contain;
   object-position: center;
   overflow: visible;
@@ -690,8 +690,8 @@
     font-size: 18px;
   }
   .what-we-do-page .wwd-model-card > img {
-    width: 42px;
-    height: 50px;
+    width: 28px;
+    height: 28px;
     margin: 0 0 12px;
   }
   .what-we-do-page .wwd-model-grid {
@@ -842,8 +842,8 @@
     .wwd-capability-row:is(:first-child, :nth-child(2))
     .wwd-capability-copy
     li::before {
-    width: 24px;
-    height: 24px;
+    width: 28px;
+    height: 28px;
   }
   .what-we-do-page .wwd-capability-row:nth-child(3) .wwd-capability-copy h2 {
     font-size: 34px;
@@ -909,8 +909,8 @@
     font-size: 17px;
   }
   .what-we-do-page .wwd-model-card > img {
-    width: 36px;
-    height: 44px;
+    width: 28px;
+    height: 28px;
     margin: 0 0 12px;
   }
   .what-we-do-page .wwd-model-card {
