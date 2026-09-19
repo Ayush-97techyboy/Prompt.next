@@ -9,12 +9,14 @@
   background: linear-gradient(180deg, rgba(0, 4, 28, 0.65), transparent);
 }
 
+
 .nav-wrap {
   height: 78px;
   display: flex;
   align-items: center;
   gap: 20px;
 }
+
 
 .brand {
   display: inline-flex;
@@ -28,21 +30,6 @@
   white-space: nowrap;
 }
 
-.brand-mark {
-  position: relative;
-  top: -4px;
-  display: inline-block;
-  color: var(--blue-bright);
-  font-size: 28px;
-  font-weight: 400;
-  line-height: 0.9;
-  transform: scale(1.6, 1.8);
-  transform-origin: center;
-}
-
-.brand-blue {
-  color: var(--blue-bright);
-}
 
 .nav-logo {
   display: block;
@@ -50,6 +37,7 @@
   width: auto;
   object-fit: contain;
 }
+
 
 .nav-links {
   display: flex;
@@ -60,6 +48,7 @@
   flex: 1;
 }
 
+
 .nav-links a {
   color: #858895;
   font-family: var(--font-sans);
@@ -68,6 +57,7 @@
   position: relative;
   transition: color 0.2s ease;
 }
+
 
 .nav-links a::after {
   position: absolute;
@@ -82,6 +72,7 @@
   transition: opacity 0.2s ease;
 }
 
+
 .nav-links a:hover::after,
 .nav-links a:focus::after,
 .nav-links a:focus-visible::after,
@@ -89,10 +80,12 @@
   opacity: 1;
 }
 
+
 .nav-links a:hover,
 .nav-links a[aria-current="page"] {
   color: #fff;
 }
+
 
 /* Global WWD Header Navigation */
 .wwd-header {
@@ -105,6 +98,7 @@
   background: transparent;
 }
 
+
 .wwd-nav {
   width: min(1280px, calc(100% - 64px));
   height: 78px;
@@ -114,6 +108,7 @@
   justify-content: space-between;
   gap: 20px;
 }
+
 
 .wwd-brand {
   display: inline-flex;
@@ -128,11 +123,13 @@
   text-decoration: none;
 }
 
+
 .wwd-brand .nav-logo {
   height: 46px;
   width: auto;
   object-fit: contain;
 }
+
 
 .wwd-nav-links {
   display: flex;
@@ -142,6 +139,7 @@
   gap: 32px;
   margin-left: 24px;
 }
+
 
 .wwd-nav-links a {
   position: relative;
@@ -154,6 +152,7 @@
   transition: color 0.2s ease;
   padding: 8px 0;
 }
+
 
 .wwd-nav-links a::after {
   position: absolute;
@@ -168,11 +167,13 @@
   transition: opacity 0.2s ease;
 }
 
+
 .wwd-nav-links a:hover,
 .wwd-nav-links a:focus-visible,
 .wwd-nav-links a[aria-current="page"] {
   color: #ffffff;
 }
+
 
 .wwd-nav-links a:hover::after,
 .wwd-nav-links a:focus-visible::after,

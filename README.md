@@ -1,121 +1,184 @@
-# Prompt Next - Corporate Website
+# Prompt Next Website
 
-A modern, responsive corporate website for Prompt Next Group Pte. Ltd, featuring comprehensive information about technology execution services, AI deployment, and industry solutions across the Asia-Pacific region.
+## Purpose
 
-## 🚀 Features
+Prompt Next is a responsive static corporate website for enterprise
+technology execution, transformation rescue, AI deployment, system
+integration, capability building, and industry-specific delivery.
 
-- **Responsive Design**: Fully responsive layout optimized for desktop, tablet, and mobile devices
-- **Modern UI/UX**: Clean, professional design with dark theme and intuitive navigation
-- **Content Management**: Dynamic Table of Contents with scroll-based active state tracking
-- **SEO Optimized**: Semantic HTML structure and meta tags for search engine optimization
-- **Performance**: Optimized assets and efficient CSS organization
+This README is the technical handoff document. The companion
+[team-lead implementation report](./TEAM-LEAD-IMPLEMENTATION-REPORT.pdf) is
+the management summary requested by AMey.
 
-## 📁 Project Structure
+## Current status
 
-```
+### Completed and integrated
+
+- Corporate pages and six industry pages are available as semantic HTML.
+- Shared CSS is organized into base, layout, component, and page layers.
+- Responsive layouts cover desktop, laptop, tablet, and mobile widths.
+- Shared navigation, mobile menu, footer, CTA, form, card, and badge styles
+  are wired across the site.
+- CTAs and footer links route to the intended extensionless pages.
+- The Prompt Next logo is used consistently and is configured as the favicon.
+- GitHub Pages directory routing is implemented with `Pages/<slug>/index.html`.
+- Open Graph and Twitter/X Card metadata are present for link previews.
+- Obsolete conflict artifacts, reference captures, scratch files, and unused
+  files identified during cleanup were removed.
+
+### In progress / requires final review
+
+- The Methodology section on the home page is being converted into an
+  animated interaction by Ajay. The current visual capture shows overlapping
+  labels and duplicate step text; this must be corrected and rechecked at
+  desktop and mobile widths before final sign-off.
+- Social previews should be checked after deployment because preview services
+  cache metadata.
+
+## Contribution and ownership
+
+The repository history contains Ajay's initial baseline and Ayush's later
+implementation commits. The ownership below is intentionally separated so
+the team lead can distinguish baseline work, implementation, integration, and
+remaining work.
+
+### Ajay — baseline and methodology animation
+
+- Created the original repository baseline and initial static site structure.
+- Commit: `c59768d` — `Initial commit`.
+- Owns the current methodology animation conversion/integration work in
+  progress.
+- Needs to resolve the duplicate/overlapping labels visible in the current
+  methodology capture and confirm responsive behavior.
+
+### Ayush — implementation, integration, and handoff
+
+- Added and integrated the corporate pages, industry pages, and shared
+  navigation/footer surfaces.
+- Reorganized CSS into the modular architecture documented below.
+- Corrected page paths, asset paths, logos, CTA destinations, hero sections,
+  tiles, spacing, and responsive behavior.
+- Repaired the mobile hamburger behavior and preserved the two-column footer
+  layout on narrow screens.
+- Reorganized pages into extensionless GitHub Pages directories.
+- Added favicon, canonical URL, Open Graph, and Twitter/X Card metadata.
+- Performed conflict cleanup, asset/reference cleanup, route checks, and
+  documentation/handoff preparation.
+- Relevant commits: `0abae72` and `72dcd06`.
+
+### Shared validation responsibility
+
+Before release, Ayush and Ajay should jointly verify the methodology section,
+all responsive breakpoints, route navigation, social previews, and the final
+GitHub Pages deployment. The report should be updated if responsibility or
+completion status changes.
+
+## Site structure
+
+```text
 Prompt.next/
-├── assets/
-│   ├── Correct_PIxalate/          # Icon assets (social media, UI elements)
-│   └── images/                    # Main image assets (hero backgrounds, logos, etc.)
+├── index.html                         # Root GitHub Pages redirect
+├── nav.js                             # Shared menu and page behavior
+├── Pages/
+│   ├── home/index.html
+│   ├── about-us/index.html
+│   ├── bfsi/index.html
+│   ├── blog/index.html
+│   ├── contact-us/index.html
+│   ├── government/index.html
+│   ├── healthcare/index.html
+│   ├── hospitality/index.html
+│   ├── how-we-work/index.html
+│   ├── industries/index.html
+│   ├── insights/index.html
+│   ├── manufacturing/index.html
+│   ├── partners/index.html
+│   ├── telecommunication/index.html
+│   └── what-we-do/index.html
 ├── css/
-│   ├── base/                      # Base CSS (variables, reset)
-│   ├── layout/                    # Layout CSS (header, footer, containers)
-│   ├── components/                # Component CSS (buttons, cards, forms)
-│   └── pages/                     # Page-specific CSS
-├── *.html                         # HTML pages
-├── nav.js                        # Navigation and TOC functionality
-└── README.md                     # Project documentation
+│   ├── main.css
+│   ├── base/
+│   ├── components/
+│   ├── layout/
+│   └── pages/
+├── assets/
+├── TEAM-LEAD-IMPLEMENTATION-REPORT.pdf
+└── README.md
 ```
 
-## 🌐 Pages
+## Extensionless routes
 
-- **LandingPage.html**: Main landing page with company overview and services
-- **WhatWeDo.html**: Detailed information about technology execution services
-- **HowWeWork.html**: Methodology and work process explanation
-- **Partners.html**: Partner ecosystem and vetting process
-- **AboutUs.html**: Company history, vision, and mission
-- **Insights.html**: Blog and thought leadership content
-- **Blog.html**: Individual blog article pages
-- **Industries.html**: Industry-specific solutions and case studies
-- **ContactUs.html**: Contact information and inquiry form
+Each route is a directory containing `index.html`, so GitHub Pages serves the
+route without exposing the file extension.
 
-## 🎨 Technologies & Tools
+| Page | Route |
+| --- | --- |
+| Home | `/Pages/home/` |
+| What We Do | `/Pages/what-we-do/` |
+| Industries | `/Pages/industries/` |
+| How We Work | `/Pages/how-we-work/` |
+| Partners | `/Pages/partners/` |
+| Insights | `/Pages/insights/` |
+| About Us | `/Pages/about-us/` |
+| Contact Us | `/Pages/contact-us/` |
+| Blog | `/Pages/blog/` |
+| BFSI | `/Pages/bfsi/` |
+| Healthcare | `/Pages/healthcare/` |
+| Government | `/Pages/government/` |
+| Hospitality | `/Pages/hospitality/` |
+| Manufacturing | `/Pages/manufacturing/` |
+| Telecommunication | `/Pages/telecommunication/` |
 
-- **HTML5**: Semantic markup
-- **CSS3**: Modern styling with CSS Grid and Flexbox
-- **JavaScript**: Vanilla JS for navigation and interactive features
-- **Satoshi Font**: Typography via Fontshare API
+The root route `/` redirects to `/Pages/home/`.
 
-## 🛠️ Setup Instructions
+## CSS architecture
 
-1. **Clone the repository**
-   ```bash
-   git clone <repository-url>
-   cd Prompt.next
-   ```
+Every page loads `css/main.css` before its page-specific stylesheet.
 
-2. **Open the project**
-   - Open `LandingPage.html` in your preferred web browser
-   - Or use a local server for development:
-     ```bash
-     python -m http.server 8080
-     ```
-     Then navigate to `http://localhost:8080`
+- `css/base/` — reset rules and design variables.
+- `css/layout/` — containers, header, footer, and mobile navigation.
+- `css/components/` — buttons, badges, and forms.
+- `css/pages/` — page-specific layout, imagery, typography, and breakpoints.
 
-## 📝 Key Features Implementation
+Use shared files for reusable behavior and the matching page file for
+page-specific changes. Do not reintroduce the removed monolithic `Style.css`
+or `css/global.css`.
 
-### Dynamic Table of Contents
-- Scroll-based active state tracking
-- Automatic section highlighting
-- Click-based navigation with smooth scrolling
+## Local development
 
-### Responsive Footer
-- Desktop: 5-column layout
-- Tablet (≤960px): 2-column layout
-- Mobile (≤600px): Single column layout
+From the repository root:
 
-### Asset Organization
-- Separate directories for icons and images
-- Optimized file structure for maintainability
+```bash
+python -m http.server 4173
+```
 
-## 🔧 Development Notes
+Open:
 
-### CSS Architecture
-- **Base**: Variables, reset, and foundational styles
-- **Layout**: Grid systems, containers, and structural components
-- **Components**: Reusable UI elements
-- **Pages**: Page-specific styling overrides
+```text
+http://127.0.0.1:4173/
+http://127.0.0.1:4173/Pages/home/
+```
 
-### JavaScript Functionality
-- Mobile navigation toggle
-- Dynamic TOC active state management
-- Smooth scroll behavior
+No framework, build step, or package installation is required to serve the
+website locally.
 
-## 📱 Browser Support
+## Release checklist
 
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
-- Mobile browsers (iOS Safari, Chrome Mobile)
+1. Confirm the methodology animation has no overlapping or duplicate labels.
+2. Test the animation at approximately 390 px, 768 px, 1024 px, and 1440 px.
+3. Test the hamburger menu and footer at mobile and tablet widths.
+4. Confirm all CTAs point to the intended page, especially Contact Us.
+5. Confirm all CSS, JavaScript, image, and font requests resolve.
+6. Confirm `/`, `/Pages/home/`, and representative page routes return HTTP 200.
+7. Run `git diff --check` and confirm no unresolved merge entries remain.
+8. Deploy to GitHub Pages and refresh social previews using a platform debugger.
 
-## 🤝 Contributing
+## Deployment metadata
 
-1. Create a feature branch
-2. Make your changes
-3. Test thoroughly across devices
-4. Commit with standard commit messages
-5. Push and create pull request
+The entry pages currently use the GitHub Pages project URL in
+`og:url`, `og:image`, and canonical metadata. If the repository URL or custom
+domain changes, update those values in the HTML entry pages.
 
-## 📄 License
+## License
 
 © Prompt Next Group Pte. Ltd. All rights reserved.
-
-## 📞 Contact
-
-For technical support or inquiries, visit the Contact Us page or email the development team.
-
----
-
-**Version**: 1.0.0  
-**Last Updated**: 2026-09-18

@@ -48,7 +48,9 @@
   }
 
   .wwd-nav-links.nav-active,
-  .nav-links.nav-active {
+  .nav-links.nav-active,
+  body .wwd-nav-links.nav-active,
+  body .nav-links.nav-active {
     display: flex !important;
   }
 
@@ -100,7 +102,7 @@
 
   .wwd-footer-grid,
   .footer-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 28px;
   }
 }

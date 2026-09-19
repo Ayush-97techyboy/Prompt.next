@@ -55,18 +55,6 @@
   color: #2470ff;
 }
 
-.what-we-do-page .wwd-brand-mark {
-  position: relative;
-  top: -4px;
-  display: inline-block;
-  color: #1870ff;
-  font-size: 28px;
-  font-weight: 400;
-  line-height: .9;
-  transform: scale(1.6, 1.8);
-  transform-origin: center;
-}
-
 .what-we-do-page .wwd-nav-links {
   display: flex;
   flex: 1;
@@ -137,7 +125,7 @@
   justify-content: center;
   position: relative;
   overflow: hidden;
-  background: #1c1d1e url("../../assets/images/what-hero-no-nav-final3.png") center top / cover no-repeat;
+  background: #1c1d1e url("../../assets/what-hero.png") center top / cover no-repeat;
   text-align: center;
 }
 
@@ -178,6 +166,10 @@
 @media (max-width: 600px) {
   .what-we-do-page .wwd-hero {
     min-height: 400px;
+  }
+
+  .what-we-do-page .wwd-hero {
+    background-image: url("../../assets/what-hero.png");
   }
 
   .what-we-do-page .wwd-hero-inner {
@@ -1078,4 +1070,8 @@
   .what-we-do-page .wwd-model-card {
     padding: 25px;
   }
+}
+
+.what-we-do-page .wwd-hero {
+  background-image: url("../../assets/what-hero.png");
 }

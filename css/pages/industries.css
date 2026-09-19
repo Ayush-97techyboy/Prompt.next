@@ -87,8 +87,9 @@
 }
 
 .industries-hero {
-  min-height: 555px;
-  background: #101315 url("../../assets/images/industries-hero-no-nav-clear.png") center top / 100% 100% no-repeat;
+  width: 100%;
+  min-height: 636px;
+  background: #101315 url("../../assets/Correct_PIxalate/Industries_hero.svg") center top / cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -154,59 +155,59 @@
 }
 
 .industries-list {
-  padding: 101px 0 105px;
+  padding: 100px 0 104px;
   background: #050506;
 }
 
 .industries-grid {
-  width: min(1280px, calc(100% - 80px));
+  width: min(1280px, calc(100% - 64px));
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 41px 30px;
+  gap: 40px 32px;
   margin: 0 auto;
 }
 
 .industries-card {
-  min-height: 389px;
+  min-height: 387px;
   display: flex;
   flex-direction: column;
-  padding: 33px 31px 27px;
+  padding: 32px;
   border-radius: 22px;
   background: #111216;
 }
 
 .industries-card>img {
-  width: 50px;
-  height: 50px;
+  width: 32px;
+  height: 32px;
   object-fit: contain;
   object-position: left center;
-  margin: 0 0 15px;
+  margin: 0 0 31px;
 }
 
 .industries-card h2 {
-  min-height: 77px;
+  min-height: 80px;
   margin: 0;
   color: #ffffff;
   font-family: var(--font-sans);
   font-weight: 700;
-  font-size: 48px;
-  line-height: 88px;
+  font-size: 32px;
+  line-height: 40px;
   letter-spacing: 0px;
 }
 
 .industries-card p {
-  min-height: 75px;
-  margin: 20px 0 0;
+  min-height: 48px;
+  margin: 16px 0 0;
   color: #B0B0B0;
   font-family: var(--font-sans);
   font-weight: 400;
-  font-size: 24px;
-  line-height: 32px;
+  font-size: 16px;
+  line-height: 24px;
   letter-spacing: 0px;
 }
 
 .industries-card-bottom {
-  padding-top: 20px;
+  padding-top: 16px;
   margin-top: auto;
   border-top: 1px solid rgba(255, 255, 255, .13);
 }
@@ -350,18 +351,6 @@
 
 .industries-page .wwd-brand>span:last-child>span {
   color: #2470ff;
-}
-
-.industries-page .wwd-brand-mark {
-  position: relative;
-  top: -4px;
-  display: inline-block;
-  color: #1870ff;
-  font-size: 28px;
-  font-weight: 400;
-  line-height: .9;
-  transform: scale(1.6, 1.8);
-  transform-origin: center;
 }
 
 .industries-page .wwd-nav-links {

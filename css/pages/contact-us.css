@@ -400,8 +400,20 @@
   .contact-us-page .wwd-top-button {
     display: none;
   }
+  .contact-us-page .contact-hero {
+    padding: 104px 0 36px;
+  }
+  .contact-us-page .contact-hero-inner {
+    width: calc(100% - 34px);
+  }
   .contact-us-page .contact-hero-inner h1 {
     font-size: 28px;
+    line-height: 1.2;
+    margin-bottom: 14px;
+  }
+  .contact-us-page .contact-hero-inner p {
+    font-size: 16px;
+    line-height: 1.5;
   }
   .contact-us-page .contact-card {
     padding: 28px 20px;
