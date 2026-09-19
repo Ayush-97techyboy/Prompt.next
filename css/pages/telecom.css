@@ -60,17 +60,6 @@
 .telecom-page .wwd-brand > span:last-child > span {
   color: #2470ff;
 }
-.telecom-page .wwd-brand-mark {
-  position: relative;
-  top: -4px;
-  display: inline-block;
-  color: #1870ff;
-  font-size: 28px;
-  font-weight: 400;
-  line-height: 0.9;
-  transform: scale(1.6, 1.8);
-  transform-origin: center;
-}
 .telecom-page .wwd-nav-links {
   display: flex;
   flex: 1;

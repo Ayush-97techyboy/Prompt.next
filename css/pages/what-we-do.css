@@ -1,16 +1,20 @@
+/* What We Do page - all rules are scoped so the landing page remains unchanged. */
 .what-we-do-page {
   background: #08090b;
   color: #f4f5f7;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
 }
+
 .what-we-do-page a {
   color: inherit;
   text-decoration: none;
 }
+
 .what-we-do-page img {
   display: block;
   max-width: 100%;
 }
+
 .what-we-do-page .wwd-header {
   position: absolute;
   z-index: 5;
@@ -18,6 +22,7 @@
   height: 78px;
   background: transparent;
 }
+
 .what-we-do-page .wwd-nav {
   width: min(1280px, calc(100% - 64px));
   height: 78px;
@@ -26,6 +31,7 @@
   align-items: center;
   gap: 20px;
 }
+
 .what-we-do-page .wwd-brand {
   display: inline-flex;
   align-items: center;
@@ -33,29 +39,22 @@
   color: #f6f7fa;
   font-size: 20px;
   font-weight: 600;
-  line-height: 0.9;
-  letter-spacing: -0.5px;
+  line-height: .9;
+  letter-spacing: -.5px;
   white-space: nowrap;
-  transform: scaleY(0.8);
-  transform-origin: left center;
+  text-decoration: none;
 }
+
 .what-we-do-page .wwd-brand .nav-logo {
-  transform: scaleY(1.25);
+  height: 46px;
+  width: auto;
+  object-fit: contain;
 }
-.what-we-do-page .wwd-brand > span:last-child > span {
+
+.what-we-do-page .wwd-brand>span:last-child>span {
   color: #2470ff;
 }
-.what-we-do-page .wwd-brand-mark {
-  position: relative;
-  top: -4px;
-  display: inline-block;
-  color: #1870ff;
-  font-size: 28px;
-  font-weight: 400;
-  line-height: 0.9;
-  transform: scale(1.6, 1.8);
-  transform-origin: center;
-}
+
 .what-we-do-page .wwd-nav-links {
   display: flex;
   flex: 1;
@@ -64,15 +63,17 @@
   gap: 35px;
   margin-left: 16px;
 }
+
 .what-we-do-page .wwd-nav-links a {
   position: relative;
   color: #92949a;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
   font-size: 14px;
   font-weight: 400;
   white-space: nowrap;
-  transition: color 0.2s ease;
+  transition: color .2s ease;
 }
+
 .what-we-do-page .wwd-nav-links a::after {
   position: absolute;
   right: 0;
@@ -83,20 +84,23 @@
   border-radius: 2px;
   background: #1f6cff;
   opacity: 0;
-  transition: opacity 0.2s ease;
+  transition: opacity .2s ease;
 }
+
 .what-we-do-page .wwd-nav-links a:hover,
 .what-we-do-page .wwd-nav-links a:focus,
 .what-we-do-page .wwd-nav-links a:focus-visible,
 .what-we-do-page .wwd-nav-links a[aria-current="page"] {
   color: #fff;
 }
+
 .what-we-do-page .wwd-nav-links a:hover::after,
 .what-we-do-page .wwd-nav-links a:focus::after,
 .what-we-do-page .wwd-nav-links a:focus-visible::after,
 .what-we-do-page .wwd-nav-links a[aria-current="page"]::after {
   opacity: 1;
 }
+
 .what-we-do-page .wwd-top-button {
   display: inline-flex;
   justify-content: center;
@@ -106,13 +110,14 @@
   border-radius: 8px;
   background: #1f5df0;
   color: #fff;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
   font-size: 13px;
   font-style: normal;
   font-weight: 400;
-  letter-spacing: 0.02em;
+  letter-spacing: .02em;
   white-space: nowrap;
 }
+
 .what-we-do-page .wwd-hero {
   min-height: 638px;
   display: flex;
@@ -120,52 +125,105 @@
   justify-content: center;
   position: relative;
   overflow: hidden;
-  background: #1c1d1e url("../../assets/what-hero.png") center top / 100% 100%
-    no-repeat;
+  background: #1c1d1e url("../../assets/what-hero.png") center top / cover no-repeat;
   text-align: center;
 }
+
 .what-we-do-page .wwd-hero-inner {
   position: relative;
   z-index: 1;
   width: min(1200px, calc(100% - 64px));
-  margin-top: 15px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
+
 .what-we-do-page .wwd-hero h1 {
   margin: 0;
   color: #ffffff;
-  font-family:
-    "Inter",
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Roboto,
-    sans-serif;
+  font-family: var(--font-sans);
   font-size: clamp(36px, 4.8vw, 68px);
   font-weight: 600;
   line-height: 1.18;
   letter-spacing: -0.03em;
-  white-space: normal;
+  text-align: center;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
+
 .what-we-do-page .wwd-hero p {
-  margin: 28px auto 0;
-  color: #a8abb5;
-  font-family:
-    "Inter",
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Roboto,
-    sans-serif;
-  font-size: clamp(15px, 1.25vw, 18px);
+  max-width: 1000px;
+  margin: 24px auto 0;
+  color: #929399;
+  font-family: var(--font-sans);
+  font-size: 19px;
   font-weight: 400;
-  line-height: 1.55;
-  max-width: 1200px;
-  white-space: nowrap;
+  line-height: 1.6;
+  text-align: center;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
+
+@media (max-width: 600px) {
+  .what-we-do-page .wwd-hero {
+    min-height: 400px;
+  }
+
+  .what-we-do-page .wwd-hero {
+    background-image: url("../../assets/what-hero.png");
+  }
+
+  .what-we-do-page .wwd-hero-inner {
+    padding: 0 16px;
+    width: calc(100% - 32px);
+  }
+
+  .what-we-do-page .wwd-hero h1 {
+    font-size: 24px;
+    line-height: 1.3;
+    white-space: normal;
+  }
+
+  .what-we-do-page .wwd-hero p {
+    font-size: 16px;
+    line-height: 1.5;
+    max-width: 100%;
+  }
+}
+
+.what-we-do-page .wwd-hero-inner {
+  position: relative;
+  z-index: 1;
+  width: min(1160px, calc(100% - 64px));
+  margin-top: 24px;
+}
+
+.what-we-do-page .wwd-hero h1 {
+  margin: 0;
+  color: #ffffff;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 70px;
+  line-height: 88px;
+  letter-spacing: 0px;
+  text-align: center;
+}
+
+.what-we-do-page .wwd-hero p {
+  margin: 27px auto 0;
+  color: #B0B0B0;
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 32px;
+  letter-spacing: 0px;
+  text-align: center;
+}
+
 .what-we-do-page .wwd-capabilities {
   width: min(1280px, calc(100% - 80px));
   margin: 0 auto;
 }
+
 .what-we-do-page .wwd-capability-row {
   min-height: 620px;
   display: grid;
@@ -174,28 +232,38 @@
   column-gap: 92px;
   padding: 88px 0;
 }
+
 .what-we-do-page .wwd-capability-copy {
   min-width: 0;
 }
+
 .what-we-do-page .wwd-capability-copy h2 {
   margin: 0 0 22px;
-  color: #f1f1f2;
-  font-size: 52px;
-  line-height: 1.14;
-  letter-spacing: -0.03em;
+  color: #ffffff;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 88px;
+  letter-spacing: 0px;
 }
+
 .what-we-do-page .wwd-lead {
   max-width: 590px;
   margin: 0 0 38px;
-  color: #96979b;
-  font-size: 22px;
-  line-height: 1.45;
+  color: #B0B0B0;
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: 0px;
 }
+
 .what-we-do-page .wwd-capability-copy ul {
   padding: 0;
   margin: 0;
   list-style: none;
 }
+
 .what-we-do-page .wwd-capability-copy li {
   position: relative;
   max-width: 610px;
@@ -205,6 +273,7 @@
   font-size: 17px;
   line-height: 1.45;
 }
+
 .what-we-do-page .wwd-capability-copy li::before {
   position: absolute;
   top: -7px;
@@ -212,51 +281,63 @@
   width: 24px;
   height: 24px;
   content: "";
-  background: url("../../assets/what-bullet.png") center / contain no-repeat;
+  background: url("../../assets/images/what-bullet.png") center / contain no-repeat;
 }
+
 .what-we-do-page .wwd-capability-copy li strong {
   color: #ececef;
   font-weight: 500;
 }
+
 .what-we-do-page .wwd-capability-copy li span {
   color: #929398;
   font-weight: 400;
 }
+
 .what-we-do-page .wwd-capability-copy .wwd-practice-line {
   display: block;
   white-space: nowrap;
 }
+
 .what-we-do-page .wwd-capability-copy .wwd-system-gap-line {
   display: block;
   white-space: nowrap;
 }
+
 .what-we-do-page .wwd-capability-copy .wwd-system-practice-line {
   display: block;
   white-space: nowrap;
 }
+
 .what-we-do-page .wwd-capability-copy .wwd-capability-gap-line {
   display: block;
   white-space: nowrap;
 }
+
 .what-we-do-page .wwd-capability-copy .wwd-capability-practice-line {
   display: block;
   white-space: nowrap;
 }
+
 .what-we-do-page .wwd-capability-copy .wwd-capability-deliverable-line {
   display: block;
   white-space: nowrap;
 }
+
 .what-we-do-page .wwd-capability-copy .wwd-specialist-gap-line {
   display: block;
   white-space: nowrap;
 }
+
 .what-we-do-page .wwd-capability-copy .wwd-specialist-deliverable-line {
   display: block;
   white-space: nowrap;
 }
+
 .what-we-do-page .wwd-desktop-break {
   display: inline;
 }
+
 .what-we-do-page .wwd-capability-image {
   width: 100%;
   max-width: 554px;
@@ -265,123 +346,139 @@
   object-fit: cover;
   border-radius: 20px;
 }
+
 .what-we-do-page .wwd-reverse .wwd-capability-image {
   justify-self: start;
 }
-.what-we-do-page
-  .wwd-capability-row:is(:first-child, :nth-child(2))
-  .wwd-capability-copy
-  li {
+
+/* Give the first two capability blocks more visual weight, including their bullet icons. */
+.what-we-do-page .wwd-capability-row:is(:first-child, :nth-child(2)) .wwd-capability-copy li {
   padding-left: 48px;
   font-size: 18px;
 }
+
 .what-we-do-page .wwd-capability-row:first-child .wwd-capability-copy h2 {
   font-size: 48px;
   font-weight: 550;
 }
+
 .what-we-do-page .wwd-capability-row:first-child .wwd-lead {
   font-size: 22px;
 }
+
 .what-we-do-page .wwd-capability-row:first-child .wwd-capability-copy li {
   font-size: 17px;
 }
-.what-we-do-page
-  .wwd-capability-row:first-child
-  .wwd-capability-copy
-  li::before {
+
+.what-we-do-page .wwd-capability-row:first-child .wwd-capability-copy li::before {
   width: 24px;
   height: 24px;
 }
+
 .what-we-do-page .wwd-capability-row:nth-child(2) .wwd-capability-copy h2 {
   font-size: 48px;
   font-weight: 550;
 }
+
 .what-we-do-page .wwd-capability-row:nth-child(2) .wwd-lead {
   font-size: 22px;
 }
-.what-we-do-page
-  .wwd-capability-row:is(:first-child, :nth-child(2))
-  .wwd-capability-copy
-  li::before {
+
+.what-we-do-page .wwd-capability-row:is(:first-child, :nth-child(2)) .wwd-capability-copy li::before {
   width: 30px;
   height: 30px;
 }
+
 .what-we-do-page .wwd-capability-row:nth-child(2) .wwd-capability-copy li {
   font-size: 17px;
 }
+
 .what-we-do-page .wwd-capability-row:nth-child(3) .wwd-capability-copy h2 {
   font-size: 48px;
   font-weight: 550;
 }
+
 .what-we-do-page .wwd-capability-row:nth-child(3) .wwd-lead {
   font-size: 22px;
 }
+
 .what-we-do-page .wwd-capability-row:nth-child(3) .wwd-capability-copy li {
   padding-left: 48px;
   font-size: 17px;
 }
-.what-we-do-page
-  .wwd-capability-row:nth-child(3)
-  .wwd-capability-copy
-  li::before {
+
+.what-we-do-page .wwd-capability-row:nth-child(3) .wwd-capability-copy li::before {
   width: 30px;
   height: 30px;
 }
+
 .what-we-do-page .wwd-capability-row:nth-child(4) .wwd-capability-copy h2 {
   font-size: 48px;
   font-weight: 550;
 }
+
 .what-we-do-page .wwd-capability-row:nth-child(4) .wwd-lead {
   font-size: 22px;
 }
+
 .what-we-do-page .wwd-capability-row:nth-child(4) .wwd-capability-copy li {
   padding-left: 48px;
   font-size: 17px;
 }
-.what-we-do-page
-  .wwd-capability-row:nth-child(4)
-  .wwd-capability-copy
-  li::before {
+
+.what-we-do-page .wwd-capability-row:nth-child(4) .wwd-capability-copy li::before {
   width: 30px;
   height: 30px;
 }
+
 .what-we-do-page .wwd-capability-row:nth-child(5) .wwd-capability-copy h2 {
   font-size: 48px;
   font-weight: 550;
 }
+
 .what-we-do-page .wwd-capability-row:nth-child(5) .wwd-lead {
   font-size: 22px;
 }
+
 .what-we-do-page .wwd-capability-row:nth-child(5) .wwd-capability-copy li {
   padding-left: 48px;
   font-size: 17px;
 }
-.what-we-do-page
-  .wwd-capability-row:nth-child(5)
-  .wwd-capability-copy
-  li::before {
+
+.what-we-do-page .wwd-capability-row:nth-child(5) .wwd-capability-copy li::before {
   width: 30px;
   height: 30px;
 }
+
 .what-we-do-page .wwd-engagement {
   padding: 93px 0 91px;
   background: #08090b;
 }
+
 .what-we-do-page .wwd-section-heading {
   text-align: center;
 }
+
 .what-we-do-page .wwd-section-heading h2 {
   margin: 0 0 22px;
-  color: #f1f1f2;
+  color: #ffffff;
+  font-family: var(--font-sans);
+  font-weight: 700;
   font-size: 48px;
-  line-height: 1.2;
+  line-height: 88px;
+  letter-spacing: 0px;
 }
+
 .what-we-do-page .wwd-section-heading p {
   margin: 0;
-  color: #929398;
-  font-size: 19px;
-  line-height: 1.45;
+  color: #B0B0B0;
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: 0px;
 }
+
 .what-we-do-page .wwd-model-grid {
   width: min(1280px, calc(100% - 80px));
   display: grid;
@@ -389,6 +486,7 @@
   gap: 31px;
   margin: 64px auto 0;
 }
+
 .what-we-do-page .wwd-model-card {
   min-height: 394px;
   padding: 28px 32px 30px;
@@ -396,24 +494,27 @@
   border-radius: 17px;
   background: #111216;
 }
-.what-we-do-page .wwd-model-card > img {
+
+.what-we-do-page .wwd-model-card>img {
   display: block;
-  width: 32px;
-  height: 32px;
+  width: 52px;
+  height: 60px;
   max-width: none;
-  margin: 0 0 12px;
+  margin: 0 0 10px;
   object-fit: contain;
   object-position: center;
   overflow: visible;
 }
+
 .what-we-do-page .wwd-model-card h3 {
   margin: 0 0 17px;
   color: #efeff1;
   font-size: 24px;
   font-weight: 540;
   line-height: 1.3;
-  -webkit-text-stroke: 0.12px currentColor;
+  -webkit-text-stroke: .12px currentColor;
 }
+
 .what-we-do-page .wwd-model-card p {
   min-height: 105px;
   margin: 0;
@@ -422,27 +523,32 @@
   font-weight: 400;
   line-height: 1.7;
 }
+
 .what-we-do-page .wwd-model-card hr {
   height: 1px;
   margin: 24px 0 17px;
   border: 0;
-  background: rgba(255, 255, 255, 0.13);
+  background: rgba(255, 255, 255, .13);
 }
+
 .what-we-do-page .wwd-model-card:nth-child(2) hr {
   margin-top: -7px;
   margin-bottom: 48px;
 }
+
 .what-we-do-page .wwd-model-card:nth-child(2) ul {
   position: relative;
   top: -25px;
   margin-top: 0;
   transform: none;
 }
+
 .what-we-do-page .wwd-model-card ul {
   padding: 0;
   margin: 0;
   list-style: none;
 }
+
 .what-we-do-page .wwd-model-card li {
   position: relative;
   padding-left: 17px;
@@ -452,6 +558,7 @@
   font-weight: 400;
   line-height: 1.6;
 }
+
 .what-we-do-page .wwd-model-card li::before {
   position: absolute;
   top: 7px;
@@ -462,89 +569,106 @@
   border-radius: 50%;
   background: #1c67ff;
 }
+
 .what-we-do-page .wwd-footer {
   padding: 44px 0 22px;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid rgba(255, 255, 255, .08);
   background: #08090b;
 }
+
 .what-we-do-page .wwd-footer-grid {
   width: min(1360px, calc(100% - 80px));
   display: grid;
-  grid-template-columns: 1.25fr 1fr 1.15fr 1.15fr 0.8fr;
+  grid-template-columns: 1.25fr 1fr 1.15fr 1.15fr .8fr;
   gap: 38px;
   margin: 0 auto;
 }
-.what-we-do-page .wwd-footer-grid > div:not(:first-child) {
+
+.what-we-do-page .wwd-footer-grid>div:not(:first-child) {
   display: flex;
   flex-direction: column;
   gap: 9px;
 }
+
 .what-we-do-page .wwd-footer-grid b {
   margin-bottom: 6px;
   color: #e0e1e4;
   font-size: 16px;
 }
+
 .what-we-do-page .wwd-footer-grid a:not(.wwd-brand) {
   color: #777980;
   font-size: 14px;
   line-height: 1.25;
-  transition: color 0.2s ease;
+  transition: color .2s ease;
 }
+
 .what-we-do-page .wwd-footer-grid a:not(.wwd-brand):hover,
 .what-we-do-page .wwd-footer-grid a:not(.wwd-brand):focus-visible {
   color: #fff;
 }
-.what-we-do-page .wwd-footer-grid > div:nth-child(4) a:first-of-type {
+
+.what-we-do-page .wwd-footer-grid>div:nth-child(4) a:first-of-type {
   white-space: nowrap;
 }
+
 .what-we-do-page .wwd-footer-bottom {
   width: min(1360px, calc(100% - 80px));
   display: flex;
   justify-content: space-between;
   margin: 37px auto 0;
   padding-top: 20px;
-  border-top: 1px solid rgba(255, 255, 255, 0.04);
+  border-top: 1px solid rgba(255, 255, 255, .04);
   color: #858895;
   font-size: 14px;
 }
+
 .what-we-do-page .wwd-footer-bottom a {
   color: inherit;
-  transition: color 0.2s ease;
+  transition: color .2s ease;
 }
+
 .what-we-do-page .wwd-footer-bottom a:hover,
 .what-we-do-page .wwd-footer-bottom a:focus-visible {
   color: #fff;
 }
+
 .what-we-do-page .wwd-footer-bottom span:last-child {
   display: flex;
   gap: 21px;
 }
+
 @media (max-width: 1050px) {
   .what-we-do-page .wwd-capability-row {
     column-gap: 50px;
   }
 }
+
 @media (max-width: 800px) {
   .what-we-do-page .wwd-desktop-break {
     display: none;
   }
+
   .what-we-do-page .wwd-hero {
     min-height: 560px;
   }
+
   .what-we-do-page .wwd-hero h1 {
-    font-size: clamp(28px, 4.5vw, 38px);
+    font-size: 38px;
   }
+
   .what-we-do-page .wwd-hero p {
-    font-size: 13px;
-    line-height: 1.55;
-    white-space: normal;
+    font-size: 12px;
   }
+
   .what-we-do-page .wwd-hero p br {
     display: none;
   }
+
   .what-we-do-page .wwd-capabilities {
     width: calc(100% - 44px);
   }
+
   .what-we-do-page .wwd-capability-row {
     min-height: 0;
     display: flex;
@@ -552,371 +676,402 @@
     gap: 38px;
     padding: 66px 0;
   }
+
   .what-we-do-page .wwd-reverse .wwd-capability-image {
     order: 0;
   }
+
   .what-we-do-page .wwd-reverse .wwd-capability-copy {
     order: 1;
   }
+
   .what-we-do-page .wwd-capability-image {
     width: 100%;
     max-width: none;
     justify-self: auto;
   }
+
   .what-we-do-page .wwd-capability-copy h2 {
     font-size: 40px;
   }
-  .what-we-do-page
-    .wwd-capability-row:is(:first-child, :nth-child(2))
-    .wwd-capability-copy
-    li {
+
+  .what-we-do-page .wwd-capability-row:is(:first-child, :nth-child(2)) .wwd-capability-copy li {
     padding-left: 41px;
     font-size: 17px;
   }
+
   .what-we-do-page .wwd-capability-row:first-child .wwd-capability-copy h2 {
     font-size: 40px;
   }
+
   .what-we-do-page .wwd-capability-row:first-child .wwd-lead {
     font-size: 20px;
   }
+
   .what-we-do-page .wwd-capability-row:first-child .wwd-capability-copy li {
     font-size: 15px;
   }
+
   .what-we-do-page .wwd-capability-row:first-child .wwd-practice-line {
     white-space: normal;
   }
+
   .what-we-do-page .wwd-capability-row:nth-child(3) .wwd-system-gap-line {
     white-space: normal;
   }
+
   .what-we-do-page .wwd-capability-row:nth-child(3) .wwd-system-practice-line {
     white-space: normal;
   }
+
   .what-we-do-page .wwd-capability-row:nth-child(4) .wwd-capability-gap-line {
     white-space: normal;
   }
-  .what-we-do-page
-    .wwd-capability-row:nth-child(4)
-    .wwd-capability-practice-line {
+
+  .what-we-do-page .wwd-capability-row:nth-child(4) .wwd-capability-practice-line {
     white-space: normal;
   }
-  .what-we-do-page
-    .wwd-capability-row:nth-child(4)
-    .wwd-capability-deliverable-line {
+
+  .what-we-do-page .wwd-capability-row:nth-child(4) .wwd-capability-deliverable-line {
     white-space: normal;
   }
+
   .what-we-do-page .wwd-capability-row:nth-child(5) .wwd-specialist-gap-line {
     white-space: normal;
   }
-  .what-we-do-page
-    .wwd-capability-row:nth-child(5)
-    .wwd-specialist-deliverable-line {
+
+  .what-we-do-page .wwd-capability-row:nth-child(5) .wwd-specialist-deliverable-line {
     white-space: normal;
   }
+
   .what-we-do-page .wwd-capability-row:nth-child(2) .wwd-capability-copy h2 {
     font-size: 40px;
     font-weight: 550;
   }
+
   .what-we-do-page .wwd-capability-row:nth-child(2) .wwd-lead {
     font-size: 20px;
   }
-  .what-we-do-page
-    .wwd-capability-row:is(:first-child, :nth-child(2))
-    .wwd-capability-copy
-    li::before {
+
+  .what-we-do-page .wwd-capability-row:is(:first-child, :nth-child(2)) .wwd-capability-copy li::before {
     width: 26px;
     height: 26px;
   }
+
   .what-we-do-page .wwd-capability-row:nth-child(2) .wwd-capability-copy li {
     font-size: 15px;
   }
+
   .what-we-do-page .wwd-capability-row:nth-child(3) .wwd-capability-copy h2 {
     font-size: 40px;
     font-weight: 550;
   }
+
   .what-we-do-page .wwd-capability-row:nth-child(3) .wwd-lead {
     font-size: 20px;
   }
+
   .what-we-do-page .wwd-capability-row:nth-child(3) .wwd-capability-copy li {
     padding-left: 41px;
     font-size: 15px;
   }
-  .what-we-do-page
-    .wwd-capability-row:nth-child(3)
-    .wwd-capability-copy
-    li::before {
+
+  .what-we-do-page .wwd-capability-row:nth-child(3) .wwd-capability-copy li::before {
     width: 26px;
     height: 26px;
   }
+
   .what-we-do-page .wwd-capability-row:nth-child(4) .wwd-capability-copy h2 {
     font-size: 40px;
     font-weight: 550;
   }
+
   .what-we-do-page .wwd-capability-row:nth-child(4) .wwd-lead {
     font-size: 20px;
   }
+
   .what-we-do-page .wwd-capability-row:nth-child(4) .wwd-capability-copy li {
     padding-left: 41px;
     font-size: 15px;
   }
-  .what-we-do-page
-    .wwd-capability-row:nth-child(4)
-    .wwd-capability-copy
-    li::before {
+
+  .what-we-do-page .wwd-capability-row:nth-child(4) .wwd-capability-copy li::before {
     width: 26px;
     height: 26px;
   }
+
   .what-we-do-page .wwd-capability-row:nth-child(5) .wwd-capability-copy h2 {
     font-size: 40px;
     font-weight: 550;
   }
+
   .what-we-do-page .wwd-capability-row:nth-child(5) .wwd-lead {
     font-size: 20px;
   }
+
   .what-we-do-page .wwd-capability-row:nth-child(5) .wwd-capability-copy li {
     padding-left: 41px;
     font-size: 15px;
   }
-  .what-we-do-page
-    .wwd-capability-row:nth-child(5)
-    .wwd-capability-copy
-    li::before {
+
+  .what-we-do-page .wwd-capability-row:nth-child(5) .wwd-capability-copy li::before {
     width: 26px;
     height: 26px;
   }
+
   .what-we-do-page .wwd-section-heading h2 {
     font-size: 40px;
   }
+
   .what-we-do-page .wwd-section-heading p {
     font-size: 18px;
   }
-  .what-we-do-page .wwd-model-card > img {
-    width: 28px;
-    height: 28px;
+
+  .what-we-do-page .wwd-model-card>img {
+    width: 42px;
+    height: 50px;
     margin: 0 0 12px;
   }
+
   .what-we-do-page .wwd-model-grid {
     width: calc(100% - 44px);
     grid-template-columns: 1fr;
     gap: 18px;
   }
+
   .what-we-do-page .wwd-footer-grid {
     width: calc(100% - 44px);
     grid-template-columns: repeat(2, 1fr);
     gap: 30px 20px;
   }
-  .what-we-do-page .wwd-footer-grid > div:first-child {
+
+  .what-we-do-page .wwd-footer-grid>div:first-child {
     grid-column: 1 / -1;
   }
+
   .what-we-do-page .wwd-footer-bottom {
     width: calc(100% - 44px);
     flex-direction: column;
     gap: 14px;
   }
+
   .what-we-do-page .wwd-footer-bottom span:last-child {
     gap: 13px;
   }
 }
+
 @media (max-width: 900px) {
   .what-we-do-page .wwd-nav-links {
     display: none;
   }
+
   .what-we-do-page .wwd-nav {
     justify-content: space-between;
   }
+
   .what-we-do-page .wwd-top-button {
     margin-left: auto;
   }
 }
-@media (max-width: 1100px) {
-  .what-we-do-page .wwd-hero p {
-    white-space: normal;
-  }
-  .what-we-do-page .wwd-capability-copy .wwd-practice-line,
-  .what-we-do-page .wwd-capability-copy .wwd-system-gap-line,
-  .what-we-do-page .wwd-capability-copy .wwd-system-practice-line,
-  .what-we-do-page .wwd-capability-copy .wwd-capability-gap-line,
-  .what-we-do-page .wwd-capability-copy .wwd-capability-practice-line,
-  .what-we-do-page .wwd-capability-copy .wwd-capability-deliverable-line,
-  .what-we-do-page .wwd-capability-copy .wwd-specialist-gap-line,
-  .what-we-do-page .wwd-capability-copy .wwd-specialist-deliverable-line {
-    white-space: normal;
-  }
-}
+
 @media (max-width: 600px) {
   .what-we-do-page .wwd-header {
     height: 62px;
   }
+
   .what-we-do-page .wwd-nav {
     width: calc(100% - 34px);
     height: 62px;
   }
+
   .what-we-do-page .wwd-top-button {
     display: none;
   }
 }
+
 @media (max-width: 520px) {
   .what-we-do-page .wwd-hero h1 {
-    font-size: clamp(15px, 4.4vw, 19px);
-    line-height: 1.28;
+    font-size: 30px;
   }
+
   .what-we-do-page .wwd-hero-inner {
     width: calc(100% - 30px);
-    margin-top: 20px;
   }
+
   .what-we-do-page .wwd-hero p {
-    font-size: 12px;
+    font-size: 11px;
     line-height: 1.5;
-    margin-top: 18px;
   }
+
   .what-we-do-page .wwd-capabilities,
   .what-we-do-page .wwd-model-grid {
     width: calc(100% - 30px);
   }
+
   .what-we-do-page .wwd-capability-row {
     padding: 48px 0;
   }
+
   .what-we-do-page .wwd-capability-copy h2 {
     font-size: 34px;
   }
+
   .what-we-do-page .wwd-lead {
     font-size: 18px;
   }
+
   .what-we-do-page .wwd-capability-copy li {
     padding-left: 35px;
     font-size: 15px;
   }
-  .what-we-do-page
-    .wwd-capability-row:is(:first-child, :nth-child(2))
-    .wwd-capability-copy
-    li {
+
+  .what-we-do-page .wwd-capability-row:is(:first-child, :nth-child(2)) .wwd-capability-copy li {
     padding-left: 38px;
     font-size: 16px;
   }
+
   .what-we-do-page .wwd-capability-row:first-child .wwd-capability-copy h2 {
     font-size: 34px;
   }
+
   .what-we-do-page .wwd-capability-row:first-child .wwd-lead {
     font-size: 19px;
   }
+
   .what-we-do-page .wwd-capability-row:first-child .wwd-capability-copy li {
     font-size: 14px;
   }
+
   .what-we-do-page .wwd-capability-row:first-child .wwd-practice-line {
     white-space: normal;
   }
+
   .what-we-do-page .wwd-capability-row:nth-child(3) .wwd-system-gap-line {
     white-space: normal;
   }
+
   .what-we-do-page .wwd-capability-row:nth-child(3) .wwd-system-practice-line {
     white-space: normal;
   }
+
   .what-we-do-page .wwd-capability-row:nth-child(4) .wwd-capability-gap-line {
     white-space: normal;
   }
-  .what-we-do-page
-    .wwd-capability-row:nth-child(4)
-    .wwd-capability-practice-line {
+
+  .what-we-do-page .wwd-capability-row:nth-child(4) .wwd-capability-practice-line {
     white-space: normal;
   }
-  .what-we-do-page
-    .wwd-capability-row:nth-child(4)
-    .wwd-capability-deliverable-line {
+
+  .what-we-do-page .wwd-capability-row:nth-child(4) .wwd-capability-deliverable-line {
     white-space: normal;
   }
+
   .what-we-do-page .wwd-capability-row:nth-child(5) .wwd-specialist-gap-line {
     white-space: normal;
   }
-  .what-we-do-page
-    .wwd-capability-row:nth-child(5)
-    .wwd-specialist-deliverable-line {
+
+  .what-we-do-page .wwd-capability-row:nth-child(5) .wwd-specialist-deliverable-line {
     white-space: normal;
   }
+
   .what-we-do-page .wwd-capability-row:nth-child(2) .wwd-capability-copy h2 {
     font-size: 34px;
     font-weight: 550;
   }
+
   .what-we-do-page .wwd-capability-row:nth-child(2) .wwd-lead {
     font-size: 19px;
   }
+
   .what-we-do-page .wwd-capability-row:nth-child(2) .wwd-capability-copy li {
     font-size: 14px;
   }
-  .what-we-do-page
-    .wwd-capability-row:is(:first-child, :nth-child(2))
-    .wwd-capability-copy
-    li::before {
-    width: 28px;
-    height: 28px;
+
+  .what-we-do-page .wwd-capability-row:is(:first-child, :nth-child(2)) .wwd-capability-copy li::before {
+    width: 24px;
+    height: 24px;
   }
+
   .what-we-do-page .wwd-capability-row:nth-child(3) .wwd-capability-copy h2 {
     font-size: 34px;
     font-weight: 550;
   }
+
   .what-we-do-page .wwd-capability-row:nth-child(3) .wwd-lead {
     font-size: 19px;
   }
+
   .what-we-do-page .wwd-capability-row:nth-child(3) .wwd-capability-copy li {
     padding-left: 38px;
     font-size: 14px;
   }
-  .what-we-do-page
-    .wwd-capability-row:nth-child(3)
-    .wwd-capability-copy
-    li::before {
+
+  .what-we-do-page .wwd-capability-row:nth-child(3) .wwd-capability-copy li::before {
     width: 24px;
     height: 24px;
   }
+
   .what-we-do-page .wwd-capability-row:nth-child(4) .wwd-capability-copy h2 {
     font-size: 34px;
     font-weight: 550;
   }
+
   .what-we-do-page .wwd-capability-row:nth-child(4) .wwd-lead {
     font-size: 19px;
   }
+
   .what-we-do-page .wwd-capability-row:nth-child(4) .wwd-capability-copy li {
     padding-left: 38px;
     font-size: 14px;
   }
-  .what-we-do-page
-    .wwd-capability-row:nth-child(4)
-    .wwd-capability-copy
-    li::before {
+
+  .what-we-do-page .wwd-capability-row:nth-child(4) .wwd-capability-copy li::before {
     width: 24px;
     height: 24px;
   }
+
   .what-we-do-page .wwd-capability-row:nth-child(5) .wwd-capability-copy h2 {
     font-size: 34px;
     font-weight: 550;
   }
+
   .what-we-do-page .wwd-capability-row:nth-child(5) .wwd-lead {
     font-size: 19px;
   }
+
   .what-we-do-page .wwd-capability-row:nth-child(5) .wwd-capability-copy li {
     padding-left: 38px;
     font-size: 14px;
   }
-  .what-we-do-page
-    .wwd-capability-row:nth-child(5)
-    .wwd-capability-copy
-    li::before {
+
+  .what-we-do-page .wwd-capability-row:nth-child(5) .wwd-capability-copy li::before {
     width: 24px;
     height: 24px;
   }
+
   .what-we-do-page .wwd-engagement {
     padding-top: 65px;
   }
+
   .what-we-do-page .wwd-section-heading h2 {
     font-size: 34px;
   }
+
   .what-we-do-page .wwd-section-heading p {
     font-size: 17px;
   }
-  .what-we-do-page .wwd-model-card > img {
-    width: 28px;
-    height: 28px;
+
+  .what-we-do-page .wwd-model-card>img {
+    width: 36px;
+    height: 44px;
     margin: 0 0 12px;
   }
+
   .what-we-do-page .wwd-model-card {
     padding: 25px;
   }
+}
+
+.what-we-do-page .wwd-hero {
+  background-image: url("../../assets/what-hero.png");
 }

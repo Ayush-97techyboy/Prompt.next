@@ -60,17 +60,6 @@
 .manufacturing-page .wwd-brand > span:last-child > span {
   color: #2470ff;
 }
-.manufacturing-page .wwd-brand-mark {
-  position: relative;
-  top: -4px;
-  display: inline-block;
-  color: #1870ff;
-  font-size: 28px;
-  font-weight: 400;
-  line-height: 0.9;
-  transform: scale(1.6, 1.8);
-  transform-origin: center;
-}
 .manufacturing-page .wwd-nav-links {
   display: flex;
   flex: 1;
@@ -128,7 +117,8 @@
 }
 .manufacturing-page .mfg-hero {
   position: relative;
-  min-height: 580px;
+  aspect-ratio: 1024 / 477;
+  min-height: 0;
   display: flex;
   align-items: flex-start;
   background: #08090b url("../../assets/manufacturing-hero.png") center top /
@@ -487,6 +477,16 @@
   }
 }
 @media (max-width: 800px) {
+  .manufacturing-page .mfg-hero {
+    aspect-ratio: auto;
+    min-height: 0;
+    background-size: cover;
+    background-position: center top;
+  }
+  .manufacturing-page .mfg-hero-inner {
+    padding-top: 78px;
+    padding-bottom: 56px;
+  }
   .manufacturing-page .mfg-breadcrumb {
     margin-bottom: 28px;
   }
@@ -584,10 +584,14 @@
     display: none;
   }
   .manufacturing-page .mfg-hero {
-    min-height: 440px;
+    aspect-ratio: auto;
+    min-height: 0;
+    background-size: cover;
+    background-position: center top;
   }
   .manufacturing-page .mfg-hero-inner {
-    padding-top: 80px;
+    width: calc(100% - 34px);
+    padding: 78px 0 56px;
   }
   .manufacturing-page .mfg-hero-content h1 {
     font-size: clamp(20px, 5.8vw, 28px);

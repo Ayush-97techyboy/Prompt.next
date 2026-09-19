@@ -1,184 +1,183 @@
-# Prompt Next — Corporate Website
+# Prompt Next Website
 
-> **From Intent To Outcome** — Prompt Next runs complex technology programmes for enterprises, coordinating every party from decision to live production.
+## Purpose
 
-This repository contains the static front-end source code for the **Prompt Next** corporate website, built entirely with **HTML5** and **CSS3** — no JavaScript frameworks, no build tools, no server required.
+Prompt Next is a responsive static corporate website for enterprise
+technology execution, transformation rescue, AI deployment, system
+integration, capability building, and industry-specific delivery.
 
----
+This README is the technical handoff document. The companion
+[team-lead implementation report](./TEAM-LEAD-IMPLEMENTATION-REPORT.pdf) is
+the management summary requested by AMey.
 
-## Table of Contents
+## Current status
 
-- [Overview](#overview)
-- [Tech Stack](#tech-stack)
-- [Project Structure](#project-structure)
-- [Pages](#pages)
-- [CSS Architecture](#css-architecture)
-- [Getting Started](#getting-started)
-- [Responsive Design](#responsive-design)
-- [Assets & Fonts](#assets--fonts)
-- [Contributing](#contributing)
-- [License](#license)
+### Completed and integrated
 
----
+- Corporate pages and six industry pages are available as semantic HTML.
+- Shared CSS is organized into base, layout, component, and page layers.
+- Responsive layouts cover desktop, laptop, tablet, and mobile widths.
+- Shared navigation, mobile menu, footer, CTA, form, card, and badge styles
+  are wired across the site.
+- CTAs and footer links route to the intended extensionless pages.
+- The Prompt Next logo is used consistently and is configured as the favicon.
+- GitHub Pages directory routing is implemented with `Pages/<slug>/index.html`.
+- Open Graph and Twitter/X Card metadata are present for link previews.
+- Obsolete conflict artifacts, reference captures, scratch files, and unused
+  files identified during cleanup were removed.
 
-## Overview
+### In progress / requires final review
 
-Prompt Next is a technology-execution firm serving six key industries: **BFSI**, **Telecommunications**, **Healthcare**, **Government & Public Sector**, **Manufacturing**, and **Hospitality**. The website communicates the company's capabilities, methodology, industry expertise, insights, and partner ecosystem through a series of well-structured static pages.
+- The Methodology section on the home page is being converted into an
+  animated interaction by Ajay. The current visual capture shows overlapping
+  labels and duplicate step text; this must be corrected and rechecked at
+  desktop and mobile widths before final sign-off.
+- Social previews should be checked after deployment because preview services
+  cache metadata.
 
----
+## Contribution and ownership
 
-## Tech Stack
+The repository history contains Ajay's initial baseline and Ayush's later
+implementation commits. The ownership below is intentionally separated so
+the team lead can distinguish baseline work, implementation, integration, and
+remaining work.
 
-| Layer      | Technology                  |
-| ---------- | --------------------------- |
-| Markup     | HTML5 (semantic elements)   |
-| Styling    | CSS3 (Flexbox, Grid, media queries) |
-| Typography | Custom fonts via `@font-face`; Inter (Google Fonts on select pages) |
-| Build      | None — static files, open directly in any browser |
+### Ajay — baseline and methodology animation
 
----
+- Created the original repository baseline and initial static site structure.
+- Commit: `c59768d` — `Initial commit`.
+- Owns the current methodology animation conversion/integration work in
+  progress.
+- Needs to resolve the duplicate/overlapping labels visible in the current
+  methodology capture and confirm responsive behavior.
 
-## Project Structure
+### Ayush — implementation, integration, and handoff
+
+- Added and integrated the corporate pages, industry pages, and shared
+  navigation/footer surfaces.
+- Reorganized CSS into the modular architecture documented below.
+- Corrected page paths, asset paths, logos, CTA destinations, hero sections,
+  tiles, spacing, and responsive behavior.
+- Repaired the mobile hamburger behavior and preserved the two-column footer
+  layout on narrow screens.
+- Reorganized pages into extensionless GitHub Pages directories.
+- Added favicon, canonical URL, Open Graph, and Twitter/X Card metadata.
+- Performed conflict cleanup, asset/reference cleanup, route checks, and
+  documentation/handoff preparation.
+- Relevant commits: `0abae72` and `72dcd06`.
+
+### Shared validation responsibility
+
+Before release, Ayush and Ajay should jointly verify the methodology section,
+all responsive breakpoints, route navigation, social previews, and the final
+GitHub Pages deployment. The report should be updated if responsibility or
+completion status changes.
+
+## Site structure
 
 ```text
-Prompt Next/
-│
-├── LandingPage.html            # Home / main entry point
-├── WhatWeDo.html               # Services & capabilities
-├── HowWeWork.html              # Methodology & process
-├── Industries.html             # Industry overview hub
-│
-├── BFSI.html                   # Banking, Financial Services & Insurance
-├── Healthcare.html             # Healthcare industry page
-├── Government.html             # Government & Public Sector
-├── Hospitality.html            # Hospitality industry page
-├── Manufacturing.html          # Manufacturing industry page
-├── Telecommunication.html      # Telecom industry page
-├── Telecommunications.html     # Telecom (alternate entry)
-│
-├── Style.css                   # Legacy compatibility entry point
-│
+Prompt.next/
+├── index.html                         # Root GitHub Pages redirect
+├── nav.js                             # Shared menu and page behavior
+├── Pages/
+│   ├── home/index.html
+│   ├── about-us/index.html
+│   ├── bfsi/index.html
+│   ├── blog/index.html
+│   ├── contact-us/index.html
+│   ├── government/index.html
+│   ├── healthcare/index.html
+│   ├── hospitality/index.html
+│   ├── how-we-work/index.html
+│   ├── industries/index.html
+│   ├── insights/index.html
+│   ├── manufacturing/index.html
+│   ├── partners/index.html
+│   ├── telecommunication/index.html
+│   └── what-we-do/index.html
 ├── css/
-│   ├── global.css              # Shared site-wide styles (header, footer, hero, utilities)
+│   ├── main.css
+│   ├── base/
+│   ├── components/
+│   ├── layout/
 │   └── pages/
-│       ├── what-we-do.css
-│       ├── industries.css
-│       ├── bfsi.css
-│       ├── government.css
-│       ├── healthcare.css
-│       ├── hospitality.css
-│       ├── manufacturing.css
-│       └── telecom.css
-│
 ├── assets/
-│   ├── fonts/                  # Self-hosted typefaces
-│   ├── logo.png                # Brand logo
-│   ├── hero-bg.png             # Landing page hero background
-│   ├── Card.png                # Methodology process card
-│   ├── article-*.png           # Insight article thumbnails
-│   ├── icon-*.png              # Industry icons
-│   ├── *-hero.png              # Industry hero images
-│   └── ...                     # Other UI assets and icons
-│
-└── README.md                   # ← You are here
+├── TEAM-LEAD-IMPLEMENTATION-REPORT.pdf
+└── README.md
 ```
 
----
+## Extensionless routes
 
-## Pages
+Each route is a directory containing `index.html`, so GitHub Pages serves the
+route without exposing the file extension.
 
-| File | Description |
-| ---- | ----------- |
-| `LandingPage.html` | Hero section, company statistics, capabilities grid, industry overview, methodology card, partner ecosystem, insights, and CTA |
-| `WhatWeDo.html` | Detailed breakdown of the five core capabilities |
-| `HowWeWork.html` | Step-by-step methodology and engagement process |
-| `Industries.html` | Industry hub linking to individual sector pages |
-| `BFSI.html` | Banking, Financial Services & Insurance deep-dive |
-| `Telecommunication.html` | Telecommunications deep-dive |
-| `Healthcare.html` | Healthcare deep-dive |
-| `Government.html` | Government & Public Sector deep-dive |
-| `Manufacturing.html` | Manufacturing deep-dive |
-| `Hospitality.html` | Hospitality deep-dive |
+| Page | Route |
+| --- | --- |
+| Home | `/Pages/home/` |
+| What We Do | `/Pages/what-we-do/` |
+| Industries | `/Pages/industries/` |
+| How We Work | `/Pages/how-we-work/` |
+| Partners | `/Pages/partners/` |
+| Insights | `/Pages/insights/` |
+| About Us | `/Pages/about-us/` |
+| Contact Us | `/Pages/contact-us/` |
+| Blog | `/Pages/blog/` |
+| BFSI | `/Pages/bfsi/` |
+| Healthcare | `/Pages/healthcare/` |
+| Government | `/Pages/government/` |
+| Hospitality | `/Pages/hospitality/` |
+| Manufacturing | `/Pages/manufacturing/` |
+| Telecommunication | `/Pages/telecommunication/` |
 
----
+The root route `/` redirects to `/Pages/home/`.
 
-## CSS Architecture
+## CSS architecture
 
-The styling was originally a single `Style.css` monolith. It has since been refactored into a modular structure:
+Every page loads `css/main.css` before its page-specific stylesheet.
 
-1. **`css/global.css`** — Contains all shared/site-wide rules: navigation bar, footer, hero section, typography, buttons, utility classes, and responsive breakpoints.
-2. **`css/pages/*.css`** — Each page (or page family) has its own scoped stylesheet loaded alongside `global.css`.
-3. **`Style.css`** — Retained as a legacy compatibility entry point that imports the new files.
+- `css/base/` — reset rules and design variables.
+- `css/layout/` — containers, header, footer, and mobile navigation.
+- `css/components/` — buttons, badges, and forms.
+- `css/pages/` — page-specific layout, imagery, typography, and breakpoints.
 
-### Loading pattern
+Use shared files for reusable behavior and the matching page file for
+page-specific changes. Do not reintroduce the removed monolithic `Style.css`
+or `css/global.css`.
 
-Every HTML page loads stylesheets in this order:
+## Local development
 
-```html
-<link rel="stylesheet" href="css/global.css" />
-<link rel="stylesheet" href="css/pages/<page-name>.css" />
+From the repository root:
+
+```bash
+python -m http.server 4173
 ```
 
-### Maintenance rules
+Open:
 
-- **Shared styles** → edit `css/global.css`
-- **Page-specific styles** → edit the matching file in `css/pages/`
-- **Asset paths** → global CSS uses `../assets/`; page CSS uses `../../assets/`
+```text
+http://127.0.0.1:4173/
+http://127.0.0.1:4173/Pages/home/
+```
 
----
+No framework, build step, or package installation is required to serve the
+website locally.
 
-## Getting Started
+## Release checklist
 
-No build step, package manager, or server is needed.
+1. Confirm the methodology animation has no overlapping or duplicate labels.
+2. Test the animation at approximately 390 px, 768 px, 1024 px, and 1440 px.
+3. Test the hamburger menu and footer at mobile and tablet widths.
+4. Confirm all CTAs point to the intended page, especially Contact Us.
+5. Confirm all CSS, JavaScript, image, and font requests resolve.
+6. Confirm `/`, `/Pages/home/`, and representative page routes return HTTP 200.
+7. Run `git diff --check` and confirm no unresolved merge entries remain.
+8. Deploy to GitHub Pages and refresh social previews using a platform debugger.
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/Ayush-97techyboy/Prompt.next.git
-   ```
-2. **Open in browser**
-   - Open `LandingPage.html` directly in any modern browser (Chrome, Firefox, Safari, Edge).
-3. **Edit**
-   - Use any text editor or IDE (VS Code recommended).
-   - Changes are reflected immediately on page refresh.
+## Deployment metadata
 
----
-
-## Responsive Design
-
-The site has been audited and optimised at four viewport widths:
-
-| Breakpoint | Target |
-| ---------- | ------ |
-| **1440 px** | Desktop / large monitors |
-| **1024 px** | Small laptops / landscape tablets |
-| **768 px** | Tablets (portrait) |
-| **390 px** | Mobile phones |
-
-Key responsive features:
-
-- **CSS-only hamburger menu** — navigation collapses at `≤ 1100 px` with no JavaScript.
-- **Fluid grid layouts** — capability cards, industry cards, and article grids reflow from multi-column to single-column.
-- **No horizontal overflow** — verified at all tested viewport widths.
-
----
-
-## Assets & Fonts
-
-- All images and icons live in `assets/`.
-- Custom fonts are self-hosted under `assets/fonts/` and loaded via `@font-face` declarations in `global.css`.
-- Some pages additionally load the **Inter** typeface from Google Fonts for supplementary weights.
-- Unreferenced images have been cleaned up; every file in `assets/` is referenced by at least one HTML page or stylesheet.
-
----
-
-## Contributing
-
-1. Create a feature branch from `main`.
-2. Make your changes following the existing CSS architecture (global vs. page-scoped).
-3. Test at all four responsive breakpoints before submitting.
-4. Open a pull request with a clear description of the changes.
-
----
+The entry pages currently use the GitHub Pages project URL in
+`og:url`, `og:image`, and canonical metadata. If the repository URL or custom
+domain changes, update those values in the HTML entry pages.
 
 ## License
 

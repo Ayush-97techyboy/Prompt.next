@@ -1,0 +1,16 @@
+.container {
+  width: min(var(--container), calc(100% - 64px));
+  margin-inline: auto;
+}
+
+.narrow {
+  max-width: 950px;
+}
+
+.about-container,
+.contact-container {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 24px;
+}

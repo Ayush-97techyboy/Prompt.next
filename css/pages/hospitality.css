@@ -60,17 +60,6 @@
 .hospitality-page .wwd-brand > span:last-child > span {
   color: #2470ff;
 }
-.hospitality-page .wwd-brand-mark {
-  position: relative;
-  top: -4px;
-  display: inline-block;
-  color: #1870ff;
-  font-size: 28px;
-  font-weight: 400;
-  line-height: 0.9;
-  transform: scale(1.6, 1.8);
-  transform-origin: center;
-}
 .hospitality-page .wwd-nav-links {
   display: flex;
   flex: 1;
@@ -498,6 +487,16 @@
   }
 }
 @media (max-width: 800px) {
+  .hospitality-page .hosp-hero {
+    aspect-ratio: auto;
+    min-height: 0;
+    background-size: cover;
+    background-position: center top;
+  }
+  .hospitality-page .hosp-hero-inner {
+    padding-top: 78px;
+    padding-bottom: 56px;
+  }
   .hospitality-page .hosp-desktop-br {
     display: none;
   }
@@ -601,10 +600,14 @@
     display: none;
   }
   .hospitality-page .hosp-hero {
-    min-height: auto;
+    aspect-ratio: auto;
+    min-height: 0;
+    background-size: cover;
+    background-position: center top;
   }
   .hospitality-page .hosp-hero-inner {
-    padding-top: 75px;
+    width: calc(100% - 34px);
+    padding: 78px 0 56px;
   }
   .hospitality-page .hosp-breadcrumb {
     margin-bottom: 16px;
