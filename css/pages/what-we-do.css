@@ -77,9 +77,9 @@
 .what-we-do-page .wwd-nav-links a::after {
   position: absolute;
   right: 0;
-  bottom: -13px;
+  bottom: -6px;
   left: 0;
-  height: 2px;
+  height: 3px;
   content: "";
   border-radius: 2px;
   background: #1f6cff;
@@ -281,7 +281,7 @@
   width: 24px;
   height: 24px;
   content: "";
-  background: url("../../assets/images/what-bullet.png") center / contain no-repeat;
+  background: url("../../assets/images/Margin.png") center / contain no-repeat;
 }
 
 .what-we-do-page .wwd-capability-copy li strong {
@@ -385,8 +385,9 @@
 }
 
 .what-we-do-page .wwd-capability-row:is(:first-child, :nth-child(2)) .wwd-capability-copy li::before {
-  width: 30px;
-  height: 30px;
+  width: 22px;
+  height: 22px;
+  padding-bottom: 10px;
 }
 
 .what-we-do-page .wwd-capability-row:nth-child(2) .wwd-capability-copy li {
@@ -408,8 +409,9 @@
 }
 
 .what-we-do-page .wwd-capability-row:nth-child(3) .wwd-capability-copy li::before {
-  width: 30px;
-  height: 30px;
+   width: 22px;
+  height: 22px;
+  padding-bottom: 10px;
 }
 
 .what-we-do-page .wwd-capability-row:nth-child(4) .wwd-capability-copy h2 {
@@ -427,8 +429,9 @@
 }
 
 .what-we-do-page .wwd-capability-row:nth-child(4) .wwd-capability-copy li::before {
-  width: 30px;
-  height: 30px;
+  width: 22px;
+  height: 22px;
+  padding-bottom: 10px;
 }
 
 .what-we-do-page .wwd-capability-row:nth-child(5) .wwd-capability-copy h2 {
@@ -446,8 +449,9 @@
 }
 
 .what-we-do-page .wwd-capability-row:nth-child(5) .wwd-capability-copy li::before {
-  width: 30px;
-  height: 30px;
+  width: 22px;
+  height: 22px;
+  padding-bottom: 10px;
 }
 
 .what-we-do-page .wwd-engagement {
@@ -497,8 +501,8 @@
 
 .what-we-do-page .wwd-model-card>img {
   display: block;
-  width: 52px;
-  height: 60px;
+  width: 35px;
+  height: 35px;
   max-width: none;
   margin: 0 0 10px;
   object-fit: contain;

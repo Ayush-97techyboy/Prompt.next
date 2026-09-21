@@ -6,6 +6,20 @@
   color: #d1d5db;
 }
 
+.about-us-page .wwd-nav-links {
+  gap: 35px;
+  margin-left: 16px;
+}
+
+.about-us-page .wwd-nav-links a {
+  padding: 8px 0;
+}
+
+.about-us-page .wwd-nav-links a::after {
+  bottom: -6px;
+  height: 3px;
+}
+
 .about-us-page .about-container {
   width: 100%;
   max-width: 1240px;

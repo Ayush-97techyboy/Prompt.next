@@ -6,6 +6,20 @@
   color: #d1d5db;
 }
 
+.contact-us-page .wwd-nav-links {
+  gap: 35px;
+  margin-left: 16px;
+}
+
+.contact-us-page .wwd-nav-links a {
+  padding: 8px 0;
+}
+
+.contact-us-page .wwd-nav-links a::after {
+  bottom: -6px;
+  height: 3px;
+}
+
 .contact-us-page .contact-container {
   width: 100%;
   max-width: 1240px;

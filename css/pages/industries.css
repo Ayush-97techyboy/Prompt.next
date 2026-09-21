@@ -177,8 +177,8 @@
 }
 
 .industries-card>img {
-  width: 32px;
-  height: 32px;
+  width: 52px;
+  height: 52px;
   object-fit: contain;
   object-position: left center;
   margin: 0 0 31px;
@@ -375,9 +375,9 @@
 .industries-page .wwd-nav-links a::after {
   position: absolute;
   right: 0;
-  bottom: -13px;
+  bottom: -6px;
   left: 0;
-  height: 2px;
+  height: 3px;
   content: "";
   border-radius: 2px;
   background: #1f6cff;

@@ -68,9 +68,9 @@
 .insights-page .wwd-nav-links a::after {
   position: absolute;
   right: 0;
-  bottom: -13px;
+  bottom: -6px;
   left: 0;
-  height: 2px;
+  height: 3px;
   content: "";
   border-radius: 2px;
   background: #1f6cff;
@@ -90,21 +90,7 @@
   opacity: 1;
 }
 
-.insights-page .wwd-top-button {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  width: 214px;
-  height: 44px;
-  border-radius: 8px;
-  background: #1f5df0;
-  color: #fff;
-  font-family: var(--font-sans);
-  font-size: 13px;
-  font-weight: 400;
-  letter-spacing: .02em;
-  white-space: nowrap;
-}
+
 
 .insights-page .insights-hero {
   padding: 160px 24px 70px;
