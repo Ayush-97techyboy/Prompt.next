@@ -5,18 +5,34 @@
   border: 0;
   width: 38px;
   height: 38px;
-  padding: 6px;
+  padding: 10px;
   cursor: pointer;
   z-index: 60;
+  position: relative;
 }
 
 .menu-button span {
   display: block;
   height: 2px;
-  margin: 5px 0;
+  width: 24px;
+  margin: 4px 0;
   background: #ffffff;
   border-radius: 2px;
-  transition: transform 0.25s ease, opacity 0.25s ease;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  position: relative;
+}
+
+/* Hamburger to Cross Animation */
+.menu-button.menu-active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-button.menu-active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-button.menu-active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
 }
 
 @media (max-width: 960px) {

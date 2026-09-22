@@ -1,6 +1,7 @@
+//function for mobile menu toggle
 document.addEventListener('DOMContentLoaded', () => {
   const menuButtons = document.querySelectorAll('.menu-button');
-  
+
   menuButtons.forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.stopPropagation();
@@ -9,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
         navLinks.classList.toggle('nav-active');
         const isExpanded = navLinks.classList.contains('nav-active');
         btn.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
+        btn.classList.toggle('menu-active', isExpanded);
       }
     });
   });
@@ -20,7 +22,10 @@ document.addEventListener('DOMContentLoaded', () => {
     if (navLinks && navLinks.classList.contains('nav-active')) {
       if (!navLinks.contains(e.target) && (!menuBtn || !menuBtn.contains(e.target))) {
         navLinks.classList.remove('nav-active');
-        if (menuBtn) menuBtn.setAttribute('aria-expanded', 'false');
+        if (menuBtn) {
+          menuBtn.setAttribute('aria-expanded', 'false');
+          menuBtn.classList.remove('menu-active');
+        }
       }
     }
   });
@@ -33,7 +38,10 @@ document.addEventListener('DOMContentLoaded', () => {
       const menuBtn = document.querySelector('.menu-button');
       if (navLinks) {
         navLinks.classList.remove('nav-active');
-        if (menuBtn) menuBtn.setAttribute('aria-expanded', 'false');
+        if (menuBtn) {
+          menuBtn.setAttribute('aria-expanded', 'false');
+          menuBtn.classList.remove('menu-active');
+        }
       }
     });
   });
@@ -45,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Function to update active TOC link based on scroll position
   function updateActiveToc() {
     let currentSection = '';
-    
+
     sections.forEach(section => {
       const sectionTop = section.offsetTop;
       const sectionHeight = section.offsetHeight;
@@ -67,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Update active state on click
   tocLinks.forEach(link => {
-    link.addEventListener('click', function(e) {
+    link.addEventListener('click', function (e) {
       tocLinks.forEach(l => l.classList.remove('active-toc'));
       this.classList.add('active-toc');
     });
@@ -76,3 +84,25 @@ document.addEventListener('DOMContentLoaded', () => {
   // Initial call to set active state
   updateActiveToc();
 });
+
+
+// Function for Methodology Section 
+
+document.addEventListener("DOMContentLoaded", function () {
+  (function () {
+    var card = document.querySelector(".method-card");
+    if (!card) return;
+    if (!("IntersectionObserver" in window)) {
+      card.classList.add("is-playing");
+      return;
+    }
+    var io = new IntersectionObserver(function (entries) {
+      if (entries[0].isIntersecting) {
+        card.classList.add("is-playing");
+        io.disconnect();
+      }
+    }, { threshold: 0.25 });
+    io.observe(card);
+  })();
+});
+
