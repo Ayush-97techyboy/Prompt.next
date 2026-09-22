@@ -89,7 +89,7 @@
 .industries-hero {
   width: 100%;
   min-height: 636px;
-  background: #101315 url("../../assets/Correct_PIxalate/Industries_hero.svg") center top / cover no-repeat;
+  background: #101315 url("../../assets/Correct_PIxalate/Industries_hero.svg") center top / contain no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -100,7 +100,7 @@
   position: relative;
   z-index: 2;
   width: min(1200px, calc(100% - 64px));
-  margin: 0 auto;
+  margin: -120px auto 0;
   padding: 0 20px;
   text-align: center;
 }
@@ -139,6 +139,7 @@
   .industries-hero-inner {
     padding: 0 16px;
     width: calc(100% - 32px);
+    margin: -80px auto 0;
   }
 
   .industries-hero h1 {
@@ -527,7 +528,7 @@
 
   .industries-hero {
     min-height: 390px;
-    background-size: cover;
+    background-size: contain;
     background-position: center top;
   }
 

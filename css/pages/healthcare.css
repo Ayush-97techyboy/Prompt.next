@@ -181,14 +181,7 @@
   display: flex;
   flex-direction: column;
 }
-@media (min-width: 1051px) {
-  .healthcare-page .health-card-l1,
-  .healthcare-page .health-card-l2,
-  .healthcare-page .health-card-l3,
-  .healthcare-page .health-card-l4 {
-    white-space: nowrap;
-  }
-}
+
 .healthcare-page .health-card-num {
   display: block;
   color: #1f70ff;
