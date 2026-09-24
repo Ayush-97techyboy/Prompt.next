@@ -1,137 +1,4 @@
-.site-header {
-  position: absolute;
-  z-index: 10;
-  inset: 0 0 auto;
-  height: 78px;
-  background: linear-gradient(180deg, rgba(0, 4, 28, .65), transparent);
-}
-
-.nav-wrap {
-  height: 78px;
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-.brand {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  color: #fff;
-  font-size: 20px;
-  font-weight: 600;
-  line-height: .9;
-  letter-spacing: -.5px;
-  white-space: nowrap;
-}
-
-.nav-logo {
-  display: block;
-  height: 46px;
-  width: auto;
-  object-fit: contain;
-}
-
-.nav-links {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 35px;
-  margin-left: 16px;
-  flex: 1;
-}
-
-.nav-links a,
-.footer-column a {
-  color: #858895;
-  font-family: var(--font-sans);
-  font-size: 14px;
-  font-weight: 400;
-  transition: color .2s ease;
-}
-
-.nav-links a {
-  position: relative;
-  padding: 8px 0;
-}
-
-.nav-links a::after {
-  position: absolute;
-  right: 0;
-  bottom: -6px;
-  left: 0;
-  height: 3px;
-  content: "";
-  border-radius: 2px;
-  background: #1f6cff;
-  opacity: 0;
-  transition: opacity .2s ease;
-}
-
-.nav-links a:hover::after,
-.nav-links a:focus::after,
-.nav-links a:focus-visible::after,
-.nav-links a[aria-current="page"]::after {
-  opacity: 1;
-}
-
-.nav-links a:hover,
-.footer-column a:hover {
-  color: #fff;
-}
-
-.button {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  min-width: 168px;
-  height: 38px;
-  padding: 0 21px;
-  border: 1px solid rgba(76, 131, 255, .48);
-  border-radius: 999px;
-  background: var(--blue);
-  color: #fff;
-  font-family: var(--font-sans);
-  font-size: 13px;
-  font-style: normal;
-  font-weight: 400;
-  letter-spacing: .02em;
-  box-shadow: none;
-}
-
-.button:hover {
-  background: #2d73ff;
-}
-
-.button-small {
-  width: 214px;
-  min-width: 214px;
-  height: 44px;
-  padding: 0;
-  border: 0;
-  border-radius: 8px;
-  background: #1f5cf1;
-  box-shadow: none;
-  font-size: 13px;
-  font-weight: 400;
-  letter-spacing: .02em;
-}
-
-.hero .button-light {
-  min-width: 228px;
-  height: 45px;
-  border-color: #fff;
-  background: #fff;
-  color: #000;
-  font-size: 13px;
-  font-weight: 500;
-  box-shadow: none;
-}
-
-.hero .button-light:hover {
-  background: #dfe4ef;
-}
-
+/* Landing Page Specific Hero & Page Layout */
 .text-link {
   display: inline-flex;
   align-items: center;
@@ -157,21 +24,6 @@
   stroke-linecap: round;
   stroke-linejoin: round;
   stroke-width: 1.35;
-}
-
-.menu-button {
-  display: none;
-  background: none;
-  border: 0;
-  width: 35px;
-  padding: 4px;
-}
-
-.menu-button span {
-  display: block;
-  height: 1px;
-  margin: 5px 0;
-  background: #fff;
 }
 
 .hero {
@@ -636,16 +488,16 @@ h1 {
   position: relative;
   z-index: 1;
   max-width: 1280px;
-  height: 505px;
+  height: 380px;
   margin: 0 auto;
-  padding: 72px 72px 56px;
+  padding: 48px 56px 36px;
   border-radius: 24px;
   background: linear-gradient(180deg, #0c1f51 0%, #0a1a42 28%, #091638 58%, #081331 100%);
   overflow: hidden;
   text-align: center;
   box-sizing: border-box;
   content-visibility: auto;
-  contain-intrinsic-size: 1280px 505px;
+  contain-intrinsic-size: 1280px 380px;
 }
 
 .method-track {
@@ -880,6 +732,180 @@ h1 {
 .method-pill-text-1,
 .method-line-live-1 {
   animation-name: method-on-1;
+}
+
+/* Scroll-Driven Active Step Overrides for Desktop & Mobile */
+.method-card[class*="step-"] .method-node-live-1,
+.method-card[class*="step-"] .method-node-live-2,
+.method-card[class*="step-"] .method-node-live-3,
+.method-card[class*="step-"] .method-node-live-4,
+.method-card[class*="step-"] .method-node-live-5,
+.method-card[class*="step-"] .method-line-live-1,
+.method-card[class*="step-"] .method-line-live-2,
+.method-card[class*="step-"] .method-line-live-3,
+.method-card[class*="step-"] .method-line-live-4,
+.method-card[class*="step-"] .method-pill-text-1,
+.method-card[class*="step-"] .method-pill-text-2,
+.method-card[class*="step-"] .method-pill-text-3,
+.method-card[class*="step-"] .method-pill-text-4,
+.method-card[class*="step-"] .method-pill-text-5 {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  animation: none !important;
+}
+
+.method-card[class*="step-"] .method-node-idle-1,
+.method-card[class*="step-"] .method-node-idle-2,
+.method-card[class*="step-"] .method-node-idle-3,
+.method-card[class*="step-"] .method-node-idle-4,
+.method-card[class*="step-"] .method-node-idle-5 {
+  opacity: 1 !important;
+  visibility: visible !important;
+  animation: none !important;
+}
+
+.method-card[class*="step-"] .method-label-1,
+.method-card[class*="step-"] .method-label-2,
+.method-card[class*="step-"] .method-label-3,
+.method-card[class*="step-"] .method-label-4,
+.method-card[class*="step-"] .method-label-5 {
+  color: #6a7799 !important;
+  font-weight: 400 !important;
+  animation: none !important;
+}
+
+/* 1 of 5 Active State */
+.method-card.step-1-active .method-node-live-1,
+.method-card.step-1-active .method-pill-text-1 {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+.method-card.step-1-active .method-node-idle-1 {
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+.method-card.step-1-active .method-label-1 {
+  color: #e4edff !important;
+  font-weight: 500 !important;
+}
+
+/* 2 of 5 Active State: Nodes 1..2 & Line 1 stay active */
+.method-card.step-2-active .method-node-live-1,
+.method-card.step-2-active .method-node-live-2,
+.method-card.step-2-active .method-line-live-1,
+.method-card.step-2-active .method-pill-text-2 {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+.method-card.step-2-active .method-node-idle-1,
+.method-card.step-2-active .method-node-idle-2 {
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+.method-card.step-2-active .method-label-1,
+.method-card.step-2-active .method-label-2 {
+  color: #e4edff !important;
+  font-weight: 500 !important;
+}
+
+/* 3 of 5 Active State: Nodes 1..3 & Lines 1..2 stay active */
+.method-card.step-3-active .method-node-live-1,
+.method-card.step-3-active .method-node-live-2,
+.method-card.step-3-active .method-node-live-3,
+.method-card.step-3-active .method-line-live-1,
+.method-card.step-3-active .method-line-live-2,
+.method-card.step-3-active .method-pill-text-3 {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+.method-card.step-3-active .method-node-idle-1,
+.method-card.step-3-active .method-node-idle-2,
+.method-card.step-3-active .method-node-idle-3 {
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+.method-card.step-3-active .method-label-1,
+.method-card.step-3-active .method-label-2,
+.method-card.step-3-active .method-label-3 {
+  color: #e4edff !important;
+  font-weight: 500 !important;
+}
+
+/* 4 of 5 Active State: Nodes 1..4 & Lines 1..3 stay active */
+.method-card.step-4-active .method-node-live-1,
+.method-card.step-4-active .method-node-live-2,
+.method-card.step-4-active .method-node-live-3,
+.method-card.step-4-active .method-node-live-4,
+.method-card.step-4-active .method-line-live-1,
+.method-card.step-4-active .method-line-live-2,
+.method-card.step-4-active .method-line-live-3,
+.method-card.step-4-active .method-pill-text-4 {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+.method-card.step-4-active .method-node-idle-1,
+.method-card.step-4-active .method-node-idle-2,
+.method-card.step-4-active .method-node-idle-3,
+.method-card.step-4-active .method-node-idle-4 {
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+.method-card.step-4-active .method-label-1,
+.method-card.step-4-active .method-label-2,
+.method-card.step-4-active .method-label-3,
+.method-card.step-4-active .method-label-4 {
+  color: #e4edff !important;
+  font-weight: 500 !important;
+}
+
+/* 5 of 5 Active State: Nodes 1..5 & Lines 1..4 all stay active */
+.method-card.step-5-active .method-node-live-1,
+.method-card.step-5-active .method-node-live-2,
+.method-card.step-5-active .method-node-live-3,
+.method-card.step-5-active .method-node-live-4,
+.method-card.step-5-active .method-node-live-5,
+.method-card.step-5-active .method-line-live-1,
+.method-card.step-5-active .method-line-live-2,
+.method-card.step-5-active .method-line-live-3,
+.method-card.step-5-active .method-line-live-4,
+.method-card.step-5-active .method-pill-text-5 {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+.method-card.step-5-active .method-node-idle-1,
+.method-card.step-5-active .method-node-idle-2,
+.method-card.step-5-active .method-node-idle-3,
+.method-card.step-5-active .method-node-idle-4,
+.method-card.step-5-active .method-node-idle-5 {
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+.method-card.step-5-active .method-label-1,
+.method-card.step-5-active .method-label-2,
+.method-card.step-5-active .method-label-3,
+.method-card.step-5-active .method-label-4,
+.method-card.step-5-active .method-label-5 {
+  color: #e4edff !important;
+  font-weight: 500 !important;
+}
+
+/* Individual Mobile Step Activation */
+.method-step.is-active .method-node-live,
+.method-step.is-active [class*="method-node-live-"] {
+  opacity: 1 !important;
+  visibility: visible !important;
+  animation: none !important;
+}
+.method-step.is-active .method-node-idle,
+.method-step.is-active [class*="method-node-idle-"] {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  animation: none !important;
+}
+.method-step.is-active .method-label,
+.method-step.is-active [class*="method-label-"] {
+  color: #e4edff !important;
+  font-weight: 500 !important;
 }
 
 .method-node-idle-1 {
@@ -1247,7 +1273,7 @@ h1 {
 
 .article-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 39px;
   max-width: 1280px;
   margin: 46px auto 34px;
@@ -1477,24 +1503,16 @@ h1 {
     display: none;
   }
 
-  .nav-wrap {
-    justify-content: space-between;
-  }
-
-  .menu-button {
-    display: block;
-  }
-
-  .button-small {
-    margin-left: auto;
-  }
-
   h1 {
     white-space: normal;
   }
 
   .section-strategy h2 {
     font-size: 32px;
+  }
+
+  .section h2 {
+    line-height: 1.25;
   }
 
   .contact-point h2 {
@@ -1518,31 +1536,98 @@ h1 {
     font-size: 15px;
   }
 
-  /* Tablet responsive fixes */
-  .method-card {
-    height: auto;
-    min-height: 400px;
-    padding: 40px 32px;
-    flex-direction: column;
-  }
-
+  /* Tablet responsive fixes — methodology fully visible, centered, no scroll */
   .method-scroll {
     overflow-x: hidden;
-    padding: 0 16px;
+    padding: 0;
+    width: 100%;
+    display: block;
+  }
+
+  .method-card {
+    height: auto;
+    min-height: 0;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 48px 32px;
+    border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    box-sizing: border-box;
   }
 
   .method-track {
-    grid-template-columns: 1fr;
-    gap: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 450px;
+    margin: 0 auto;
   }
 
   .method-step {
+    display: flex;
     flex-direction: column;
-    min-width: 100%;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+  }
+
+  .method-node {
+    width: 90px;
+    height: 90px;
+    flex: 0 0 90px;
+  }
+
+  .method-label,
+  .method-label-4 {
+    width: auto;
+    max-width: 280px;
+    min-height: 0;
+    margin: 12px 0 0;
+    padding-left: 0;
+    text-align: center;
+  }
+
+  .method-line {
+    width: 3px;
+    height: 32px;
+    min-height: 32px;
+    flex: 0 0 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+  }
+
+  .method-line-idle,
+  .method-line-live {
+    width: 3px;
+    height: 100%;
+    max-width: none;
+    position: relative;
+    left: auto;
+    top: auto;
+    bottom: auto;
+    transform: none;
+    border-radius: 2px;
+  }
+
+  .method-line-live {
+    width: 3px;
+    height: 100%;
+    max-height: 32px;
+    background: #439AE0;
+    box-shadow:
+      3.14px 0px 11.78px 0px rgba(59, 130, 246, 0.4),
+      -0.79px 0px 11.78px 0px rgba(59, 130, 246, 0.4);
   }
 
   .article-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 24px;
   }
 
@@ -1553,7 +1638,6 @@ h1 {
   .article-body {
     min-height: auto;
   }
-}
 
   .evidence {
     grid-template-columns: 50px 1fr;
@@ -1611,25 +1695,8 @@ h1 {
     height: auto;
   }
 
-  .method-card {
-    position: relative;
-    top: auto;
-    overflow-x: auto;
-    align-items: stretch;
-    height: auto;
-    min-height: 420px;
-    padding: 48px 24px 36px;
-  }
-
-  .method-track {
-    min-width: 980px;
-    grid-template-columns: repeat(4, 160px 84px) 160px;
-    flex: 0 0 auto;
-  }
-
-  .method-step {
-    min-width: 0;
-  }
+  /* method-card, method-track, method-step already handled above
+     with vertical flex layout — do NOT re-introduce horizontal scroll */
 
   .footer-grid {
     width: calc(100% - 48px);
@@ -1640,19 +1707,11 @@ h1 {
   .footer-grid > div:first-child {
     grid-column: 1 / -1;
   }
+}
 
 @media (max-width: 600px) {
   .container {
     width: min(100% - 34px, var(--container));
-  }
-
-  .site-header,
-  .nav-wrap {
-    height: 62px;
-  }
-
-  .button-small {
-    display: none;
   }
 
   .hero,
@@ -1671,7 +1730,9 @@ h1 {
   }
 
   #mobile-view {
-    font-size: 60px;
+    font-size: inherit !important;
+    line-height: inherit !important;
+    display: block;
   }
 
   h1 {
@@ -1907,6 +1968,10 @@ h1 {
     padding-top: 75px;
   }
 
+  .section h2 {
+    line-height: 1.2;
+  }
+
   .methodology h2 {
     font-size: 30px;
   }
@@ -2061,5 +2126,57 @@ h1 {
 
   .footer-bottom span:last-child {
     gap: 13px;
+  }
+}
+
+/* Figma Uniform Hero Typography System */
+.hero-copy h1, h1 {
+  font-family: var(--font-sans) !important;
+  font-size: 70px !important;
+  line-height: 88px !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+  letter-spacing: 0px !important;
+}
+
+.hero-copy p {
+  font-family: var(--font-sans) !important;
+  font-size: 20px !important;
+  line-height: 32px !important;
+  font-weight: 400 !important;
+  color: #b0b0b0 !important;
+  letter-spacing: 0px !important;
+}
+
+@media (max-width: 1050px) {
+  .hero-copy h1, h1 {
+    font-size: clamp(48px, 5vw, 58px) !important;
+    line-height: 1.15 !important;
+  }
+  .hero-copy p {
+    font-size: 18px !important;
+    line-height: 28px !important;
+  }
+}
+
+@media (max-width: 800px) {
+  .hero-copy h1, h1 {
+    font-size: clamp(40px, 5.5vw, 50px) !important;
+    line-height: 1.15 !important;
+  }
+  .hero-copy p {
+    font-size: 16px !important;
+    line-height: 26px !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-copy h1, h1 {
+    font-size: clamp(34px, 8vw, 42px) !important;
+    line-height: 1.15 !important;
+  }
+  .hero-copy p {
+    font-size: 14px !important;
+    line-height: 22px !important;
   }
 }

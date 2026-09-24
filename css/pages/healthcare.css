@@ -84,9 +84,18 @@
 .healthcare-page .health-hero {
   position: relative;
   min-height: clamp(380px, calc(100vw * 671 / 1440), 671px);
-  background: #08090b url("../../assets/healthcare-hero.png") center top /
-    min(1440px, 100%) auto no-repeat;
+  background: #08090b;
   overflow: hidden;
+}
+
+.healthcare-page .health-hero-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
 }
 .healthcare-page .health-hero-inner {
   position: relative;
@@ -94,9 +103,13 @@
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
-  padding: clamp(85px, 8.8vw, 125px) 0 0;
+  padding: 140px 0 60px;
   display: flex;
   flex-direction: column;
+}
+
+.healthcare-page .health-hero::before {
+  display: none;
 }
 .healthcare-page .health-breadcrumb {
   margin: 0 0 clamp(16px, 2vw, 30px);
@@ -127,19 +140,13 @@
   text-align: center;
 }
 .healthcare-page .health-hero-content h1 {
-  margin: 0 auto;
+  margin: 15px 100px;
   color: #ffffff;
-  font-family:
-    "Inter",
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Roboto,
-    sans-serif;
-  font-size: clamp(22px, 4.7vw, 68px);
+  font-family: var(--font-sans);
+  font-size: clamp(22px, 3.8vw, 56px);
   font-weight: 500;
   line-height: 1.25;
-  letter-spacing: -0.02em;
+  /* letter-spacing: -0.02em; */
   max-width: 100%;
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
   text-align: center;
@@ -148,15 +155,15 @@
 }
 .healthcare-page .health-hero-l1 {
   display: inline-block;
-  white-space: nowrap;
+  white-space: normal;
 }
 .healthcare-page .health-hero-l2 {
   display: inline-block;
-  white-space: nowrap;
+  white-space: normal;
 }
 .healthcare-page .health-hero-period {
   display: inline-block;
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: var(--font-sans);
   font-weight: 500;
   transform: scale(1.08, 1.12);
   transform-origin: center bottom;
@@ -448,6 +455,27 @@
     flex-direction: column;
     gap: 24px;
   }
+  .healthcare-page .health-hero-l1,
+  .healthcare-page .health-hero-l2 {
+    white-space: normal;
+  }
+  .healthcare-page .health-hero-content h1 {
+    margin-left: 40px;
+    margin-right: 40px;
+  }
+  .healthcare-page .wwd-nav-links {
+    gap: 18px;
+    margin-left: 10px;
+  }
+  .healthcare-page .wwd-nav-links a {
+    font-size: 13px;
+  }
+  .healthcare-page .wwd-nav {
+    gap: 10px;
+  }
+  .healthcare-page .wwd-top-button {
+    margin-right: 10px;
+  }
 }
 @media (max-width: 900px) {
   .healthcare-page .wwd-nav-links {
@@ -482,6 +510,7 @@
     font-size: clamp(24px, 5.5vw, 40px);
     font-weight: 700;
     line-height: 1.25;
+    /* margin: 15px; */
   }
   .healthcare-page .health-context-copy h2 {
     font-size: 32px;
@@ -594,5 +623,58 @@
   }
   .healthcare-page .health-cta {
     padding: 40px 0 80px;
+  }
+}
+
+
+/* Figma Uniform Hero Typography System */
+.healthcare-page .health-hero-content h1 {
+  font-family: var(--font-sans) !important;
+  font-size: 70px !important;
+  line-height: 88px !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+  letter-spacing: 0px !important;
+}
+
+.healthcare-page .health-hero-content p {
+  font-family: var(--font-sans) !important;
+  font-size: 20px !important;
+  line-height: 32px !important;
+  font-weight: 400 !important;
+  color: #b0b0b0 !important;
+  letter-spacing: 0px !important;
+}
+
+@media (max-width: 1050px) {
+  .healthcare-page .health-hero-content h1 {
+    font-size: clamp(48px, 5vw, 58px) !important;
+    line-height: 1.15 !important;
+  }
+  .healthcare-page .health-hero-content p {
+    font-size: 18px !important;
+    line-height: 28px !important;
+  }
+}
+
+@media (max-width: 800px) {
+  .healthcare-page .health-hero-content h1 {
+    font-size: clamp(40px, 5.5vw, 50px) !important;
+    line-height: 1.15 !important;
+  }
+  .healthcare-page .health-hero-content p {
+    font-size: 16px !important;
+    line-height: 26px !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .healthcare-page .health-hero-content h1 {
+    font-size: clamp(34px, 8vw, 42px) !important;
+    line-height: 1.15 !important;
+  }
+  .healthcare-page .health-hero-content p {
+    font-size: 14px !important;
+    line-height: 22px !important;
   }
 }

@@ -1,0 +1,35 @@
+{
+  "name": "prompt.next",
+  "version": "1.0.0",
+  "description": "Prompt Next is a responsive static corporate website for enterprise\r technology execution, transformation rescue, AI deployment, system\r integration, capability building, and industry-specific delivery.",
+  "main": "interaction.js",
+  "scripts": {
+    "dev": "npx -y serve . -p 3000",
+    "start": "npx -y serve . -p 3000",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ayush-97techyboy/Prompt.next.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Ayush-97techyboy/Prompt.next/issues"
+  },
+  "homepage": "https://github.com/Ayush-97techyboy/Prompt.next#readme",
+  "devDependencies": {
+    "@aws-amplify/backend": "^1.25.1",
+    "@aws-amplify/backend-cli": "^1.10.0",
+    "aws-cdk-lib": "^2.268.0",
+    "constructs": "^10.8.1",
+    "esbuild": "^0.28.2",
+    "tsx": "^4.23.15",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "aws-amplify": "^6.22.0"
+  }
+}

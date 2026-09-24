@@ -81,8 +81,9 @@
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  width: 214px;
+  min-width: 214px;
   height: 44px;
+  padding: 0 24px;
   border-radius: 8px;
   background: #1f5df0;
   color: #ffffff;
@@ -93,6 +94,7 @@
   white-space: nowrap;
   text-decoration: none;
   transition: background 0.2s ease, transform 0.2s ease;
+  box-sizing: border-box;
 }
 
 .wwd-top-button:hover {

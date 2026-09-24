@@ -3,6 +3,12 @@
   margin-inline: auto;
 }
 
+@media (max-width: 600px) {
+  .container {
+    width: min(var(--container), calc(100% - 32px));
+  }
+}
+
 .narrow {
   max-width: 950px;
 }
