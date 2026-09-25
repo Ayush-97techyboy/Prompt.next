@@ -644,6 +644,14 @@ h1 {
   justify-content: center;
   margin: 24px auto 0;
   flex-shrink: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.method-card[class*="step-"] .method-pill {
+  opacity: 1;
+  visibility: visible;
 }
 
 .method-pill-bg {
@@ -684,14 +692,16 @@ h1 {
   font-style: normal;
 }
 
+.method-node-live-1,
 .method-node-live-2,
 .method-node-live-3,
 .method-node-live-4,
 .method-node-live-5,
-.method-node-idle-1,
+.method-line-live-1,
 .method-line-live-2,
 .method-line-live-3,
 .method-line-live-4,
+.method-pill-text-1,
 .method-pill-text-2,
 .method-pill-text-3,
 .method-pill-text-4,
@@ -700,9 +710,22 @@ h1 {
   visibility: hidden;
 }
 
-.method-label-1 {
-  color: #e4edff;
-  font-weight: 500;
+.method-node-idle-1,
+.method-node-idle-2,
+.method-node-idle-3,
+.method-node-idle-4,
+.method-node-idle-5 {
+  opacity: 1;
+  visibility: visible;
+}
+
+.method-label-1,
+.method-label-2,
+.method-label-3,
+.method-label-4,
+.method-label-5 {
+  color: #6a7799;
+  font-weight: 400;
 }
 
 .method-node-live,
@@ -711,11 +734,7 @@ h1 {
 .method-line-idle,
 .method-label,
 .method-pill-text {
-  animation-duration: 10s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-fill-mode: both;
-  animation-play-state: paused;
+  animation: none;
 }
 
 .method-card.is-playing .method-node-live,
@@ -724,13 +743,17 @@ h1 {
 .method-card.is-playing .method-line-idle,
 .method-card.is-playing .method-label,
 .method-card.is-playing .method-pill-text {
+  animation-duration: 10s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
   animation-play-state: running;
 }
 
-.method-node-live-1,
-.method-label-1,
-.method-pill-text-1,
-.method-line-live-1 {
+.method-card.is-playing .method-node-live-1,
+.method-card.is-playing .method-label-1,
+.method-card.is-playing .method-pill-text-1,
+.method-card.is-playing .method-line-live-1 {
   animation-name: method-on-1;
 }
 
@@ -909,7 +932,6 @@ h1 {
 }
 
 .method-node-idle-1 {
-  animation-name: method-off-1;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -920,90 +942,86 @@ h1 {
   box-sizing: border-box;
 }
 
-.method-node-live-2,
-.method-label-2,
-.method-pill-text-2,
-.method-line-live-2 {
+.method-card.is-playing .method-node-idle-1 {
+  animation-name: method-off-1;
+}
+
+.method-card.is-playing .method-node-live-2,
+.method-card.is-playing .method-label-2,
+.method-card.is-playing .method-pill-text-2,
+.method-card.is-playing .method-line-live-2 {
   animation-name: method-on-2;
 }
 
-.method-node-idle-2 {
+.method-card.is-playing .method-node-idle-2 {
   animation-name: method-off-2;
 }
 
-.method-node-live-3,
-.method-label-3,
-.method-pill-text-3,
-.method-line-live-3 {
+.method-card.is-playing .method-node-live-3,
+.method-card.is-playing .method-label-3,
+.method-card.is-playing .method-pill-text-3,
+.method-card.is-playing .method-line-live-3 {
   animation-name: method-on-3;
 }
 
-.method-node-idle-3 {
+.method-card.is-playing .method-node-idle-3 {
   animation-name: method-off-3;
 }
 
-.method-node-live-4,
-.method-label-4,
-.method-pill-text-4,
-.method-line-live-4 {
+.method-card.is-playing .method-node-live-4,
+.method-card.is-playing .method-label-4,
+.method-card.is-playing .method-pill-text-4,
+.method-card.is-playing .method-line-live-4 {
   animation-name: method-on-4;
 }
 
-.method-node-idle-4 {
+.method-card.is-playing .method-node-idle-4 {
   animation-name: method-off-4;
 }
 
-.method-node-live-5,
-.method-label-5,
-.method-pill-text-5 {
+.method-card.is-playing .method-node-live-5,
+.method-card.is-playing .method-label-5,
+.method-card.is-playing .method-pill-text-5 {
   animation-name: method-on-5;
 }
 
-.method-node-idle-5 {
+.method-card.is-playing .method-node-idle-5 {
   animation-name: method-off-5;
 }
 
-.method-line-idle-1 {
+.method-card.is-playing .method-line-idle-1 {
   animation-name: method-line-off-1;
 }
 
-.method-line-idle-2 {
+.method-card.is-playing .method-line-idle-2 {
   animation-name: method-line-off-2;
 }
 
-.method-line-idle-3 {
+.method-card.is-playing .method-line-idle-3 {
   animation-name: method-line-off-3;
 }
 
-.method-line-idle-4 {
+.method-card.is-playing .method-line-idle-4 {
   animation-name: method-line-off-4;
 }
 
-.method-label-1,
-.method-label-2,
-.method-label-3,
-.method-label-4,
-.method-label-5 {
-  animation-name: none;
-}
-
-.method-label-1 {
+.method-card.is-playing .method-label-1 {
   animation-name: method-label-1;
 }
 
-.method-label-2 {
+.method-card.is-playing .method-label-2 {
   animation-name: method-label-2;
 }
 
-.method-label-3 {
+.method-card.is-playing .method-label-3 {
   animation-name: method-label-3;
 }
 
-.method-label-4 {
+.method-card.is-playing .method-label-4 {
   animation-name: method-label-4;
 }
 
-.method-label-5 {
+.method-card.is-playing .method-label-5 {
   animation-name: method-label-5;
 }
 
@@ -1161,34 +1179,6 @@ h1 {
   .method-label,
   .method-pill-text {
     animation: none !important;
-  }
-
-  .method-node-live-1,
-  .method-line-live-1,
-  .method-pill-text-1 {
-    opacity: 1;
-    visibility: visible;
-  }
-
-  .method-node-live-2,
-  .method-node-live-3,
-  .method-node-live-4,
-  .method-node-live-5,
-  .method-line-live-2,
-  .method-line-live-3,
-  .method-line-live-4,
-  .method-pill-text-2,
-  .method-pill-text-3,
-  .method-pill-text-4,
-  .method-pill-text-5,
-  .method-node-idle-1 {
-    opacity: 0;
-    visibility: hidden;
-  }
-
-  .method-label-1 {
-    color: #e4edff;
-    font-weight: 500;
   }
 
   .method-scroll {

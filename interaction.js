@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-// Function for Methodology Section: Scroll-Based Active Step Activation
+// Function for Methodology Section: Scroll-Based Active Step Activation (with Reverse Deactivation)
 document.addEventListener("DOMContentLoaded", function () {
   const card = document.querySelector(".method-card");
   const steps = document.querySelectorAll(".method-step");
@@ -117,54 +117,64 @@ document.addEventListener("DOMContentLoaded", function () {
     const isMobile = window.innerWidth <= 800;
 
     if (isMobile && steps.length > 0) {
-      // Mobile / Vertical layout: Find step closest to viewport center
-      const viewportCenter = window.innerHeight * 0.45;
-      let activeIdx = 1;
-      let minDistance = Infinity;
+      // Mobile / Vertical layout: Each step activates as its focal point enters view
+      const cardRect = card.getBoundingClientRect();
+      const focalThreshold = window.innerHeight * 0.60;
+      let activeIdx = 0;
 
+      if (cardRect.top > window.innerHeight) {
+        // Entire card is below the viewport / user scrolled up past section
+        activeIdx = 0;
+      } else if (cardRect.bottom < 0) {
+        // Entire card is above the viewport (scrolled past downward)
+        activeIdx = steps.length;
+      } else {
+        // In viewport: step is active if its top has crossed into the focal threshold
+        steps.forEach((step, index) => {
+          const rect = step.getBoundingClientRect();
+          if (rect.top <= focalThreshold) {
+            activeIdx = Math.max(activeIdx, index + 1);
+          }
+        });
+      }
+
+      // Toggle individual step active states (all previous steps stay active up to activeIdx)
       steps.forEach((step, index) => {
-        const rect = step.getBoundingClientRect();
-        const stepCenter = rect.top + rect.height / 2;
-        const dist = Math.abs(stepCenter - viewportCenter);
-
-        if (dist < minDistance && rect.top < window.innerHeight * 0.85 && rect.bottom > 0) {
-          minDistance = dist;
-          activeIdx = index + 1;
-        }
+        step.classList.toggle('is-active', activeIdx > 0 && (index + 1) <= activeIdx);
       });
 
-      steps.forEach((step, index) => {
-        step.classList.toggle('is-active', (index + 1) <= activeIdx);
-      });
-
+      // Update card level class for pill and overall progression
       card.className = card.className.replace(/\bstep-\d+-active\b/g, '').trim();
-      card.classList.add(`step-${activeIdx}-active`);
+      if (activeIdx > 0) {
+        card.classList.add(`step-${activeIdx}-active`);
+      }
     } else {
       // Desktop / Tablet layout: Map scroll position cleanly as card travels across screen
       const rect = card.getBoundingClientRect();
       const cardTop = rect.top;
       const viewportHeight = window.innerHeight;
 
-      // Start step 1 when card top is at 75% of viewport height (card comfortably in view)
+      // Start step 1 when card top reaches 75% of viewport height (card entering viewport)
       // End step 5 when card top reaches 15% of viewport height
       const startPos = viewportHeight * 0.75;
       const endPos = viewportHeight * 0.15;
 
-      if (rect.top <= viewportHeight && rect.bottom >= 0) {
-        if (cardTop > startPos) {
-          // Card is just entering screen: lock to step 1 (1 of 5)
-          card.className = card.className.replace(/\bstep-\d+-active\b/g, '').trim();
-          card.classList.add('step-1-active');
-        } else {
-          let progress = (startPos - cardTop) / (startPos - endPos);
-          progress = Math.max(0, Math.min(1, progress));
+      if (rect.top > viewportHeight || cardTop > startPos) {
+        // Card is below focal activation point / user scrolled up in reverse: ALL nodes inactive
+        card.className = card.className.replace(/\bstep-\d+-active\b/g, '').trim();
+      } else if (rect.bottom < 0) {
+        // Scrolled past the section completely: keep all active
+        card.className = card.className.replace(/\bstep-\d+-active\b/g, '').trim();
+        card.classList.add('step-5-active');
+      } else {
+        let progress = (startPos - cardTop) / (startPos - endPos);
+        progress = Math.max(0, Math.min(1, progress));
 
-          let stepIdx = Math.floor(progress * 4.99) + 1;
-          stepIdx = Math.max(1, Math.min(5, stepIdx));
+        let stepIdx = Math.floor(progress * 4.99) + 1;
+        stepIdx = Math.max(1, Math.min(5, stepIdx));
 
-          card.className = card.className.replace(/\bstep-\d+-active\b/g, '').trim();
-          card.classList.add(`step-${stepIdx}-active`);
-        }
+        card.className = card.className.replace(/\bstep-\d+-active\b/g, '').trim();
+        card.classList.add(`step-${stepIdx}-active`);
       }
     }
   }
