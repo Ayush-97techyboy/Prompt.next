@@ -3,3 +3,27 @@ node_modules
 .amplify
 amplify_outputs*
 amplifyconfiguration*
+
+# AWS & Security credentials / Keys
+aws/
+*.pem
+*.key
+*.pub
+*.cert
+*.crt
+
+# Environment variables & secrets
+.env
+.env.*
+!.env.example
+
+# OS generated files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
