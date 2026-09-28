@@ -256,12 +256,15 @@ h1 {
   line-height: 1.78;
   margin: 0;
 }
-.intro-grid > p:first-child {                  
-  padding-left: 39px;                        
-}                                              
-.intro-grid > p:last-child {                      
-  padding-right: 39px;                            
-}              
+
+.intro-grid>p:first-child {
+  padding-left: 39px;
+}
+
+.intro-grid>p:last-child {
+  padding-right: 39px;
+}
+
 .evidence-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -332,22 +335,46 @@ h1 {
 
 .quote {
   display: flex;
-  gap: 10px !important;
   align-items: center;
   justify-content: center;
+  gap: 16px;
   min-height: 122px;
   background: var(--panel);
   border-radius: 24px;
   color: #c9ccd4;
-  font-size: 24px;
   margin-top: 26px !important;
+  padding: 20px 32px;
 }
 
-.bulb {
-  color: #1652f0;
+.bulb,
+.quote-bulb {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   width: 44px;
   height: 44px;
-  margin-right: 10px !important;
+  flex-shrink: 0;
+  margin: 0 !important;
+}
+
+.bulb img,
+.quote-bulb img {
+  display: block;
+  width: 42px;
+  height: 44px;
+  object-fit: contain;
+}
+
+.quote-text {
+  margin: 0 !important;
+  padding: 0 !important;
+  font-family: var(--font-sans);
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.25;
+  color: #c9ccd4;
+  display: flex;
+  align-items: center;
 }
 
 .section-strategy {
@@ -803,10 +830,12 @@ h1 {
   opacity: 1 !important;
   visibility: visible !important;
 }
+
 .method-card.step-1-active .method-node-idle-1 {
   opacity: 0 !important;
   visibility: hidden !important;
 }
+
 .method-card.step-1-active .method-label-1 {
   color: #e4edff !important;
   font-weight: 500 !important;
@@ -820,11 +849,13 @@ h1 {
   opacity: 1 !important;
   visibility: visible !important;
 }
+
 .method-card.step-2-active .method-node-idle-1,
 .method-card.step-2-active .method-node-idle-2 {
   opacity: 0 !important;
   visibility: hidden !important;
 }
+
 .method-card.step-2-active .method-label-1,
 .method-card.step-2-active .method-label-2 {
   color: #e4edff !important;
@@ -841,12 +872,14 @@ h1 {
   opacity: 1 !important;
   visibility: visible !important;
 }
+
 .method-card.step-3-active .method-node-idle-1,
 .method-card.step-3-active .method-node-idle-2,
 .method-card.step-3-active .method-node-idle-3 {
   opacity: 0 !important;
   visibility: hidden !important;
 }
+
 .method-card.step-3-active .method-label-1,
 .method-card.step-3-active .method-label-2,
 .method-card.step-3-active .method-label-3 {
@@ -866,6 +899,7 @@ h1 {
   opacity: 1 !important;
   visibility: visible !important;
 }
+
 .method-card.step-4-active .method-node-idle-1,
 .method-card.step-4-active .method-node-idle-2,
 .method-card.step-4-active .method-node-idle-3,
@@ -873,6 +907,7 @@ h1 {
   opacity: 0 !important;
   visibility: hidden !important;
 }
+
 .method-card.step-4-active .method-label-1,
 .method-card.step-4-active .method-label-2,
 .method-card.step-4-active .method-label-3,
@@ -895,6 +930,7 @@ h1 {
   opacity: 1 !important;
   visibility: visible !important;
 }
+
 .method-card.step-5-active .method-node-idle-1,
 .method-card.step-5-active .method-node-idle-2,
 .method-card.step-5-active .method-node-idle-3,
@@ -903,6 +939,7 @@ h1 {
   opacity: 0 !important;
   visibility: hidden !important;
 }
+
 .method-card.step-5-active .method-label-1,
 .method-card.step-5-active .method-label-2,
 .method-card.step-5-active .method-label-3,
@@ -919,12 +956,14 @@ h1 {
   visibility: visible !important;
   animation: none !important;
 }
+
 .method-step.is-active .method-node-idle,
 .method-step.is-active [class*="method-node-idle-"] {
   opacity: 0 !important;
   visibility: hidden !important;
   animation: none !important;
 }
+
 .method-step.is-active .method-label,
 .method-step.is-active [class*="method-label-"] {
   color: #e4edff !important;
@@ -1026,141 +1065,457 @@ h1 {
 }
 
 @keyframes method-on-1 {
-  0%, 19.99% { opacity: 1; visibility: visible; }
-  20%, 100% { opacity: 0; visibility: hidden; }
+
+  0%,
+  19.99% {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  20%,
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
 }
 
 @keyframes method-on-2 {
-  0%, 19.99% { opacity: 0; visibility: hidden; }
-  20%, 39.99% { opacity: 1; visibility: visible; }
-  40%, 100% { opacity: 0; visibility: hidden; }
+
+  0%,
+  19.99% {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  20%,
+  39.99% {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  40%,
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
 }
 
 @keyframes method-on-3 {
-  0%, 39.99% { opacity: 0; visibility: hidden; }
-  40%, 59.99% { opacity: 1; visibility: visible; }
-  60%, 100% { opacity: 0; visibility: hidden; }
+
+  0%,
+  39.99% {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  40%,
+  59.99% {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  60%,
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
 }
 
 @keyframes method-on-4 {
-  0%, 59.99% { opacity: 0; visibility: hidden; }
-  60%, 79.99% { opacity: 1; visibility: visible; }
-  80%, 100% { opacity: 0; visibility: hidden; }
+
+  0%,
+  59.99% {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  60%,
+  79.99% {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  80%,
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
 }
 
 @keyframes method-on-5 {
-  0%, 79.99% { opacity: 0; visibility: hidden; }
-  80%, 100% { opacity: 1; visibility: visible; }
+
+  0%,
+  79.99% {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  80%,
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
 }
 
 @keyframes method-off-1 {
-  0%, 19.99% { opacity: 0; visibility: hidden; }
-  20%, 100% { opacity: 1; visibility: visible; }
+
+  0%,
+  19.99% {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  20%,
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
 }
 
 @keyframes method-off-2 {
-  0%, 19.99% { opacity: 1; visibility: visible; }
-  20%, 39.99% { opacity: 0; visibility: hidden; }
-  40%, 100% { opacity: 1; visibility: visible; }
+
+  0%,
+  19.99% {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  20%,
+  39.99% {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  40%,
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
 }
 
 @keyframes method-off-3 {
-  0%, 39.99% { opacity: 1; visibility: visible; }
-  40%, 59.99% { opacity: 0; visibility: hidden; }
-  60%, 100% { opacity: 1; visibility: visible; }
+
+  0%,
+  39.99% {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  40%,
+  59.99% {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  60%,
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
 }
 
 @keyframes method-off-4 {
-  0%, 59.99% { opacity: 1; visibility: visible; }
-  60%, 79.99% { opacity: 0; visibility: hidden; }
-  80%, 100% { opacity: 1; visibility: visible; }
+
+  0%,
+  59.99% {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  60%,
+  79.99% {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  80%,
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
 }
 
 @keyframes method-off-5 {
-  0%, 79.99% { opacity: 1; visibility: visible; }
-  80%, 100% { opacity: 0; visibility: hidden; }
+
+  0%,
+  79.99% {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  80%,
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
 }
 
 @keyframes method-line-off-1 {
-  0%, 19.99% { opacity: 0; visibility: hidden; }
-  20%, 100% { opacity: 1; visibility: visible; }
+
+  0%,
+  19.99% {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  20%,
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
 }
 
 @keyframes method-line-off-2 {
-  0%, 19.99% { opacity: 1; visibility: visible; }
-  20%, 39.99% { opacity: 0; visibility: hidden; }
-  40%, 100% { opacity: 1; visibility: visible; }
+
+  0%,
+  19.99% {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  20%,
+  39.99% {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  40%,
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
 }
 
 @keyframes method-line-off-3 {
-  0%, 39.99% { opacity: 1; visibility: visible; }
-  40%, 59.99% { opacity: 0; visibility: hidden; }
-  60%, 100% { opacity: 1; visibility: visible; }
+
+  0%,
+  39.99% {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  40%,
+  59.99% {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  60%,
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
 }
 
 @keyframes method-line-off-4 {
-  0%, 59.99% { opacity: 1; visibility: visible; }
-  60%, 79.99% { opacity: 0; visibility: hidden; }
-  80%, 100% { opacity: 1; visibility: visible; }
+
+  0%,
+  59.99% {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  60%,
+  79.99% {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  80%,
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
 }
 
 @keyframes method-label-1 {
-  0%, 19.99% { color: #e4edff; font-weight: 500; }
-  20%, 100% { color: #6a7799; font-weight: 400; }
+
+  0%,
+  19.99% {
+    color: #e4edff;
+    font-weight: 500;
+  }
+
+  20%,
+  100% {
+    color: #6a7799;
+    font-weight: 400;
+  }
 }
 
 @keyframes method-label-2 {
-  0%, 19.99% { color: #6a7799; font-weight: 400; }
-  20%, 39.99% { color: #e4edff; font-weight: 500; }
-  40%, 100% { color: #6a7799; font-weight: 400; }
+
+  0%,
+  19.99% {
+    color: #6a7799;
+    font-weight: 400;
+  }
+
+  20%,
+  39.99% {
+    color: #e4edff;
+    font-weight: 500;
+  }
+
+  40%,
+  100% {
+    color: #6a7799;
+    font-weight: 400;
+  }
 }
 
 @keyframes method-label-3 {
-  0%, 39.99% { color: #6a7799; font-weight: 400; }
-  40%, 59.99% { color: #e4edff; font-weight: 500; }
-  60%, 100% { color: #6a7799; font-weight: 400; }
+
+  0%,
+  39.99% {
+    color: #6a7799;
+    font-weight: 400;
+  }
+
+  40%,
+  59.99% {
+    color: #e4edff;
+    font-weight: 500;
+  }
+
+  60%,
+  100% {
+    color: #6a7799;
+    font-weight: 400;
+  }
 }
 
 @keyframes method-label-4 {
-  0%, 59.99% { color: #6a7799; font-weight: 400; }
-  60%, 79.99% { color: #e4edff; font-weight: 500; }
-  80%, 100% { color: #6a7799; font-weight: 400; }
+
+  0%,
+  59.99% {
+    color: #6a7799;
+    font-weight: 400;
+  }
+
+  60%,
+  79.99% {
+    color: #e4edff;
+    font-weight: 500;
+  }
+
+  80%,
+  100% {
+    color: #6a7799;
+    font-weight: 400;
+  }
 }
 
 @keyframes method-label-5 {
-  0%, 79.99% { color: #6a7799; font-weight: 400; }
-  80%, 100% { color: #e4edff; font-weight: 500; }
+
+  0%,
+  79.99% {
+    color: #6a7799;
+    font-weight: 400;
+  }
+
+  80%,
+  100% {
+    color: #e4edff;
+    font-weight: 500;
+  }
 }
 
 @keyframes method-pill-1 {
-  0%, 19.99% { color: #e4edff; font-weight: 600; }
-  20%, 100% { color: #439AE0; font-weight: 400; }
+
+  0%,
+  19.99% {
+    color: #e4edff;
+    font-weight: 600;
+  }
+
+  20%,
+  100% {
+    color: #439AE0;
+    font-weight: 400;
+  }
 }
 
 @keyframes method-pill-2 {
-  0%, 19.99% { color: #439AE0; font-weight: 400; }
-  20%, 39.99% { color: #e4edff; font-weight: 600; }
-  40%, 100% { color: #439AE0; font-weight: 400; }
+
+  0%,
+  19.99% {
+    color: #439AE0;
+    font-weight: 400;
+  }
+
+  20%,
+  39.99% {
+    color: #e4edff;
+    font-weight: 600;
+  }
+
+  40%,
+  100% {
+    color: #439AE0;
+    font-weight: 400;
+  }
 }
 
 @keyframes method-pill-3 {
-  0%, 39.99% { color: #439AE0; font-weight: 400; }
-  40%, 59.99% { color: #e4edff; font-weight: 600; }
-  60%, 100% { color: #439AE0; font-weight: 400; }
+
+  0%,
+  39.99% {
+    color: #439AE0;
+    font-weight: 400;
+  }
+
+  40%,
+  59.99% {
+    color: #e4edff;
+    font-weight: 600;
+  }
+
+  60%,
+  100% {
+    color: #439AE0;
+    font-weight: 400;
+  }
 }
 
 @keyframes method-pill-4 {
-  0%, 59.99% { color: #439AE0; font-weight: 400; }
-  60%, 79.99% { color: #e4edff; font-weight: 600; }
-  80%, 100% { color: #439AE0; font-weight: 400; }
+
+  0%,
+  59.99% {
+    color: #439AE0;
+    font-weight: 400;
+  }
+
+  60%,
+  79.99% {
+    color: #e4edff;
+    font-weight: 600;
+  }
+
+  80%,
+  100% {
+    color: #439AE0;
+    font-weight: 400;
+  }
 }
 
 @keyframes method-pill-5 {
-  0%, 79.99% { color: #439AE0; font-weight: 400; }
-  80%, 100% { color: #e4edff; font-weight: 600; }
+
+  0%,
+  79.99% {
+    color: #439AE0;
+    font-weight: 400;
+  }
+
+  80%,
+  100% {
+    color: #e4edff;
+    font-weight: 600;
+  }
 }
 
 @supports (animation-trigger: view()) {
+
   .method-node-live,
   .method-node-idle,
   .method-line-live,
@@ -1172,6 +1527,7 @@ h1 {
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   .method-node-live,
   .method-node-idle,
   .method-line-live,
@@ -1469,9 +1825,6 @@ h1 {
   margin-bottom: 8px;
 }
 
-.footer-column:nth-child(4) a:first-of-type {
-  white-space: nowrap;
-}
 
 .footer-bottom {
   display: flex;
@@ -1524,6 +1877,33 @@ h1 {
 
   .evidence p {
     font-size: 15px;
+  }
+
+  .quote {
+    min-height: 96px;
+    border-radius: 20px;
+    padding: 16px 24px;
+    gap: 14px;
+  }
+
+  .bulb,
+  .quote-bulb {
+    width: 38px;
+    height: 38px;
+    margin: 0 !important;
+  }
+
+  .bulb img,
+  .quote-bulb img {
+    width: 36px;
+    height: 38px;
+  }
+
+  .quote-text {
+    font-size: 20px;
+    line-height: 1.25;
+    margin: 0 !important;
+    padding: 0 !important;
   }
 
   /* Tablet responsive fixes — methodology fully visible, centered, no scroll */
@@ -1694,7 +2074,7 @@ h1 {
     gap: 32px 20px;
   }
 
-  .footer-grid > div:first-child {
+  .footer-grid>div:first-child {
     grid-column: 1 / -1;
   }
 }
@@ -1868,8 +2248,8 @@ h1 {
     margin-top: 28px;
   }
 
-  .intro-grid > p:first-child,
-  .intro-grid > p:last-child {
+  .intro-grid>p:first-child,
+  .intro-grid>p:last-child {
     padding-left: 0;
     padding-right: 0;
   }
@@ -1919,19 +2299,29 @@ h1 {
   .quote {
     min-height: 78px;
     border-radius: 16px;
-    font-size: 15px;
+    padding: 10px 16px;
+    gap: 10px;
     margin-top: 26px !important;
   }
 
-  .quote-text {
-    margin-top: 10px;
-    font-size: 13px;
+  .bulb,
+  .quote-bulb {
+    width: 30px;
+    height: 30px;
+    margin: 0 !important;
   }
 
-  .bulb {
-    width: 30px;
-    /* height: 30px; */
-    margin-right: 10px !important;
+  .bulb img,
+  .quote-bulb img {
+    width: 28px;
+    height: 30px;
+  }
+
+  .quote-text {
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: 13px;
+    line-height: 1.25;
   }
 
   .capability-grid,
@@ -1977,7 +2367,7 @@ h1 {
 
   .industries .section-subtitle {
     font-size: 14px;
-    margin: 5px;    
+    margin: 5px;
   }
 
   .method-scroll {
@@ -2120,7 +2510,8 @@ h1 {
 }
 
 /* Figma Uniform Hero Typography System */
-.hero-copy h1, h1 {
+.hero-copy h1,
+h1 {
   font-family: var(--font-sans) !important;
   font-size: 70px !important;
   line-height: 88px !important;
@@ -2139,10 +2530,13 @@ h1 {
 }
 
 @media (max-width: 1050px) {
-  .hero-copy h1, h1 {
+
+  .hero-copy h1,
+  h1 {
     font-size: clamp(48px, 5vw, 58px) !important;
     line-height: 1.15 !important;
   }
+
   .hero-copy p {
     font-size: 18px !important;
     line-height: 28px !important;
@@ -2150,10 +2544,13 @@ h1 {
 }
 
 @media (max-width: 800px) {
-  .hero-copy h1, h1 {
+
+  .hero-copy h1,
+  h1 {
     font-size: clamp(40px, 5.5vw, 50px) !important;
     line-height: 1.15 !important;
   }
+
   .hero-copy p {
     font-size: 16px !important;
     line-height: 26px !important;
@@ -2161,10 +2558,13 @@ h1 {
 }
 
 @media (max-width: 600px) {
-  .hero-copy h1, h1 {
+
+  .hero-copy h1,
+  h1 {
     font-size: clamp(34px, 8vw, 42px) !important;
     line-height: 1.15 !important;
   }
+
   .hero-copy p {
     font-size: 14px !important;
     line-height: 22px !important;

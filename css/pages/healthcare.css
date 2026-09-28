@@ -408,9 +408,6 @@
 .healthcare-page .wwd-footer-grid a:not(.wwd-brand):focus-visible {
   color: #fff;
 }
-.healthcare-page .wwd-footer-grid > div:nth-child(4) a:first-of-type {
-  white-space: nowrap;
-}
 .healthcare-page .wwd-footer-bottom {
   width: min(1360px, calc(100% - 80px));
   display: flex;

@@ -312,9 +312,6 @@
   color: #fff;
 }
 
-.industries-footer-column:nth-child(4) a:first-of-type {
-  white-space: nowrap;
-}
 
 .industries-footer-bottom {
   width: min(1380px, calc(100% - 60px));
@@ -473,9 +470,6 @@
   color: #fff;
 }
 
-.industries-page .wwd-footer-grid>div:nth-child(4) a:first-of-type {
-  white-space: nowrap;
-}
 
 .industries-page .wwd-footer-bottom {
   width: min(1360px, calc(100% - 80px));
