@@ -100,8 +100,7 @@
 .healthcare-page .health-hero-inner {
   position: relative;
   z-index: 1;
-  width: 100%;
-  max-width: 1440px;
+  width: min(1280px, calc(100% - 64px));
   margin: 0 auto;
   padding: 140px 0 60px;
   display: flex;
@@ -113,7 +112,7 @@
 }
 .healthcare-page .health-breadcrumb {
   margin: 0 0 clamp(16px, 2vw, 30px);
-  padding: 0 clamp(20px, 5.86vw, 64px);
+  padding: 0;
   font-size: 14px;
   color: #858895;
   text-align: left;
@@ -140,13 +139,12 @@
   text-align: center;
 }
 .healthcare-page .health-hero-content h1 {
-  margin: 15px 100px;
+  margin: 15px auto;
   color: #ffffff;
   font-family: var(--font-sans);
   font-size: clamp(22px, 3.8vw, 56px);
   font-weight: 500;
   line-height: 1.25;
-  /* letter-spacing: -0.02em; */
   max-width: 100%;
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
   text-align: center;
@@ -301,8 +299,8 @@
   justify-content: space-between;
   gap: 40px;
   align-items: start;
-  margin-left: 24px;
-  max-width: calc(100% - 24px);
+  margin-left: 0;
+  max-width: 100%;
 }
 .healthcare-page .health-env-col {
   margin: 0;

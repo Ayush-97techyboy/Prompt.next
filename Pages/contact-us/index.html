@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" type="image/png" href="../../assets/Correct_PIxalate/Promt_Next_Logo.png" />
+  <link rel="icon" type="image/svg+xml" href="../../assets/Correct_PIxalate/Promt_Next_Logo.svg" />
   <title>Prompt Next — Contact Us</title>
     <link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700,900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../../css/main.css" />
@@ -15,7 +15,7 @@
   <header class="wwd-header">
     <div class="wwd-nav">
       <a class="wwd-brand" href="../../">
-        <img src="../../assets/Correct_PIxalate/Promt_Next_Logo.png" alt="Prompt Next" class="nav-logo" />
+        <img src="../../assets/Correct_PIxalate/Promt_Next_Logo.svg" alt="Prompt Next" class="nav-logo" />
       </a>
       <nav class="wwd-nav-links" aria-label="Primary navigation">
         <a href="../what-we-do/">What We Do</a>
@@ -51,161 +51,137 @@
         <!-- Left Card: Strategy Call Booking -->
         <article class="contact-card strategy-card">
           <div class="contact-card-header">
-            <div class="contact-card-tags">
-              <span class="card-tag">STRATEGY CALL</span>
-              <span class="card-tag-badge">RECOMMENDED</span>
+            <div class="contact-header-text">
+              <h2>Strategy Call</h2>
+              <p class="strategy-subtext">
+                <span class="strat-line">Book a 30-minute strategy call. No commitment.</span>
+                <span class="strat-line">No agenda. Just an honest conversation about</span>
+                <span class="strat-line">your programme.</span>
+              </p>
             </div>
-            <h2>Book a 30-minute strategy call.</h2>
-            <p>No commitment. No agenda. Just an honest conversation about your programme.</p>
+            <span class="card-tag-badge">Recommended</span>
           </div>
 
-          <!-- Interactive Date & Time Picker Mockup -->
-          <div class="calendar-widget">
-            <div class="calendar-header">
-              <span class="calendar-title">Select Date</span>
-              <span class="calendar-tz">Asia/Singapore (GMT+8)</span>
-            </div>
-            <div class="calendar-days-row" role="radiogroup" aria-label="Available Dates">
-              <button type="button" class="cal-day-btn" data-day="Mon">
-                <span class="day-name">MON</span>
-                <span class="day-num">16</span>
-              </button>
-              <button type="button" class="cal-day-btn active" data-day="Tue">
-                <span class="day-name">TUE</span>
-                <span class="day-num">17</span>
-              </button>
-              <button type="button" class="cal-day-btn" data-day="Wed">
-                <span class="day-name">WED</span>
-                <span class="day-num">18</span>
-              </button>
-              <button type="button" class="cal-day-btn" data-day="Thu">
-                <span class="day-name">THU</span>
-                <span class="day-num">19</span>
-              </button>
-              <button type="button" class="cal-day-btn" data-day="Fri">
-                <span class="day-name">FRI</span>
-                <span class="day-num">20</span>
-              </button>
+          <!-- Strategy Session Inner Card Frame -->
+          <div class="strategy-card-inner">
+            <!-- Interactive Date Picker Mockup -->
+            <div class="calendar-widget">
+              <div class="calendar-top-bar">
+                <div class="cal-session-title">
+                  <label for="cal-date-picker" class="cal-icon-btn" title="Choose date on calendar">
+                    <img src="../../assets/Correct_PIxalate/Calendar_contact.svg" alt="Calendar date selector" class="cal-header-icon" />
+                    <input type="date" id="cal-date-picker" class="cal-native-date-input" aria-label="Select session date" />
+                  </label>
+                  <span>Book 30 min session</span>
+                </div>
+                <span class="cal-tz-label">GMT+8 Singapore</span>
+              </div>
+
+              <div class="cal-divider"></div>
+
+              <div class="calendar-days-row" role="radiogroup" aria-label="Available Days">
+                <!-- Dynamically rendered based on current date -->
+              </div>
             </div>
 
-            <div class="calendar-header" style="margin-top: 1.25rem;">
-              <span class="calendar-title">Select Time Slot</span>
-            </div>
-            <div class="time-slots-grid" role="radiogroup" aria-label="Available Time Slots">
-              <button type="button" class="time-slot-btn active">09:30 AM</button>
-              <button type="button" class="time-slot-btn">11:00 AM</button>
-              <button type="button" class="time-slot-btn">02:30 PM</button>
-              <button type="button" class="time-slot-btn">04:30 PM</button>
-            </div>
+            <!-- Quick Details Form -->
+            <form class="contact-form" onsubmit="event.preventDefault(); submitStrategySession(this);">
+              <input type="hidden" id="strat-selected-date" name="selected_date" />
+              <div class="form-group">
+                <label for="strat-name">NAME</label>
+                <input type="text" id="strat-name" name="name" placeholder="Your full name" required />
+              </div>
+              <div class="form-group">
+                <label for="strat-company">COMPANY</label>
+                <input type="text" id="strat-company" name="company" placeholder="Organisation name" required />
+              </div>
+              <button type="submit" class="contact-submit-btn">Confirm Strategy Session</button>
+            </form>
           </div>
-
-          <!-- Quick Details Form -->
-          <form class="contact-form" onsubmit="event.preventDefault(); alert('Thank you! Your strategy session request has been received. Our team will send a calendar invite shortly.');">
-            <div class="form-group">
-              <label for="strat-name">YOUR NAME</label>
-              <input type="text" id="strat-name" name="name" placeholder="Alexander Wright" required />
-            </div>
-            <div class="form-group">
-              <label for="strat-company">COMPANY</label>
-              <input type="text" id="strat-company" name="company" placeholder="DBS Bank / Singtel" required />
-            </div>
-            <div class="form-group">
-              <label for="strat-email">WORK EMAIL</label>
-              <input type="email" id="strat-email" name="email" placeholder="alexander@company.com" required />
-            </div>
-            <button type="submit" class="contact-submit-btn">CONFIRM STRATEGY SESSION</button>
-          </form>
         </article>
 
         <!-- Right Card: Direct Message Form -->
         <article class="contact-card message-card">
           <div class="contact-card-header">
-            <div class="contact-card-tags">
-              <span class="card-tag">DIRECT MESSAGE</span>
+            <div class="contact-header-text">
+              <h2>Message</h2>
+              <p>Prefer to write first? Send us a brief message and we will respond within one business day.</p>
             </div>
-            <h2>Prefer to write first?</h2>
-            <p>Send us a brief message and we will respond within one business day.</p>
           </div>
 
-          <form class="contact-form" onsubmit="event.preventDefault(); alert('Thank you! Your message has been sent to Prompt Next Group. We will reply within one business day.');">
+          <form class="contact-form" onsubmit="event.preventDefault(); submitMessageForm(this);">
             <div class="form-group">
               <label for="msg-name">NAME</label>
-              <input type="text" id="msg-name" name="name" placeholder="Alexander Wright" required />
+              <input type="text" id="msg-name" name="name" placeholder="John Doe" required />
             </div>
             <div class="form-group">
               <label for="msg-company">COMPANY</label>
-              <input type="text" id="msg-company" name="company" placeholder="Organization name" required />
+              <input type="text" id="msg-company" name="company" placeholder="Acme Corp" required />
             </div>
             <div class="form-group">
               <label for="msg-email">EMAIL ADDRESS</label>
-              <input type="email" id="msg-email" name="email" placeholder="alexander@company.com" required />
+              <input type="email" id="msg-email" name="email" placeholder="john@acme.com" required />
             </div>
             <div class="form-group">
               <label for="msg-text">MESSAGE (OPTIONAL)</label>
-              <textarea id="msg-text" name="message" rows="4" placeholder="Tell us briefly about your current initiative, regulatory landscape, or target milestone..."></textarea>
+              <textarea id="msg-text" name="message" rows="4" placeholder="Briefly describe your enquiry"></textarea>
             </div>
-            <button type="submit" class="contact-submit-btn">SEND MESSAGE</button>
+            <button type="submit" class="contact-submit-btn">Send message</button>
           </form>
         </article>
 
       </div>
     </section>
 
-    <!-- Bottom Information Strip (4 Columns) -->
+    <!-- Bottom Information Strip (Single Card with 4 Items) -->
     <section class="contact-info-strip-section" aria-label="Corporate details">
       <div class="contact-container">
-        <div class="contact-info-grid">
+        <div class="contact-info-strip-card">
           
           <!-- Column 1: Email -->
-          <div class="contact-info-col">
+          <div class="contact-info-item">
             <div class="info-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect width="20" height="16" x="2" y="4" rx="2"></rect>
-                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
-              </svg>
+              <img src="../../assets/Correct_PIxalate/Mail_contact.svg" alt="Email" width="35" height="35" />
             </div>
-            <span class="info-label">EMAIL US</span>
-            <a href="mailto:info@promptnext.com.sg" class="info-link">info@promptnext.com.sg</a>
+            <div class="info-text-group">
+              <span class="info-heading">Email</span>
+              <a href="mailto:info@promptnext.com.sg" class="info-content-link">info@promptnext.com.sg</a>
+            </div>
           </div>
 
           <!-- Column 2: Registered Address -->
-          <div class="contact-info-col">
+          <div class="contact-info-item">
             <div class="info-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
-                <circle cx="12" cy="10" r="3"></circle>
-              </svg>
+              <img src="../../assets/Correct_PIxalate/Location_contact.svg" alt="Address" width="35" height="35" />
             </div>
-            <span class="info-label">REGISTERED ADDRESS</span>
-            <address class="info-address">
-              Prompt Next Group Pte Ltd<br />
-              21 Tan Quee Lan Street, #02-04,<br />
-              Heritage Place, Singapore 188108.
-            </address>
+            <div class="info-text-group">
+              <span class="info-heading">Registered Address</span>
+              <address class="info-content-address">
+                Prompt Next Group Pte Ltd<br />
+                21 Tan Quee Lan Street , #02-04,<br />
+                Heritage Place, Singapore 188108.
+              </address>
+            </div>
           </div>
 
           <!-- Column 3: LinkedIn -->
-          <div class="contact-info-col">
+          <div class="contact-info-item center-align">
             <div class="info-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                <rect width="4" height="12" x="2" y="9"></rect>
-                <circle cx="4" cy="4" r="2"></circle>
-              </svg>
+              <img src="../../assets/Correct_PIxalate/Linkedin_contact.svg" alt="LinkedIn" width="35" height="35" />
             </div>
-            <span class="info-label">LINKEDIN</span>
-            <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" class="info-link">Prompt Next Group &#8599;</a>
+            <div class="info-text-group">
+              <a href="https://www.linkedin.com/company/promptnext" target="_blank" rel="noopener noreferrer" class="info-heading info-underlined-link">Linkedin</a>
+            </div>
           </div>
 
           <!-- Column 4: WhatsApp -->
-          <div class="contact-info-col">
+          <div class="contact-info-item center-align">
             <div class="info-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-              </svg>
+              <img src="../../assets/Correct_PIxalate/Whatsapp_contact.svg" alt="WhatsApp" width="35" height="35" />
             </div>
-            <span class="info-label">WHATSAPP</span>
-            <a href="https://wa.me/6580000000" target="_blank" rel="noopener noreferrer" class="info-link">+65 8000 0000 &#8599;</a>
+            <div class="info-text-group">
+              <a href="https://api.whatsapp.com/send/?phone=6581639567&text&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" class="info-heading info-underlined-link">Whatsapp</a>
+            </div>
           </div>
 
         </div>
@@ -217,7 +193,7 @@
   <footer class="wwd-footer">
     <div class="wwd-footer-grid">
       <div>
-        <a class="wwd-brand" href="../../"><img src="../../assets/Correct_PIxalate/Promt_Next_Logo.png" alt="Prompt Next" class="nav-logo" /></a>
+        <a class="wwd-brand" href="../../"><img src="../../assets/Correct_PIxalate/Promt_Next_Logo.svg" alt="Prompt Next" class="nav-logo" /></a>
       </div>
       <div>
         <b>Company</b>
@@ -255,20 +231,212 @@
   </footer>
 
   <script>
-    // Simple interactive selection for calendar days and time slots
-    document.querySelectorAll('.cal-day-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        document.querySelectorAll('.cal-day-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
+    // Calendar date picker & dynamic week synchronization
+    const dayNames = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
+
+    function parseDateString(str) {
+      if (!str) return new Date();
+      const parts = str.split('-');
+      return new Date(parseInt(parts[0], 10), parseInt(parts[1], 10) - 1, parseInt(parts[2], 10));
+    }
+
+    function formatDateString(d) {
+      const year = d.getFullYear();
+      const month = String(d.getMonth() + 1).padStart(2, '0');
+      const day = String(d.getDate()).padStart(2, '0');
+      return `${year}-${month}-${day}`;
+    }
+
+    function getTodayString() {
+      return formatDateString(new Date());
+    }
+
+    function renderCalendarWeek(selectedDateStr) {
+      const selectedDate = parseDateString(selectedDateStr);
+      const container = document.querySelector('.calendar-days-row');
+      if (!container) return;
+
+      // Calculate Sunday of the selected date's week
+      const sunday = new Date(selectedDate);
+      sunday.setDate(selectedDate.getDate() - selectedDate.getDay());
+
+      container.innerHTML = '';
+      for (let i = 0; i < 7; i++) {
+        const curDate = new Date(sunday);
+        curDate.setDate(sunday.getDate() + i);
+        const curDateStr = formatDateString(curDate);
+        const dayNum = curDate.getDate();
+        const isMuted = curDate.getMonth() !== selectedDate.getMonth();
+        const isActive = curDateStr === selectedDateStr;
+
+        const cell = document.createElement('div');
+        cell.className = 'cal-day-cell' + (isActive ? ' active' : '');
+        cell.setAttribute('data-date', curDateStr);
+        cell.setAttribute('role', 'radio');
+        cell.setAttribute('aria-checked', isActive ? 'true' : 'false');
+        cell.setAttribute('tabindex', '0');
+        cell.title = curDate.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric', year: 'numeric' });
+
+        cell.innerHTML = `
+          <span class="day-name">${dayNames[i]}</span>
+          <span class="day-num${isMuted ? ' muted' : ''}">${dayNum}</span>
+        `;
+
+        cell.addEventListener('click', () => {
+          document.querySelectorAll('.cal-day-cell').forEach(c => {
+            c.classList.remove('active');
+            c.setAttribute('aria-checked', 'false');
+          });
+          cell.classList.add('active');
+          cell.setAttribute('aria-checked', 'true');
+          const dateInput = document.getElementById('cal-date-picker');
+          if (dateInput) dateInput.value = curDateStr;
+          const hiddenInput = document.getElementById('strat-selected-date');
+          if (hiddenInput) hiddenInput.value = curDateStr;
+        });
+
+        cell.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            cell.click();
+          }
+        });
+
+        container.appendChild(cell);
+      }
+
+      const hiddenInput = document.getElementById('strat-selected-date');
+      if (hiddenInput) hiddenInput.value = selectedDateStr;
+    }
+
+    const calDateInput = document.getElementById('cal-date-picker');
+    const calIconBtn = document.querySelector('.cal-icon-btn');
+
+    if (calDateInput) {
+      calDateInput.addEventListener('change', (e) => {
+        if (e.target.value) {
+          renderCalendarWeek(e.target.value);
+        }
       });
-    });
-    document.querySelectorAll('.time-slot-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        document.querySelectorAll('.time-slot-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
+    }
+
+    if (calIconBtn && calDateInput) {
+      calIconBtn.addEventListener('click', () => {
+        if (typeof calDateInput.showPicker === 'function') {
+          try {
+            calDateInput.showPicker();
+          } catch (err) {}
+        }
       });
-    });
+    }
+
+    // Custom Centered Dialog Modal Controller
+    function showCustomDialog(title, message, onConfirm) {
+      const modal = document.getElementById('contact-dialog-modal');
+      const titleEl = document.getElementById('modal-title');
+      const msgEl = document.getElementById('modal-message');
+      const okBtn = document.getElementById('modal-ok-btn');
+
+      if (!modal) return;
+      titleEl.textContent = title;
+      msgEl.textContent = message;
+      modal.classList.add('active');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+
+      function closeDialog() {
+        modal.classList.remove('active');
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        okBtn.removeEventListener('click', handleOk);
+        modal.removeEventListener('click', handleBackdrop);
+        document.removeEventListener('keydown', handleKey);
+        if (typeof onConfirm === 'function') {
+          onConfirm();
+        }
+      }
+
+      function handleOk() {
+        closeDialog();
+      }
+
+      function handleBackdrop(e) {
+        if (e.target === modal) {
+          closeDialog();
+        }
+      }
+
+      function handleKey(e) {
+        if (e.key === 'Escape' || e.key === 'Enter') {
+          closeDialog();
+        }
+      }
+
+      okBtn.addEventListener('click', handleOk);
+      modal.addEventListener('click', handleBackdrop);
+      document.addEventListener('keydown', handleKey);
+      setTimeout(() => okBtn.focus(), 50);
+    }
+
+    function submitStrategySession(form) {
+      const todayStr = getTodayString();
+      const dateStr = document.getElementById('strat-selected-date')?.value || calDateInput?.value || todayStr;
+      const d = parseDateString(dateStr);
+      const friendlyDate = d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+      
+      showCustomDialog(
+        'Strategy Session Confirmed',
+        `Thank you! Your strategy session request for ${friendlyDate} has been received.`,
+        () => {
+          form.reset();
+          const resetToday = getTodayString();
+          if (calDateInput) {
+            calDateInput.value = resetToday;
+            calDateInput.min = resetToday;
+          }
+          const hidden = document.getElementById('strat-selected-date');
+          if (hidden) hidden.value = resetToday;
+          renderCalendarWeek(resetToday);
+        }
+      );
+    }
+
+    function submitMessageForm(form) {
+      showCustomDialog(
+        'Message Sent',
+        'Thank you! Your message has been sent to Prompt Next Group. We will reply within one business day.',
+        () => {
+          form.reset();
+        }
+      );
+    }
+
+    // Initialize calendar on load with CURRENT year, month, and date
+    const initialToday = getTodayString();
+    if (calDateInput) {
+      calDateInput.value = initialToday;
+      calDateInput.min = initialToday;
+    }
+    const hiddenDateInput = document.getElementById('strat-selected-date');
+    if (hiddenDateInput) {
+      hiddenDateInput.value = initialToday;
+    }
+    renderCalendarWeek(initialToday);
   </script>
   <script src="../../js/interaction.js"></script>
+
+  <!-- Custom Confirmation Dialog Modal -->
+  <div class="custom-modal-backdrop" id="contact-dialog-modal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="custom-modal-box">
+      <div class="modal-icon-badge">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M5 13L9 17L19 7" stroke="#1652F0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <h3 class="modal-title" id="modal-title">Success</h3>
+      <p class="modal-message" id="modal-message">Thank you! Your message has been sent to Prompt Next Group.</p>
+      <button type="button" class="modal-confirm-btn" id="modal-ok-btn">OK</button>
+    </div>
+  </div>
 </body>
 </html>

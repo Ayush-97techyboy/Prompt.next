@@ -27,3 +27,14 @@ desktop.ini
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Agent & Tool Configurations
+.agents/
+.claude/
+.codex/
+
+# Local diagnostic & inspect scripts
+check_*.ps1
+inspect_*.ps1
+devices.json
+

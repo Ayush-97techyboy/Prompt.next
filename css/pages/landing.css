@@ -3,7 +3,7 @@
   display: inline-flex;
   align-items: center;
   color: #fff;
-  font-size: 10px;
+  /* font-size: 10px; */
   margin-left: 30px;
 }
 
@@ -564,6 +564,9 @@ h1 {
   top: 50%;
   transform: translate(-50%, -50%);
   pointer-events: none;
+  transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
 }
 
 .method-node-live {
@@ -622,6 +625,7 @@ h1 {
   line-height: 20px;
   letter-spacing: 0;
   white-space: normal;
+  transition: color 0.35s ease, font-weight 0.35s ease, text-shadow 0.35s ease;
 }
 
 .method-label-4 {
@@ -663,6 +667,9 @@ h1 {
   box-shadow:
     0px 3.14px 11.78px 0px rgba(59, 130, 246, 0.4),
     0px -0.79px 11.78px 0px rgba(59, 130, 246, 0.4);
+  transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
 }
 
 .method-pill {
@@ -789,18 +796,31 @@ h1 {
 .method-card[class*="step-"] .method-node-live-2,
 .method-card[class*="step-"] .method-node-live-3,
 .method-card[class*="step-"] .method-node-live-4,
-.method-card[class*="step-"] .method-node-live-5,
+.method-card[class*="step-"] .method-node-live-5 {
+  opacity: 0 !important;
+  transform: translate(-50%, -50%) scale(0.92) !important;
+  visibility: visible !important;
+  animation: none !important;
+}
+
 .method-card[class*="step-"] .method-line-live-1,
 .method-card[class*="step-"] .method-line-live-2,
 .method-card[class*="step-"] .method-line-live-3,
-.method-card[class*="step-"] .method-line-live-4,
+.method-card[class*="step-"] .method-line-live-4 {
+  opacity: 0 !important;
+  transform: translateX(-50%) scaleX(0.7) !important;
+  visibility: visible !important;
+  animation: none !important;
+}
+
 .method-card[class*="step-"] .method-pill-text-1,
 .method-card[class*="step-"] .method-pill-text-2,
 .method-card[class*="step-"] .method-pill-text-3,
 .method-card[class*="step-"] .method-pill-text-4,
 .method-card[class*="step-"] .method-pill-text-5 {
   opacity: 0 !important;
-  visibility: hidden !important;
+  transform: translateY(4px) !important;
+  visibility: visible !important;
   animation: none !important;
 }
 
@@ -810,6 +830,7 @@ h1 {
 .method-card[class*="step-"] .method-node-idle-4,
 .method-card[class*="step-"] .method-node-idle-5 {
   opacity: 1 !important;
+  transform: translate(-50%, -50%) scale(1) !important;
   visibility: visible !important;
   animation: none !important;
 }
@@ -821,63 +842,81 @@ h1 {
 .method-card[class*="step-"] .method-label-5 {
   color: #6a7799 !important;
   font-weight: 400 !important;
+  text-shadow: none !important;
   animation: none !important;
 }
 
 /* 1 of 5 Active State */
-.method-card.step-1-active .method-node-live-1,
+.method-card.step-1-active .method-node-live-1 {
+  opacity: 1 !important;
+  transform: translate(-50%, -50%) scale(1) !important;
+}
 .method-card.step-1-active .method-pill-text-1 {
   opacity: 1 !important;
-  visibility: visible !important;
+  transform: translateY(0) !important;
 }
 
 .method-card.step-1-active .method-node-idle-1 {
   opacity: 0 !important;
-  visibility: hidden !important;
+  transform: translate(-50%, -50%) scale(0.92) !important;
 }
 
 .method-card.step-1-active .method-label-1 {
   color: #e4edff !important;
   font-weight: 500 !important;
+  text-shadow: 0 0 12px rgba(67, 154, 224, 0.4) !important;
 }
 
 /* 2 of 5 Active State: Nodes 1..2 & Line 1 stay active */
 .method-card.step-2-active .method-node-live-1,
-.method-card.step-2-active .method-node-live-2,
-.method-card.step-2-active .method-line-live-1,
+.method-card.step-2-active .method-node-live-2 {
+  opacity: 1 !important;
+  transform: translate(-50%, -50%) scale(1) !important;
+}
+.method-card.step-2-active .method-line-live-1 {
+  opacity: 1 !important;
+  transform: translateX(-50%) scaleX(1) !important;
+}
 .method-card.step-2-active .method-pill-text-2 {
   opacity: 1 !important;
-  visibility: visible !important;
+  transform: translateY(0) !important;
 }
 
 .method-card.step-2-active .method-node-idle-1,
 .method-card.step-2-active .method-node-idle-2 {
   opacity: 0 !important;
-  visibility: hidden !important;
+  transform: translate(-50%, -50%) scale(0.92) !important;
 }
 
 .method-card.step-2-active .method-label-1,
 .method-card.step-2-active .method-label-2 {
   color: #e4edff !important;
   font-weight: 500 !important;
+  text-shadow: 0 0 12px rgba(67, 154, 224, 0.4) !important;
 }
 
 /* 3 of 5 Active State: Nodes 1..3 & Lines 1..2 stay active */
 .method-card.step-3-active .method-node-live-1,
 .method-card.step-3-active .method-node-live-2,
-.method-card.step-3-active .method-node-live-3,
+.method-card.step-3-active .method-node-live-3 {
+  opacity: 1 !important;
+  transform: translate(-50%, -50%) scale(1) !important;
+}
 .method-card.step-3-active .method-line-live-1,
-.method-card.step-3-active .method-line-live-2,
+.method-card.step-3-active .method-line-live-2 {
+  opacity: 1 !important;
+  transform: translateX(-50%) scaleX(1) !important;
+}
 .method-card.step-3-active .method-pill-text-3 {
   opacity: 1 !important;
-  visibility: visible !important;
+  transform: translateY(0) !important;
 }
 
 .method-card.step-3-active .method-node-idle-1,
 .method-card.step-3-active .method-node-idle-2,
 .method-card.step-3-active .method-node-idle-3 {
   opacity: 0 !important;
-  visibility: hidden !important;
+  transform: translate(-50%, -50%) scale(0.92) !important;
 }
 
 .method-card.step-3-active .method-label-1,
@@ -885,19 +924,26 @@ h1 {
 .method-card.step-3-active .method-label-3 {
   color: #e4edff !important;
   font-weight: 500 !important;
+  text-shadow: 0 0 12px rgba(67, 154, 224, 0.4) !important;
 }
 
 /* 4 of 5 Active State: Nodes 1..4 & Lines 1..3 stay active */
 .method-card.step-4-active .method-node-live-1,
 .method-card.step-4-active .method-node-live-2,
 .method-card.step-4-active .method-node-live-3,
-.method-card.step-4-active .method-node-live-4,
+.method-card.step-4-active .method-node-live-4 {
+  opacity: 1 !important;
+  transform: translate(-50%, -50%) scale(1) !important;
+}
 .method-card.step-4-active .method-line-live-1,
 .method-card.step-4-active .method-line-live-2,
-.method-card.step-4-active .method-line-live-3,
+.method-card.step-4-active .method-line-live-3 {
+  opacity: 1 !important;
+  transform: translateX(-50%) scaleX(1) !important;
+}
 .method-card.step-4-active .method-pill-text-4 {
   opacity: 1 !important;
-  visibility: visible !important;
+  transform: translateY(0) !important;
 }
 
 .method-card.step-4-active .method-node-idle-1,
@@ -905,7 +951,7 @@ h1 {
 .method-card.step-4-active .method-node-idle-3,
 .method-card.step-4-active .method-node-idle-4 {
   opacity: 0 !important;
-  visibility: hidden !important;
+  transform: translate(-50%, -50%) scale(0.92) !important;
 }
 
 .method-card.step-4-active .method-label-1,
@@ -914,6 +960,7 @@ h1 {
 .method-card.step-4-active .method-label-4 {
   color: #e4edff !important;
   font-weight: 500 !important;
+  text-shadow: 0 0 12px rgba(67, 154, 224, 0.4) !important;
 }
 
 /* 5 of 5 Active State: Nodes 1..5 & Lines 1..4 all stay active */
@@ -921,14 +968,20 @@ h1 {
 .method-card.step-5-active .method-node-live-2,
 .method-card.step-5-active .method-node-live-3,
 .method-card.step-5-active .method-node-live-4,
-.method-card.step-5-active .method-node-live-5,
+.method-card.step-5-active .method-node-live-5 {
+  opacity: 1 !important;
+  transform: translate(-50%, -50%) scale(1) !important;
+}
 .method-card.step-5-active .method-line-live-1,
 .method-card.step-5-active .method-line-live-2,
 .method-card.step-5-active .method-line-live-3,
-.method-card.step-5-active .method-line-live-4,
+.method-card.step-5-active .method-line-live-4 {
+  opacity: 1 !important;
+  transform: translateX(-50%) scaleX(1) !important;
+}
 .method-card.step-5-active .method-pill-text-5 {
   opacity: 1 !important;
-  visibility: visible !important;
+  transform: translateY(0) !important;
 }
 
 .method-card.step-5-active .method-node-idle-1,
@@ -937,7 +990,7 @@ h1 {
 .method-card.step-5-active .method-node-idle-4,
 .method-card.step-5-active .method-node-idle-5 {
   opacity: 0 !important;
-  visibility: hidden !important;
+  transform: translate(-50%, -50%) scale(0.92) !important;
 }
 
 .method-card.step-5-active .method-label-1,
@@ -947,12 +1000,14 @@ h1 {
 .method-card.step-5-active .method-label-5 {
   color: #e4edff !important;
   font-weight: 500 !important;
+  text-shadow: 0 0 12px rgba(67, 154, 224, 0.4) !important;
 }
 
 /* Individual Mobile Step Activation */
 .method-step.is-active .method-node-live,
 .method-step.is-active [class*="method-node-live-"] {
   opacity: 1 !important;
+  transform: translate(-50%, -50%) scale(1) !important;
   visibility: visible !important;
   animation: none !important;
 }
@@ -960,7 +1015,8 @@ h1 {
 .method-step.is-active .method-node-idle,
 .method-step.is-active [class*="method-node-idle-"] {
   opacity: 0 !important;
-  visibility: hidden !important;
+  transform: translate(-50%, -50%) scale(0.92) !important;
+  visibility: visible !important;
   animation: none !important;
 }
 
@@ -968,6 +1024,7 @@ h1 {
 .method-step.is-active [class*="method-label-"] {
   color: #e4edff !important;
   font-weight: 500 !important;
+  text-shadow: 0 0 12px rgba(67, 154, 224, 0.4) !important;
 }
 
 .method-node-idle-1 {
@@ -1565,10 +1622,11 @@ h1 {
 
 .methodology h2 {
   font-size: 40px;
+  font-weight: 700;
   text-align: center;
   white-space: normal;
-  line-height: 1.2;
-  max-width: 900px;
+  line-height: 1.25;
+  max-width: 1120px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -1594,11 +1652,22 @@ h1 {
 }
 
 .methodology .section-subtitle {
-  font-size: 20px;
+  font-size: 18px;
+  line-height: 1.6;
   text-align: center;
-  max-width: 860px;
-  margin-left: auto;
-  margin-right: auto;
+  max-width: 840px;
+  margin: 22px auto 0;
+  color: #b0b0b0;
+}
+
+.method-desktop-br {
+  display: block;
+}
+
+@media (max-width: 900px) {
+  .method-desktop-br {
+    display: none;
+  }
 }
 
 .industries .section-subtitle {
@@ -1649,15 +1718,15 @@ h1 {
 }
 
 .image-one {
-  background-image: url("../../assets/images/article-ai.jpg");
+  background-image: url("../../assets/article-ai.png");
 }
 
 .image-two {
-  background-image: url("../../assets/images/article-strategy.jpg");
+  background-image: url("../../assets/article-strategy.png");
 }
 
 .image-three {
-  background-image: url("../../assets/images/article-engineering.jpg");
+  background-image: url("../../assets/article-engineering.png");
 }
 
 .article-body {

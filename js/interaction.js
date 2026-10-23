@@ -67,38 +67,92 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', updateStickyHeader, { passive: true });
   updateStickyHeader();
 
-  // Dynamic TOC active state management
+  // Dynamic TOC active state management (flicker-free click & smooth scrollspy)
   const tocLinks = document.querySelectorAll('.blog-toc-list a');
   const sections = document.querySelectorAll('.blog-content-section');
+  let isClickScrolling = false;
+  let scrollLockTimer = null;
 
   // Function to update active TOC link based on scroll position
   function updateActiveToc() {
-    let currentSection = '';
+    if (isClickScrolling) return; // Prevent scrollspy flickering during click-initiated scroll
+    if (!sections.length || !tocLinks.length) return;
 
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop;
-      const sectionHeight = section.offsetHeight;
-      if (scrollY >= sectionTop - 200) {
-        currentSection = section.getAttribute('id');
-      }
-    });
+    let currentSection = '';
+    const scrollPosition = window.scrollY;
+    const headerOffset = 130;
+
+    // If near the bottom of page, activate the last section
+    if ((window.innerHeight + scrollPosition) >= (document.documentElement.scrollHeight - 60)) {
+      currentSection = sections[sections.length - 1].getAttribute('id');
+    } else {
+      sections.forEach(section => {
+        const top = section.getBoundingClientRect().top + scrollPosition;
+        if (scrollPosition >= top - headerOffset) {
+          currentSection = section.getAttribute('id');
+        }
+      });
+    }
+
+    if (!currentSection && sections.length > 0) {
+      currentSection = sections[0].getAttribute('id');
+    }
 
     tocLinks.forEach(link => {
-      link.classList.remove('active-toc');
-      if (link.getAttribute('href') === `#${currentSection}`) {
-        link.classList.add('active-toc');
-      }
+      const isMatch = link.getAttribute('href') === `#${currentSection}`;
+      link.classList.toggle('active-toc', isMatch);
     });
   }
 
-  // Update active state on scroll
-  window.addEventListener('scroll', updateActiveToc);
+  // Update active state on scroll (passive for high performance)
+  window.addEventListener('scroll', updateActiveToc, { passive: true });
 
-  // Update active state on click
+  // Update active state on click with smooth scroll & scroll lock to prevent intermediate flickering
   tocLinks.forEach(link => {
     link.addEventListener('click', function (e) {
+      const targetId = this.getAttribute('href');
+      if (!targetId || !targetId.startsWith('#')) return;
+
+      const targetSection = document.querySelector(targetId);
+      if (!targetSection) return;
+
+      e.preventDefault();
+
+      // 1. Immediately lock active state to the clicked item
       tocLinks.forEach(l => l.classList.remove('active-toc'));
       this.classList.add('active-toc');
+
+      // 2. Lock scrollspy updates while animating to destination
+      isClickScrolling = true;
+      clearTimeout(scrollLockTimer);
+
+      // 3. Smooth scroll with sticky header compensation
+      const headerOffset = 110;
+      const targetTop = targetSection.getBoundingClientRect().top + window.scrollY - headerOffset;
+
+      window.scrollTo({
+        top: Math.max(0, targetTop),
+        behavior: 'smooth'
+      });
+
+      if (history.pushState) {
+        history.pushState(null, null, targetId);
+      }
+
+      // 4. Release lock once smooth scrolling completes
+      const unlock = () => {
+        isClickScrolling = false;
+        window.removeEventListener('scrollend', unlock);
+      };
+
+      if ('onscrollend' in window) {
+        window.addEventListener('scrollend', unlock, { once: true });
+      }
+
+      // Fallback timer to guarantee lock is released
+      scrollLockTimer = setTimeout(() => {
+        isClickScrolling = false;
+      }, 700);
     });
   });
 

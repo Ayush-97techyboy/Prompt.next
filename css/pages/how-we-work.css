@@ -154,7 +154,7 @@
 }
 
 .how-we-work-page .hww-stages-container {
-  width: min(1280px, calc(100% - 160px));
+  width: min(1280px, calc(100% - 64px));
   max-width: 1280px;
   margin: 0 auto;
   display: flex;
@@ -163,47 +163,57 @@
 }
 
 .how-we-work-page .hww-stage-item {
-  display: grid;
-  grid-template-columns: 460px 1fr;
-  column-gap: 48px;
+  display: flex;
+  flex-direction: row;
   align-items: flex-start;
+  gap: 440px;
 }
 
 .how-we-work-page .hww-stage-number-col {
+  width: 67px;
+  flex-shrink: 0;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   gap: 14px;
+  margin-top: -18px;
 }
 
 .how-we-work-page .hww-stage-bar {
   width: 67px;
-  height: 3px;
+  height: 4px;
   background: #1652f0;
   border-radius: 2px;
+  flex-shrink: 0;
 }
 
 .how-we-work-page .hww-stage-num {
   font-family: var(--font-sans);
-  font-size: 52px;
-  font-weight: 600;
-  line-height: 1;
+  font-size: 64px;
+  font-weight: 500;
+  line-height: 57.6px;
+  letter-spacing: -0.96px;
   color: #1652f0;
-  letter-spacing: -.02em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
 }
 
 .how-we-work-page .hww-stage-content-col {
-  padding-top: 17px;
+  max-width: 760px;
+  flex: 1;
 }
 
 .how-we-work-page .hww-stage-content-col h2 {
   font-family: var(--font-sans);
   font-weight: 700;
   font-size: 48px;
-  line-height: 88px;
+  line-height: 58px;
   letter-spacing: 0px;
   color: #ffffff;
-  margin: 0 0 24px;
+  margin: 0 0 30px;
   max-width: 760px;
 }
 
@@ -211,7 +221,7 @@
   font-family: var(--font-sans);
   font-weight: 400;
   font-size: 24px;
-  line-height: 32px;
+  line-height: 36px;
   letter-spacing: 0px;
   color: #B0B0B0;
   margin: 0 0 22px;
@@ -292,8 +302,7 @@
   }
 
   .how-we-work-page .hww-stage-item {
-    grid-template-columns: 280px 1fr;
-    column-gap: 36px;
+    gap: clamp(36px, 10vw, 120px);
   }
 
   .how-we-work-page .hww-stage-num {
@@ -316,14 +325,19 @@
   }
 
   .how-we-work-page .hww-stage-item {
-    grid-template-columns: 1fr;
+    flex-direction: column;
     gap: 20px;
   }
 
   .how-we-work-page .hww-stage-number-col {
+    width: auto;
     flex-direction: row;
     align-items: center;
     gap: 16px;
+  }
+
+  .how-we-work-page .hww-stage-bar {
+    width: 48px;
   }
 
   .how-we-work-page .hww-stage-num {

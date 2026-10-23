@@ -281,7 +281,7 @@
   width: 24px;
   height: 24px;
   content: "";
-  background: url("../../assets/images/Margin.png") center / contain no-repeat;
+  background: url("../../assets/Correct_PIxalate/whatwedo_pg_icons/checkmark.svg") center / contain no-repeat;
 }
 
 .what-we-do-page .wwd-capability-copy li strong {
@@ -481,6 +481,7 @@
   font-size: 24px;
   line-height: 32px;
   letter-spacing: 0px;
+  text-align: center;
 }
 
 .what-we-do-page .wwd-model-grid {
@@ -1142,12 +1143,28 @@
     padding-top: 65px;
   }
 
+  .what-we-do-page .wwd-section-heading {
+    padding: 0 16px;
+  }
+
   .what-we-do-page .wwd-section-heading h2 {
     font-size: 34px;
+    line-height: 1.2;
+    margin: 0 0 14px;
+    text-align: center;
   }
 
   .what-we-do-page .wwd-section-heading p {
-    font-size: 17px;
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: center;
+    text-wrap: balance;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .what-we-do-page .wwd-section-heading p br {
+    display: none;
   }
 
   .what-we-do-page .wwd-model-card>img {

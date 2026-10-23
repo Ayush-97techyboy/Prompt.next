@@ -215,7 +215,7 @@
 }
 
 .industries-card p {
-  min-height: 48px;
+  min-height: 72px;
   margin: 16px 0 0;
   color: #B0B0B0;
   font-family: var(--font-sans);
@@ -231,10 +231,17 @@
   border-top: 1px solid rgba(255, 255, 255, .13);
 }
 
-.industries-card-bottom a {
+.industries-card-bottom a,
+.industries-card-bottom a:visited {
   color: #165fff;
   font-size: 15px;
   font-weight: 500;
+  text-decoration: none;
+}
+
+.industries-card-bottom a:hover,
+.industries-card-bottom a:focus-visible {
+  color: #3b82f6;
 }
 
 .industries-card-bottom a span {

@@ -267,8 +267,8 @@
   justify-content: space-between;
   gap: 40px;
   align-items: start;
-  margin-left: 24px;
-  max-width: calc(100% - 24px);
+  margin-left: 0;
+  max-width: 100%;
 }
 .manufacturing-page .mfg-machines-col {
   margin: 0;

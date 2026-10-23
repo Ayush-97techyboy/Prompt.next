@@ -66,3 +66,41 @@ h1, h2, h3, h4, h5, h6, p {
   top: 16px;
   outline: 3px solid #ffffff;
 }
+
+/* ==========================================================================
+   Global Content Justification System
+   Applies content justification across narrative body content & non-hero sections
+   Excludes headings, subtitles, centered intros, hero sections, and CTAs
+   ========================================================================== */
+section:not([class*="hero"]):not([class*="cta"]):not(.stat-strip):not(.site-footer):not(.wwd-footer) p:not(.section-kicker):not([class*="subtitle"]):not([class*="heading"] *):not([class*="header"] *):not([class*="intro"] *):not([class*="cta"] *):not([class*="pre-engagement"] *):not([class*="practice-card"] *):not(.btn):not(.tag):not(.badge):not(.about-eyebrow):not(.quote-text):not(.cal-day-cell *):not([class*="button"]):not(.stat *):not(.contact-submit-btn):not(.modal-message):not(.modal-title):not(.info-heading):not(.info-content-address):not(.card-tag-badge):not([class*="breadcrumb"]):not([class*="breadcrumb"] *):not(.method-label),
+article:not([class*="hero"]):not([class*="cta"]) p:not(.section-kicker):not([class*="subtitle"]):not([class*="heading"] *):not([class*="header"] *):not([class*="intro"] *):not([class*="cta"] *):not([class*="pre-engagement"] *):not([class*="practice-card"] *):not(.btn):not(.tag):not(.badge):not(.about-eyebrow):not(.quote-text):not(.cal-day-cell *):not([class*="button"]):not(.stat *):not(.contact-submit-btn):not(.modal-message):not(.modal-title):not(.info-heading):not(.info-content-address):not(.card-tag-badge):not([class*="breadcrumb"]):not([class*="breadcrumb"] *):not(.method-label),
+main section:not([class*="hero"]):not([class*="cta"]):not(.stat-strip) p:not(.section-kicker):not([class*="subtitle"]):not([class*="heading"] *):not([class*="header"] *):not([class*="intro"] *):not([class*="cta"] *):not([class*="pre-engagement"] *):not([class*="practice-card"] *):not(.btn):not(.tag):not(.badge):not(.about-eyebrow):not(.quote-text):not(.cal-day-cell *):not([class*="button"]):not(.stat *):not(.contact-submit-btn):not(.modal-message):not(.modal-title):not(.info-heading):not(.info-content-address):not(.card-tag-badge):not([class*="breadcrumb"]):not([class*="breadcrumb"] *):not(.method-label),
+main article:not([class*="hero"]):not([class*="cta"]) p:not(.section-kicker):not([class*="subtitle"]):not([class*="heading"] *):not([class*="header"] *):not([class*="intro"] *):not([class*="cta"] *):not([class*="pre-engagement"] *):not([class*="practice-card"] *):not(.btn):not(.tag):not(.badge):not(.about-eyebrow):not(.quote-text):not(.cal-day-cell *):not([class*="button"]):not(.stat *):not(.contact-submit-btn):not(.modal-message):not(.modal-title):not(.info-heading):not(.info-content-address):not(.card-tag-badge):not([class*="breadcrumb"]):not([class*="breadcrumb"] *):not(.method-label),
+.wwd-capability-copy li {
+  text-align: justify;
+  text-justify: inter-word;
+  text-align-last: left;
+}
+
+/* Explicit protection: Keep hero sections, section headings, and CTAs to their intended display */
+[class*="hero"] p,
+header[class*="hero"] p,
+section[class*="hero"] p {
+  text-align: inherit;
+}
+
+.wwd-section-heading,
+.wwd-section-heading p,
+.section-subtitle,
+[class*="section-heading"] p,
+[class*="section-header"] p,
+[class*="section-intro"] p,
+[class*="cta-card"] p,
+[class*="cta-wrap"] p,
+[class*="pre-engagement"] p {
+  text-align: center;
+}
+
+.contact-card-header p {
+  text-align: left !important;
+}

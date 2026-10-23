@@ -219,6 +219,7 @@
 
 .blog-page .blog-content-section {
   margin-bottom: 40px;
+  scroll-margin-top: 110px;
 }
 
 .blog-page .blog-content-section h2 {
@@ -234,8 +235,8 @@
 .blog-page .blog-content-section p {
   font-family: var(--font-sans);
   font-weight: 400;
-  font-size: 24px;
-  line-height: 32px;
+  font-size: 18px;
+  line-height: 1.6;
   letter-spacing: 0px;
   color: #B0B0B0;
   margin: 0 0 20px;
@@ -309,33 +310,20 @@
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
 }
 
 .blog-page .blog-toc-list a {
-  font-size: 15px;
-  line-height: 1.5;
-  color: #72747d;
-  transition: color .2s ease;
-}
-
-.blog-page .blog-toc-list a.active-toc {
   position: relative;
-  padding-left: 32px;
   display: flex;
   align-items: center;
-}
-
-.blog-page .blog-toc-list a.active-toc::before {
-  content: "|";
-  position: absolute;
-  left: 0;
-  color: #1652F0;
-  font-weight: 600;
-  font-size: 34px;
-  line-height: 1;
-  top: 50%;
-  transform: translateY(-50%);
+  min-height: 42px;
+  font-size: 15px;
+  line-height: 1.45;
+  color: #72747d;
+  padding: 10px 0 10px 20px;
+  transition: color .2s ease;
+  box-sizing: border-box;
 }
 
 .blog-page .blog-toc-list a:hover {
@@ -347,7 +335,15 @@
 }
 
 .blog-page .blog-toc-list a.active-toc::before {
-  color: #1f70ff;
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 44px;
+  width: 3px;
+  background: #1652f0;
+  border-radius: 2px;
 }
 
 .blog-page .blog-related-list {
