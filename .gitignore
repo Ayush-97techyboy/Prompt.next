@@ -38,3 +38,7 @@ check_*.ps1
 inspect_*.ps1
 devices.json
 
+# Compressed theme and deployment archives
+*.zip
+*.rar
+

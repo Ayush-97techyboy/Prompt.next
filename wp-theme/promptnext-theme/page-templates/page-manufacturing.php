@@ -1,0 +1,87 @@
+<?php
+/**
+ * Template Name: Manufacturing
+ * @package PromptNext
+ */
+
+get_header(); ?>
+
+<main id="top">
+
+    <!-- ══════ HERO ══════ -->
+    <section class="mfg-hero" aria-label="Smarter operations. Connected plants. AI that actually works on the factory floor. All delivered without stopping what keeps your business running">
+      <div class="mfg-hero-inner">
+        <p class="mfg-breadcrumb"><a href="<?php echo esc_url(home_url('/industries/')); ?>">Industries</a> <span class="mfg-sep">&gt;&gt;</span> <span class="mfg-crumb-active">Manufacturing</span></p>
+        <div class="mfg-hero-content">
+          <h1>Smarter operations. Connected plants. AI that actually works on the factory floor. All delivered without stopping what keeps your business running</h1>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════ INDUSTRY CONTEXT ══════ -->
+    <section class="mfg-context">
+      <div class="mfg-context-wrap">
+        <div class="mfg-context-copy">
+          <h2>Industry Context</h2>
+          <p>Manufacturing operations today carry a technology agenda that goes well beyond the factory floor. Supply chain visibility, sustainability reporting, cybersecurity for operational technology, and AI systems that depend on clean data from equipment that was never designed to produce it. All of it running on infrastructure built over decades, often across multiple sites and countries.</p>
+        </div>
+        <div class="mfg-context-img">
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/Background+Border+Shadow (5).png" alt="Manufacturing equipment with automated control panel and wiring" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════ THREE PILLARS ══════ -->
+    <section class="mfg-pillars">
+      <div class="mfg-pillars-wrap">
+        <article class="mfg-card">
+          <span class="mfg-card-num">01</span>
+          <h3>Legacy OT First</h3>
+          <p>Plant floor systems are often older than the people running them and were never designed for modern data extraction. Execution has to work with what is actually there, not what a clean-slate architecture would prefer.</p>
+        </article>
+        <article class="mfg-card">
+          <span class="mfg-card-num">02</span>
+          <h3>Line Continuity</h3>
+          <p>A manufacturing line generates revenue every hour it runs. Deployments have to be designed around production schedules, with a clear path back if anything needs to be reversed, not the other way round.</p>
+        </article>
+        <article class="mfg-card">
+          <span class="mfg-card-num">03</span>
+          <h3>Data You Can Act On</h3>
+          <p>Predictive maintenance and AI quality systems are only as good as the data feeding them. Getting clean, reliable data out of decades-old equipment is often the real work, before any AI model becomes relevant at all.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ══════ IN PRACTICE (CARD) ══════ -->
+    <section class="mfg-practice">
+      <div class="mfg-practice-wrap">
+        <div class="mfg-practice-card">
+          <h2>What this looks like in practice</h2>
+          <p><span class="mfg-practice-l1">This pattern is drawn from how manufacturing technology programmes unfold across the industry, not from a </span><span class="mfg-practice-l2">named Prompt Next engagement.</span></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════ WHEN THE NEW SYSTEM CANNOT READ THE OLD MACHINES ══════ -->
+    <section class="mfg-machines">
+      <div class="mfg-machines-wrap">
+        <h2 class="mfg-machines-title">When the New System Cannot Read the Old Machines</h2>
+        <div class="mfg-machines-grid">
+          <p class="mfg-machines-col">A manufacturer began a programme to connect plant-floor equipment to a new data platform, intended to enable predictive maintenance across multiple sites. Partway through, it became clear that a meaningful share of the equipment, some of it decades old, did not expose data in any standard way the new platform could consume.</p>
+          <p class="mfg-machines-col">This is a common discovery in manufacturing modernisation, not a sign the programme was scoped badly. The execution challenge is building the translation layer between equipment that predates modern connectivity and a platform that assumes it, without disrupting production to do so.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════ CTA ══════ -->
+    <section class="mfg-cta">
+      <div class="mfg-cta-wrap">
+        <h2>How Prompt Next works in Manufacturing</h2>
+        <p>We coordinate every party involved in your manufacturing programme, from the first planning conversation to final handover. Working with your existing operational technology, keeping the line running, and making sure the data your AI and analytics systems depend on is actually there when they need it.</p>
+        <a class="mfg-cta-btn" href="<?php echo esc_url(home_url('/contact-us/')); ?>">START A CONVERSATION ABOUT YOUR MANUFACTURING PROGRAMME</a>
+      </div>
+    </section>
+
+  </main>
+
+<?php get_footer(); ?>

@@ -1,0 +1,89 @@
+<?php
+/**
+ * Template Name: Healthcare
+ * @package PromptNext
+ */
+
+get_header(); ?>
+
+<main id="top">
+
+    <!-- ══════ HERO ══════ -->
+    <section class="health-hero" aria-label="Patient care depends on systems that work. We deliver them">
+      <img class="health-hero-img" src="<?php echo get_template_directory_uri(); ?>/assets/healthcare-hero.png" alt="" />
+      <div class="health-hero-inner">
+        <p class="health-breadcrumb"><a href="<?php echo esc_url(home_url('/industries/')); ?>">Industries</a> <span class="health-sep">&gt;&gt;</span> <span class="health-crumb-active">Healthcare</span></p>
+        <div class="health-hero-content">
+          <h1><span class="health-hero-l1">Patient care depends on systems that work<span class="health-hero-period">.</span></span> <span class="health-hero-l2">We deliver them</span></h1>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════ INDUSTRY CONTEXT ══════ -->
+    <section class="health-context">
+      <div class="health-context-wrap">
+        <div class="health-context-copy">
+          <h2>Industry Context</h2>
+          <p class="health-context-p1">Healthcare organisations are deploying more technology than ever, electronic records, clinical data platforms, AI-assisted diagnostics, and interoperability systems, all at once, all under tightening data governance requirements.</p>
+          <p class="health-context-p2">The challenge is not finding the technology. It is getting it into the hands of the people who need it, without disrupting the care they are already delivering.</p>
+        </div>
+        <div class="health-context-img">
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/Overlay (5).png" alt="Patient monitoring system" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════ THREE PILLARS ══════ -->
+    <section class="health-pillars">
+      <div class="health-pillars-wrap">
+        <article class="health-card">
+          <span class="health-card-num">01</span>
+          <h3>Data Governance First</h3>
+          <p>Data governance built in. Healthcare data is among the most regulated. Every system that touches patient data has to be secure, compliant, and governed from day one.</p>
+        </article>
+        <article class="health-card">
+          <span class="health-card-num">02</span>
+          <h3>Clinical Workflow Fit</h3>
+          <p>Technology that does not match how clinical teams actually work will not get used, no matter how well it performed in testing. Every system we deliver is built around the clinical workflow, not the other way round.</p>
+        </article>
+        <article class="health-card">
+          <span class="health-card-num">03</span>
+          <h3>Zero Clinical Disruptions</h3>
+          <p>Healthcare operations run continuously. Every migration and system change has to be planned around clinical schedules, with a clear path back if anything needs to be reversed.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ══════ IN PRACTICE (CARD) ══════ -->
+    <section class="health-practice">
+      <div class="health-practice-wrap">
+        <div class="health-practice-card">
+          <h2>What this looks like in practice</h2>
+          <p><span class="health-practice-l1">This pattern is drawn from how healthcare technology programmes unfold across the industry, not from a named</span><span class="health-practice-l2">Prompt Next engagement.</span></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════ WHEN THE ENVIRONMENT CHANGES ══════ -->
+    <section class="health-env">
+      <div class="health-env-wrap">
+        <h2 class="health-env-title">When the Environment Changes Mid-Programme</h2>
+        <div class="health-env-grid">
+          <p class="health-env-col">A regional healthcare provider began an enterprise-wide patient data platform migration. Midway through, updated data residency regulations forced a fundamental change to the deployment architecture, an on-premises implementation had to be redesigned for a hybrid cloud environment, while staying compliant with both the original and updated rules.</p>
+          <p class="health-env-col">This kind of shift is not a planning failure. Regulatory environments evolve. The partners who kept the programme moving treated the changed environment as a problem to solve together. The ones who became blockers were the ones whose model had no room to absorb change without renegotiating the entire scope.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════ CTA ══════ -->
+    <section class="health-cta">
+      <div class="health-cta-wrap">
+        <h2>How Prompt Next works in Healthcare</h2>
+        <p><span class="health-cta-text-l1">We coordinate every party involved in your healthcare programme, from the first planning conversation to final handover. Clinical </span><span class="health-cta-text-l2">workflow fit, data governance, and zero disruption to patient care are built into how we work, not added at the end.</span></p>
+        <a class="health-cta-btn" href="<?php echo esc_url(home_url('/contact-us/')); ?>">START A CONVERSATION ABOUT YOUR HEALTHCARE PROGRAMME</a>
+      </div>
+    </section>
+
+  </main>
+
+<?php get_footer(); ?>

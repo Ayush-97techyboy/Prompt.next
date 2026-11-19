@@ -1,0 +1,15 @@
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700,900&display=swap');
+
+:root {
+  --font-sans: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --bg: #08090b;
+  --panel: #101115;
+  --panel-soft: #15161b;
+  --blue: #1652f0;
+  --blue-bright: #1f70ff;
+  --navy: #061957;
+  --text: #f4f5f7;
+  --muted: #9a9da7;
+  --line: rgba(255, 255, 255, 0.08);
+  --container: 1280px;
+}

@@ -1,0 +1,153 @@
+<?php
+/**
+ * Template Name: What We Do
+ * @package PromptNext
+ */
+
+get_header(); ?>
+
+<main id="top">
+    <section class="wwd-hero">
+      <div class="wwd-hero-inner">
+        <h1>Five capabilities. One accountable partner. Your programme, from decision to production.</h1>
+        <p>Every capability Prompt Next offers exists to answer one question: how do we get your programme from where it
+          is now to working, live, and operating in your environment? The capability your programme requires determines
+          the team and the approach. The commitment to the outcome does not change.</p>
+      </div>
+    </section>
+
+    <section class="wwd-capabilities" aria-label="Capabilities">
+      <article class="wwd-capability-row">
+        <div class="wwd-capability-copy">
+          <h2 id="technology-execution">Technology Execution</h2>
+          <p class="wwd-lead">End-to-end programme accountability from decision to live production.</p>
+          <ul>
+            <li><strong>The Gap Closed:</strong> <span>Your programme has a decision, a budget, and multiple parties. No
+                single owner of the outcome.</span></li>
+            <li><span class="wwd-practice-line"><strong>Practice Details:</strong> Core system implementations, platform
+                migrations,</span><span class="wwd-practice-line">digital transformation programmes, regulatory
+                technology deployments.</span></li>
+            <li><strong>Deliverables:</strong> <span>A working system in production, with your team trained and
+                independent to operate it.</span></li>
+          </ul>
+        </div>
+        <img class="wwd-capability-image" src="<?php echo get_template_directory_uri(); ?>/assets/images/what-server.png" alt="Technology server racks" />
+      </article>
+      <article class="wwd-capability-row wwd-reverse">
+        <img class="wwd-capability-image" src="<?php echo get_template_directory_uri(); ?>/assets/images/what-ai.png" alt="AI production hardware" />
+        <div class="wwd-capability-copy">
+          <h2 id="ai-production-deployment">AI Production Deployment</h2>
+          <p class="wwd-lead">Your AI initiative deserves to run in production, not sit in a pilot. We design, build,
+            and deploy custom AI and agentic systems that actually go live.</p>
+          <ul>
+            <li><strong>The Gap Closed:</strong> <span>From approved initiative to live deployment, including
+                integration with the systems your organisation already runs.</span></li>
+            <li><strong>Practice Details:</strong> <span>Built for real operating conditions from day one, not a proof
+                of concept that needs rethinking before it can go live.</span></li>
+            <li><strong>Deliverables:</strong> <span>Your teams run it. Your organisation owns it. No permanent
+                dependency on us to keep it working.</span></li>
+          </ul>
+        </div>
+      </article>
+      <article class="wwd-capability-row">
+        <div class="wwd-capability-copy">
+          <h2 id="system-integration">System Integration &amp; Modernisation</h2>
+          <p class="wwd-lead">New technology has to work with what you already have. Most deployment failures are
+            integration failures. We design and build integrations that hold under production load and survive
+            compliance audits.</p>
+          <ul>
+            <li><span class="wwd-system-gap-line"><strong>The Gap Closed:</strong> API and middleware builds, legacy
+                modernisation, data platform </span><span class="wwd-system-gap-line">connectivity, post-merger
+                technology integration, multi-system reconciliation.</span></li>
+            <li><span class="wwd-system-practice-line"><strong>Practice Details:</strong> Every integration is designed
+                around your actual system </span><span class="wwd-system-practice-line">landscape, not a clean-slate
+                architecture that ignores what’s already running.</span></li>
+            <li><strong>Deliverables:</strong> <span>A connected estate with clean data flows, reduced manual
+                workarounds, and an architecture built to absorb what comes next.</span></li>
+          </ul>
+        </div>
+        <img class="wwd-capability-image" src="<?php echo get_template_directory_uri(); ?>/assets/images/what-integration.png"
+          alt="High-speed network connection" />
+      </article>
+      <article class="wwd-capability-row wwd-reverse">
+        <img class="wwd-capability-image" src="<?php echo get_template_directory_uri(); ?>/assets/images/what-team.png" alt="Team collaboration" />
+        <div class="wwd-capability-copy">
+          <h2 id="capability-upskilling">Capability &amp; Upskilling</h2>
+          <p class="wwd-lead">Capability development is embedded into every engagement from day one. Your people learn
+            by being part of the work, not by attending training after delivery.</p>
+          <ul>
+            <li><span class="wwd-capability-gap-line"><strong>The Gap Closed:</strong> Embedded knowledge transfer
+                throughout </span><span class="wwd-capability-gap-line">delivery, so your team owns the system before we
+                leave, not after.</span></li>
+            <li><span class="wwd-capability-practice-line"><strong>Practice Details:</strong> Standalone training
+                programmes in AI, data, cloud, and</span><span class="wwd-capability-practice-line">enterprise
+                technology for teams that need structured upskilling independent </span><span
+                class="wwd-capability-practice-line">of a programme.</span></li>
+            <li><span class="wwd-capability-deliverable-line"><strong>Deliverables:</strong> When the engagement ends,
+                your team </span><span class="wwd-capability-deliverable-line">runs it. That is how we measure
+                success.</span></li>
+          </ul>
+        </div>
+      </article>
+      <article class="wwd-capability-row">
+        <div class="wwd-capability-copy">
+          <h2 id="specialist-deployment">Specialist Deployment</h2>
+          <p class="wwd-lead">The right specialist, in your team, for exactly the work that needs doing.</p>
+          <ul>
+            <li><span class="wwd-specialist-gap-line"><strong>The Gap Closed:</strong> Technical leads, AI engineers,
+                integration specialists, data </span><span class="wwd-specialist-gap-line">engineers, project managers,
+                and regulatory experts, each matched to your </span><span class="wwd-specialist-gap-line">specific
+                workstream.</span></li>
+            <li><strong>Practice Details:</strong> <span>Inside your existing team structure and governance model. No
+                external overlay, no parallel management track.</span></li>
+            <li><span class="wwd-specialist-deliverable-line"><strong>Deliverables:</strong> The programme moves. No
+                long-term </span><span class="wwd-specialist-deliverable-line">dependency on keeping the specialist in
+                place.</span></li>
+          </ul>
+        </div>
+        <img class="wwd-capability-image" src="<?php echo get_template_directory_uri(); ?>/assets/images/what-specialist.png"
+          alt="Specialist deployment meeting" />
+      </article>
+    </section>
+
+    <section class="wwd-engagement">
+      <div class="wwd-section-heading">
+        <h2>Engagement Models</h2>
+        <p>Your programme determines which model fits. The commitment <br> behind each one does not change.</p>
+      </div>
+      <div class="wwd-model-grid">
+        <article class="wwd-model-card"><img src="<?php echo get_template_directory_uri(); ?>/assets/Correct_PIxalate/whatwedo_pg_icons/Programme Mandate.svg" alt="" />
+          <h3>Programme Mandate</h3>
+          <p>Core system implementations, platform modernisations, AI deployments, regulatory technology programmes, and
+            enterprise integrations, managed end to end.</p>
+          <hr />
+          <ul>
+            <li>Full lifecycle accountability</li>
+            <li>From decision to handover</li>
+          </ul>
+        </article>
+        <article class="wwd-model-card"><img src="<?php echo get_template_directory_uri(); ?>/assets/Correct_PIxalate/whatwedo_pg_icons/Programme Rescue.svg" alt="" />
+          <h3>Programme Rescue</h3>
+          <p>For a programme already underway that has stalled or lost momentum. We assess honestly and lead it to the
+            outcome it was built to deliver.</p>
+          <hr />
+          <ul>
+            <li>Mid-flight deployment</li>
+            <li>Honest recovery path</li>
+          </ul>
+        </article>
+        <article class="wwd-model-card"><img src="<?php echo get_template_directory_uri(); ?>/assets/Correct_PIxalate/whatwedo_pg_icons/Specialist Augmentation.svg" alt="" />
+          <h3>Specialist Augmentation</h3>
+          <p>One specific gap in a programme already in motion. The right specialist into your team, under your
+            governance.</p>
+          <hr />
+          <ul>
+            <li>Rapid Onboarding</li>
+            <li>Targeted Expertise</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+  </main>
+
+<?php get_footer(); ?>

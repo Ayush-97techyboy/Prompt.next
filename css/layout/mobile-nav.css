@@ -118,20 +118,32 @@
   .footer-bottom {
     width: calc(100% - 48px);
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
     gap: 14px;
+  }
+
+  .wwd-footer-bottom span:last-child,
+  .footer-bottom span:last-child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
   }
 }
 
 @media (max-width: 600px) {
   .wwd-header,
   .site-header {
-    height: 64px !important;
+    height: 72px !important;
   }
 
   .wwd-nav,
   .nav-wrap {
     width: calc(100% - 36px) !important;
-    height: 64px !important;
+    height: 72px !important;
   }
 
   .wwd-nav-links,
@@ -140,13 +152,18 @@
   body .nav-links,
   body [class*="-page"] .wwd-nav-links,
   body [class*="-page"] .nav-links {
-    top: 64px !important;
+    top: 72px !important;
     padding: 20px 24px 28px !important;
   }
 
   .wwd-footer-grid,
   .footer-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 28px;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 28px !important;
+  }
+
+  .wwd-footer-grid > div:first-child,
+  .footer-grid > div:first-child {
+    grid-column: 1 / -1 !important;
   }
 }

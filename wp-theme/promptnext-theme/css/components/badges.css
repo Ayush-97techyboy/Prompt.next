@@ -1,0 +1,60 @@
+.section-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 24px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.kicker-image {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+
+.about-badge,
+.contact-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: #9ea3b0;
+  margin-bottom: 22px;
+}
+
+.about-badge .badge-icon,
+.contact-badge .badge-icon {
+  width: 14px;
+  height: 14px;
+  object-fit: contain;
+}
+
+.card-tag {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: #1f70ff;
+}
+
+.card-tag-badge {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  background: rgba(31, 112, 255, 0.15);
+  color: #3b82f6;
+  padding: 3px 8px;
+  border-radius: 6px;
+}

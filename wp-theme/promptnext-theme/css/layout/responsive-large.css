@@ -1,0 +1,1691 @@
+/* ==============================================================================
+   Prompt Next - Unified Large Screen & Ultra-Wide / 4K Responsive System
+   STRICTLY ACTIVE ONLY ABOVE 1440px (min-width: 1441px) - DOES NOT TOUCH <= 1440px
+   
+   Aligns left and right margins symmetrically across all pages:
+   - How We Work, About Us, Contact Us
+   - All Industries pages (Main + BFSI, Government, Healthcare, Hospitality, Manufacturing, Telecom)
+   - What We Do & Homepage
+   - Prepared for hidden pages (Insights / Blog & Partners)
+   ============================================================================== */
+
+/* -----------------------------------------------------------------------------
+   Tier 1: 1441px - 1919px (QHD / 1440p viewports & large widescreen monitors)
+   ----------------------------------------------------------------------------- */
+@media (min-width: 1441px) {
+  :root {
+    --container: 1480px;
+  }
+
+  /* 1. Symmetrical Navbars across ALL pages */
+  body .container.nav-wrap,
+  body .nav-wrap,
+  body .wwd-nav,
+  body [class*="-page"] .wwd-nav,
+  body .industries-nav,
+  body [class*="-page"] .industries-nav {
+    width: min(1480px, calc(100% - 96px)) !important;
+    max-width: 1480px !important;
+    margin-inline: auto !important;
+  }
+
+  body .nav-links,
+  body .wwd-nav-links,
+  body [class*="-page"] .wwd-nav-links {
+    justify-content: center !important;
+    gap: 36px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  body .wwd-top-button,
+  body .button-small {
+    margin-left: 0 !important;
+  }
+
+  /* 2. Hero Section Alignment & Proportional Responsive Height */
+    body section.wwd-hero,
+  body section.industries-hero,
+  body section.hww-hero,
+  body section.about-hero,
+  body section.health-hero,
+  body section.bfsi-hero,
+  body section.gov-hero,
+  body section.hosp-hero,
+  body section.mfg-hero,
+  body section.telecom-hero,
+  body section.blog-hero,
+  body section.partners-hero {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    padding-top: clamp(100px, 7vw, 140px) !important;
+    padding-bottom: clamp(60px, 4vw, 80px) !important;
+    min-height: clamp(670px, calc(100vw * 477 / 1024), 860px) !important;
+    box-sizing: border-box !important;
+  }
+
+  body section.contact-hero {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    padding-top: 160px !important;
+    padding-bottom: 70px !important;
+    min-height: 540px !important;
+    box-sizing: border-box !important;
+  }
+
+  
+  /* Ensure all hero images pin cleanly to top without cutting off heads */
+  body .industries-hero-img,
+  body .health-hero-img,
+  body .bfsi-hero-img,
+  body .gov-hero-img,
+  body .hosp-hero-img,
+  body .mfg-hero-img,
+  body .telecom-hero-img {
+    object-fit: cover !important;
+    object-position: center center !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    z-index: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  body .what-we-do-page .wwd-hero,
+  body .industries-page .industries-hero {
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+  }
+
+  /* Reset inner headline containers and spans so they never stretch awkwardly */
+  body .health-hero-content,
+  body [class*="-hero-content"],
+  body [class*="-hero-copy"] {
+    display: block !important;
+    padding: 0 !important;
+    min-height: auto !important;
+    width: 100% !important;
+  }
+
+  body .health-hero-l1,
+  body .health-hero-l2,
+  body [class*="-hero-l1"],
+  body [class*="-hero-l2"],
+  body [class*="-hero-period"], body .health-hero-period { display: inline !important; margin: 0 !important; padding: 0 !important; }
+
+  /* Pages without hero description: ensure inner hero content is perfectly centered vertically & horizontally */
+  body section.health-hero,
+  body section.bfsi-hero,
+  body section.gov-hero,
+  body section.hosp-hero,
+  body section.mfg-hero,
+  body section.telecom-hero,
+  body section.about-hero,
+  body section.partners-hero {
+    justify-content: center !important;
+    align-items: center !important;
+  }
+
+  body section.health-hero .health-hero-inner,
+  body section.bfsi-hero .bfsi-hero-inner,
+  body section.gov-hero .gov-hero-inner,
+  body section.hosp-hero .hosp-hero-inner,
+  body section.mfg-hero .mfg-hero-inner,
+  body section.telecom-hero .telecom-hero-inner,
+  body section.about-hero .about-hero-inner,
+  body section.partners-hero .partners-hero-inner {
+    margin-top: auto !important;
+    margin-bottom: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  
+
+
+
+    body .wwd-hero-inner,
+  body .industries-hero-inner,
+  body .hww-hero-inner,
+  body .about-hero-inner,
+  body .contact-hero-inner,
+  body [class*="-page"] [class*="-hero-inner"] {
+    width: min(1340px, calc(100% - 96px)) !important;
+    max-width: 1340px !important;
+    margin-top: 0 !important;
+    margin-inline: auto !important;
+    padding-top: 0 !important;
+  }
+
+  body .hero-copy {
+    padding-top: 90px !important;
+    max-width: 1260px !important;
+    margin-left: 0 !important;
+    margin-right: auto !important;
+    text-align: left !important;
+  }
+
+  /* 3. Contact Us Page Containers */
+  body .contact-us-page .contact-container,
+  body .contact-us-page .contact-cards-grid,
+  body .contact-us-page .contact-info-strip-card,
+  body .contact-us-page .contact-info-strip-container {
+    width: min(1480px, calc(100% - 96px)) !important;
+    max-width: 1480px !important;
+    margin-inline: auto !important;
+  }
+
+  body .contact-us-page .contact-cards-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 40px !important;
+    align-items: stretch !important;
+  }
+  body .contact-us-page .contact-card {
+    min-width: 0 !important;
+    width: 100% !important;
+    border-radius: 7px !important;
+  }
+  body .contact-us-page .strat-line {
+    white-space: normal !important;
+  }
+
+  /* 4. About Us Page Containers */
+  body .about-us-page .about-container,
+  body .about-us-page .about-lead-grid,
+  body .about-us-page .about-values-grid,
+  body .about-us-page .about-mission-grid,
+  body .about-us-page .about-proof-grid,
+  body .about-us-page .about-timeline,
+  body .about-us-page .about-cta-card {
+    width: min(1480px, calc(100% - 96px)) !important;
+    max-width: 1480px !important;
+    margin-inline: auto !important;
+  }
+
+  /* 5. How We Work Page Containers */
+  body .how-we-work-page .hww-stages-container,
+  body .how-we-work-page .hww-process-grid {
+    width: min(1480px, calc(100% - 96px)) !important;
+    max-width: 1480px !important;
+    margin-inline: auto !important;
+  }
+
+  /* 6. Industries Main Page Containers */
+  body .industries-page .industries-grid,
+  body .industries-grid {
+    width: min(1480px, calc(100% - 96px)) !important;
+    max-width: 1480px !important;
+    margin-inline: auto !important;
+    gap: 36px !important;
+  }
+
+  /* 7. All Industry Subpages (BFSI, Government, Healthcare, Hospitality, Manufacturing, Telecom) */
+  body [class*="-page"] [class*="-context-wrap"],
+  body [class*="-page"] [class*="-pillars-wrap"],
+  body [class*="-page"] [class*="-practice-wrap"],
+  body [class*="-page"] [class*="-delivery-wrap"],
+  body [class*="-page"] [class*="-cta-wrap"] {
+    width: min(1480px, calc(100% - 96px)) !important;
+    max-width: 1480px !important;
+    margin-inline: auto !important;
+  }
+
+  body [class*="-page"] [class*="-pillars-wrap"] {
+    gap: 32px !important;
+  }
+
+  /* 8. What We Do & Homepage Containers */
+  body .container:not(.nav-wrap),
+  body .wwd-capabilities,
+  body [class*="-page"] .wwd-capabilities {
+    width: min(1480px, calc(100% - 96px)) !important;
+    max-width: 1480px !important;
+    margin-inline: auto !important;
+  }
+
+  /* 9. Hidden Pages Preparedness (Insights & Partners) */
+  body .blog-page .blog-container,
+  body .blog-page .blog-layout-grid,
+  body .blog-page .blog-article-hero,
+  body .insights-grid,
+  body .article-grid,
+  body .partners-page .partners-grid,
+  body .partners-page .partners-ecosystem-wrap,
+  body .partners-page .partners-tiers-wrap,
+  body .partners-page .partners-cta-section {
+    width: min(1480px, calc(100% - 96px)) !important;
+    max-width: 1480px !important;
+    margin-inline: auto !important;
+  }
+
+  /* 10. Symmetrical Footers across ALL pages */
+  body .footer-grid,
+  body .wwd-footer-grid,
+  body [class*="-page"] .wwd-footer-grid,
+  body .industries-footer-grid,
+  body .wwd-footer-bottom,
+  body [class*="-page"] .wwd-footer-bottom,
+  body .industries-footer-bottom {
+    width: min(1480px, calc(100% - 96px)) !important;
+    max-width: 1480px !important;
+    margin-inline: auto !important;
+  }
+}
+
+/* -----------------------------------------------------------------------------
+   Tier 2: 1920px - 2399px (Full HD Ultrawide & 2K Displays)
+   ----------------------------------------------------------------------------- */
+@media (min-width: 1920px) {
+  :root {
+    --container: 1800px;
+  }
+
+  /* 1. Symmetrical Navbars */
+  body .container.nav-wrap,
+  body .nav-wrap,
+  body .wwd-nav,
+  body [class*="-page"] .wwd-nav,
+  body .industries-nav,
+  body [class*="-page"] .industries-nav {
+    width: min(1800px, calc(100% - 140px)) !important;
+    max-width: 1800px !important;
+    margin-inline: auto !important;
+  }
+
+  body .nav-links,
+  body .wwd-nav-links,
+  body [class*="-page"] .wwd-nav-links {
+    gap: 44px !important;
+  }
+
+  /* 2. Hero Section Alignment & Proportional Responsive Height */
+    body section.wwd-hero,
+  body section.industries-hero,
+  body section.hww-hero,
+  body section.about-hero,
+  body section.health-hero,
+  body section.bfsi-hero,
+  body section.gov-hero,
+  body section.hosp-hero,
+  body section.mfg-hero,
+  body section.telecom-hero,
+  body section.blog-hero,
+  body section.partners-hero {
+    padding-top: clamp(160px, 9.5vw, 200px) !important;
+    padding-bottom: clamp(70px, 4.5vw, 100px) !important;
+    min-height: clamp(860px, calc(100vw * 477 / 1024), 1080px) !important;
+  }
+
+  body section.contact-hero {
+    padding-top: 170px !important;
+    padding-bottom: 80px !important;
+    min-height: 580px !important;
+  }
+
+    body .wwd-hero-inner,
+  body .industries-hero-inner,
+  body .hww-hero-inner,
+  body .about-hero-inner,
+  body .contact-hero-inner,
+  body [class*="-page"] [class*="-hero-inner"] {
+    width: min(1560px, calc(100% - 140px)) !important;
+    max-width: 1560px !important;
+    margin-inline: auto !important;
+  }
+
+  body .hero-copy {
+    padding-top: 100px !important;
+    max-width: 1440px !important;
+    margin-left: 0 !important;
+    margin-right: auto !important;
+    text-align: left !important;
+  }
+
+  /* 3. Contact Us Page Containers */
+  body .contact-us-page .contact-container,
+  body .contact-us-page .contact-cards-grid,
+  body .contact-us-page .contact-info-strip-card,
+  body .contact-us-page .contact-info-strip-container {
+    width: min(1800px, calc(100% - 140px)) !important;
+    max-width: 1800px !important;
+    margin-inline: auto !important;
+  }
+
+  body .contact-us-page .contact-cards-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 48px !important;
+    align-items: stretch !important;
+  }
+  body .contact-us-page .contact-card {
+    min-width: 0 !important;
+    width: 100% !important;
+    border-radius: 7px !important;
+  }
+  body .contact-us-page .strat-line {
+    white-space: normal !important;
+  }
+
+  /* 4. About Us Page Containers */
+  body .about-us-page .about-container,
+  body .about-us-page .about-lead-grid,
+  body .about-us-page .about-values-grid,
+  body .about-us-page .about-mission-grid,
+  body .about-us-page .about-proof-grid,
+  body .about-us-page .about-timeline,
+  body .about-us-page .about-cta-card {
+    width: min(1800px, calc(100% - 140px)) !important;
+    max-width: 1800px !important;
+    margin-inline: auto !important;
+  }
+
+  /* 5. How We Work Page Containers */
+  body .how-we-work-page .hww-stages-container,
+  body .how-we-work-page .hww-process-grid {
+    width: min(1800px, calc(100% - 140px)) !important;
+    max-width: 1800px !important;
+    margin-inline: auto !important;
+  }
+
+  /* 6. Industries Main Page Containers */
+  body .industries-page .industries-grid,
+  body .industries-grid {
+    width: min(1800px, calc(100% - 140px)) !important;
+    max-width: 1800px !important;
+    margin-inline: auto !important;
+    gap: 44px !important;
+  }
+
+  /* 7. All Industry Subpages */
+  body [class*="-page"] [class*="-context-wrap"],
+  body [class*="-page"] [class*="-pillars-wrap"],
+  body [class*="-page"] [class*="-practice-wrap"],
+  body [class*="-page"] [class*="-delivery-wrap"],
+  body [class*="-page"] [class*="-cta-wrap"] {
+    width: min(1800px, calc(100% - 140px)) !important;
+    max-width: 1800px !important;
+    margin-inline: auto !important;
+  }
+
+  body [class*="-page"] [class*="-pillars-wrap"] {
+    gap: 36px !important;
+  }
+
+  /* 8. What We Do & Homepage Containers */
+  body .container:not(.nav-wrap),
+  body .wwd-capabilities,
+  body [class*="-page"] .wwd-capabilities {
+    width: min(1800px, calc(100% - 140px)) !important;
+    max-width: 1800px !important;
+    margin-inline: auto !important;
+  }
+
+  body .wwd-capability-row {
+    column-gap: 110px;
+    padding: 96px 0;
+  }
+
+  /* 9. Hidden Pages Preparedness (Insights & Partners) */
+  body .blog-page .blog-container,
+  body .blog-page .blog-layout-grid,
+  body .blog-page .blog-article-hero,
+  body .insights-grid,
+  body .article-grid,
+  body .partners-page .partners-grid,
+  body .partners-page .partners-ecosystem-wrap,
+  body .partners-page .partners-tiers-wrap,
+  body .partners-page .partners-cta-section {
+    width: min(1800px, calc(100% - 140px)) !important;
+    max-width: 1800px !important;
+    margin-inline: auto !important;
+  }
+
+  /* 10. Symmetrical Footers across ALL pages */
+  body .footer-grid,
+  body .wwd-footer-grid,
+  body [class*="-page"] .wwd-footer-grid,
+  body .industries-footer-grid,
+  body .wwd-footer-bottom,
+  body [class*="-page"] .wwd-footer-bottom,
+  body .industries-footer-bottom {
+    width: min(1800px, calc(100% - 140px)) !important;
+    max-width: 1800px !important;
+    margin-inline: auto !important;
+  }
+}
+
+/* -----------------------------------------------------------------------------
+   Tier 3: 2400px+ (Ultra-Wide, 1440p scaled & 4K Displays upto 2560px+)
+   ----------------------------------------------------------------------------- */
+@media (min-width: 2400px) {
+  :root {
+    --container: 2160px;
+  }
+
+  /* 1. Symmetrical Navbars */
+  body .container.nav-wrap,
+  body .nav-wrap,
+  body .wwd-nav,
+  body [class*="-page"] .wwd-nav,
+  body .industries-nav,
+  body [class*="-page"] .industries-nav {
+    width: min(2160px, calc(100% - 180px)) !important;
+    max-width: 2160px !important;
+    margin-inline: auto !important;
+  }
+
+  body .nav-links,
+  body .wwd-nav-links,
+  body [class*="-page"] .wwd-nav-links {
+    gap: 52px !important;
+  }
+
+  /* 2. Hero Section Alignment & Proportional Responsive Height (4K / 2560px) */
+    body section.wwd-hero,
+  body section.industries-hero,
+  body section.hww-hero,
+  body section.about-hero,
+  body section.health-hero,
+  body section.bfsi-hero,
+  body section.gov-hero,
+  body section.hosp-hero,
+  body section.mfg-hero,
+  body section.telecom-hero,
+  body section.blog-hero,
+  body section.partners-hero {
+    padding-top: clamp(180px, 9vw, 220px) !important;
+    padding-bottom: clamp(80px, 5vw, 110px) !important;
+    min-height: clamp(1080px, calc(100vw * 477 / 1024), 1200px) !important;
+  }
+
+  body section.contact-hero {
+    padding-top: 180px !important;
+    padding-bottom: 90px !important;
+    min-height: 620px !important;
+  }
+
+    body .wwd-hero-inner,
+  body .industries-hero-inner,
+  body .hww-hero-inner,
+  body .about-hero-inner,
+  body .contact-hero-inner,
+  body [class*="-page"] [class*="-hero-inner"] {
+    width: min(1740px, calc(100% - 180px)) !important;
+    max-width: 1740px !important;
+    margin-inline: auto !important;
+  }
+
+  body .hero-copy {
+    padding-top: 110px !important;
+    max-width: 1600px !important;
+    margin-left: 0 !important;
+    margin-right: auto !important;
+    text-align: left !important;
+  }
+
+  /* 3. Contact Us Page Containers */
+  body .contact-us-page .contact-container,
+  body .contact-us-page .contact-cards-grid,
+  body .contact-us-page .contact-info-strip-card,
+  body .contact-us-page .contact-info-strip-container {
+    width: min(2160px, calc(100% - 180px)) !important;
+    max-width: 2160px !important;
+    margin-inline: auto !important;
+  }
+
+  body .contact-us-page .contact-cards-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 56px !important;
+    align-items: stretch !important;
+  }
+  body .contact-us-page .contact-card {
+    min-width: 0 !important;
+    width: 100% !important;
+    border-radius: 7px !important;
+  }
+  body .contact-us-page .strat-line {
+    white-space: normal !important;
+  }
+
+  /* 4. About Us Page Containers */
+  body .about-us-page .about-container,
+  body .about-us-page .about-lead-grid,
+  body .about-us-page .about-values-grid,
+  body .about-us-page .about-mission-grid,
+  body .about-us-page .about-proof-grid,
+  body .about-us-page .about-timeline,
+  body .about-us-page .about-cta-card {
+    width: min(2160px, calc(100% - 180px)) !important;
+    max-width: 2160px !important;
+    margin-inline: auto !important;
+  }
+
+  /* 5. How We Work Page Containers */
+  body .how-we-work-page .hww-stages-container,
+  body .how-we-work-page .hww-process-grid {
+    width: min(2160px, calc(100% - 180px)) !important;
+    max-width: 2160px !important;
+    margin-inline: auto !important;
+  }
+
+  /* 6. Industries Main Page Containers */
+  body .industries-page .industries-grid,
+  body .industries-grid {
+    width: min(2160px, calc(100% - 180px)) !important;
+    max-width: 2160px !important;
+    margin-inline: auto !important;
+    gap: 48px !important;
+  }
+
+  /* 7. All Industry Subpages */
+  body [class*="-page"] [class*="-context-wrap"],
+  body [class*="-page"] [class*="-pillars-wrap"],
+  body [class*="-page"] [class*="-practice-wrap"],
+  body [class*="-page"] [class*="-delivery-wrap"],
+  body [class*="-page"] [class*="-cta-wrap"] {
+    width: min(2160px, calc(100% - 180px)) !important;
+    max-width: 2160px !important;
+    margin-inline: auto !important;
+  }
+
+  body [class*="-page"] [class*="-pillars-wrap"] {
+    gap: 40px !important;
+  }
+
+  /* 8. What We Do & Homepage Containers */
+  body .container:not(.nav-wrap),
+  body .wwd-capabilities,
+  body [class*="-page"] .wwd-capabilities {
+    width: min(2160px, calc(100% - 180px)) !important;
+    max-width: 2160px !important;
+    margin-inline: auto !important;
+  }
+
+  body .wwd-capability-row {
+    column-gap: 130px;
+    padding: 104px 0;
+  }
+
+  /* 9. Hidden Pages Preparedness (Insights & Partners) */
+  body .blog-page .blog-container,
+  body .blog-page .blog-layout-grid,
+  body .blog-page .blog-article-hero,
+  body .insights-grid,
+  body .article-grid,
+  body .partners-page .partners-grid,
+  body .partners-page .partners-ecosystem-wrap,
+  body .partners-page .partners-tiers-wrap,
+  body .partners-page .partners-cta-section {
+    width: min(2160px, calc(100% - 180px)) !important;
+    max-width: 2160px !important;
+    margin-inline: auto !important;
+  }
+
+  /* 10. Symmetrical Footers across ALL pages */
+  body .footer-grid,
+  body .wwd-footer-grid,
+  body [class*="-page"] .wwd-footer-grid,
+  body .industries-footer-grid,
+  body .wwd-footer-bottom,
+  body [class*="-page"] .wwd-footer-bottom,
+  body .industries-footer-bottom {
+    width: min(2160px, calc(100% - 180px)) !important;
+    max-width: 2160px !important;
+    margin-inline: auto !important;
+  }
+}
+
+@media (min-width: 1441px) {
+
+  /* ==========================================================================
+     Sub-Industries & Pages WITHOUT Hero Description (Government, Manufacturing,
+     Healthcare, BFSI, Hospitality, Telecom, About Us, Partners)
+     Centered vertically & horizontally, matching Government & Manufacturing rule
+     ========================================================================== */
+  body section.gov-hero,
+  body section.mfg-hero,
+  body section.health-hero,
+  body section.bfsi-hero,
+  body section.hosp-hero,
+  body section.telecom-hero,
+  body section.about-hero,
+  body section.partners-hero {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    aspect-ratio: 1024 / 477 !important;
+    min-height: 0 !important;
+    padding-top: clamp(100px, 8vw, 150px) !important;
+    padding-bottom: clamp(40px, 3.5vw, 70px) !important;
+    box-sizing: border-box !important;
+    background-size: 100% 100% !important;
+    background-position: center top !important;
+    background-repeat: no-repeat !important;
+    overflow: hidden !important;
+  }
+
+  body .gov-hero-inner,
+  body .mfg-hero-inner,
+  body .health-hero-inner,
+  body .bfsi-hero-inner,
+  body .hosp-hero-inner,
+  body .telecom-hero-inner,
+  body .about-hero-inner,
+  body .partners-hero-inner {
+    margin: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    width: min(1340px, calc(100% - 96px)) !important;
+    max-width: 1340px !important;
+  }
+
+  body .gov-hero-content,
+  body .mfg-hero-content,
+  body .health-hero-content,
+  body .bfsi-hero-content,
+  body .hosp-hero-content,
+  body .telecom-hero-content {
+    margin: 20px auto 0 !important;
+    text-align: center !important;
+    width: 100% !important;
+  }
+
+  body .gov-hero-inner h1,
+  body .mfg-hero-inner h1,
+  body .health-hero-inner h1,
+  body .bfsi-hero-inner h1,
+  body .hosp-hero-inner h1,
+  body .telecom-hero-inner h1,
+  body .about-hero-inner h1,
+  body .partners-hero-inner h1,
+  body .gov-hero-content h1,
+  body .mfg-hero-content h1,
+  body .health-hero-content h1,
+  body .bfsi-hero-content h1,
+  body .hosp-hero-content h1,
+  body .telecom-hero-content h1 {
+    margin: 0 auto !important;
+    text-align: center !important;
+    max-width: 1300px !important;
+  }
+
+}
+
+
+/* ==============================================================================
+   UNIVERSAL HERO CENTERING ACROSS ALL PAGES (WHOLE APPLICATION)
+   Applies the Government & Manufacturing responsive centering rule to:
+   - All Sub-Industries (Government, Manufacturing, Healthcare, BFSI, Hospitality, Telecom)
+   - All Main Pages (Industries, What We Do, How We Work, About Us, Contact Us, Home)
+   - Hidden Pages (Blog, Insights, Partners)
+   ============================================================================== */
+@media (min-width: 1441px) {
+    body section.wwd-hero,
+  body section.industries-hero,
+  body section.hww-hero,
+  body section.about-hero,
+  body section.contact-hero,
+  body section.gov-hero,
+  body section.mfg-hero,
+  body section.health-hero,
+  body section.bfsi-hero,
+  body section.hosp-hero,
+  body section.telecom-hero,
+  body section.blog-hero,
+  body section.partners-hero,
+  body section.insights-hero {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+    aspect-ratio: 1024 / 477 !important;
+    min-height: 0 !important;
+    padding-top: clamp(90px, 6vw, 120px) !important;
+    padding-bottom: clamp(40px, 3vw, 70px) !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+  }
+
+  /* Universal Inner Container Centering */
+    body .wwd-hero-inner,
+  body .industries-hero-inner,
+  body .hww-hero-inner,
+  body .about-hero-inner,
+  body .contact-hero-inner,
+  body .gov-hero-inner,
+  body .mfg-hero-inner,
+  body .health-hero-inner,
+  body .bfsi-hero-inner,
+  body .hosp-hero-inner,
+  body .telecom-hero-inner,
+  body .blog-hero-inner,
+  body .partners-hero-inner,
+  body .insights-hero-inner,
+  body [class*="-page"] [class*="-hero-inner"] {
+    margin-inline: auto !important;
+    margin-top: auto !important;
+    margin-bottom: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+    width: min(1480px, calc(100% - 96px)) !important;
+    max-width: 1480px !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  /* Universal Hero Content & Titles Centering */
+    body .hero-content,
+  body .gov-hero-content,
+  body .mfg-hero-content,
+  body .health-hero-content,
+  body .bfsi-hero-content,
+  body .hosp-hero-content,
+  body .telecom-hero-content,
+  body [class*="-hero-content"],
+  body [class*="-hero-copy"] {
+    margin-inline: auto !important;
+    text-align: center !important;
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 !important;
+  }
+
+  body section[class*="-hero"] h1,
+    body [class*="-hero-inner"] h1,
+  body [class*="-hero-content"] h1 {
+    margin-inline: auto !important;
+    text-align: center !important;
+    max-width: 1300px !important;
+  }
+
+  body section[class*="-hero"] p:not([class*="breadcrumb"]):not([class*="crumb"]),
+    body [class*="-hero-inner"] p:not([class*="breadcrumb"]):not([class*="crumb"]) {
+    margin-inline: auto !important;
+    text-align: center !important;
+    max-width: 1000px !important;
+  }
+
+  
+}
+
+
+/* ==============================================================================
+   CONTACT US HERO SPACE REDUCTION, BREADCRUMB STACKING ALIGNMENT & LOGO SCALING
+   ============================================================================== */
+@media (min-width: 1441px) {
+  /* 1. Contact Us Hero - Space reduced so half of form cards are visible above fold */
+  body section.contact-hero,
+  body .contact-us-page .contact-hero {
+    aspect-ratio: auto !important;
+    min-height: auto !important;
+    height: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+    padding-top: clamp(95px, 6vw, 120px) !important;
+    padding-bottom: clamp(12px, 1.2vw, 20px) !important;
+    box-sizing: border-box !important;
+  }
+
+  body .contact-us-page .contact-hero-inner {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  body .contact-us-page .contact-hero-inner h1 {
+    margin: 0 0 10px 0 !important;
+    font-size: clamp(38px, 3.8vw, 56px) !important;
+    line-height: 1.15 !important;
+    text-align: center !important;
+  }
+
+  body .contact-us-page .contact-hero-inner p {
+    margin: 0 auto !important;
+    max-width: 900px !important;
+    font-size: clamp(14px, 1.05vw, 16px) !important;
+    line-height: 1.5 !important;
+    text-align: center !important;
+  }
+
+  body .contact-us-page .contact-main-section {
+    padding-top: 10px !important;
+  }
+
+  /* 2. Breadcrumbs Direct Stacking Alignment with Prompt Next Logo */
+  body [class*="-breadcrumb"],
+  body .gov-breadcrumb,
+  body .mfg-breadcrumb,
+  body .health-breadcrumb,
+  body .bfsi-breadcrumb,
+  body .hosp-breadcrumb,
+  body .telecom-breadcrumb {
+    width: 100% !important;
+    text-align: left !important;
+    align-self: flex-start !important;
+    margin-left: 0 !important;
+    margin-right: auto !important;
+    padding-left: 0 !important;
+    margin-bottom: clamp(14px, 1.5vw, 24px) !important;
+  }
+
+  body [class*="-breadcrumb"] a,
+  body [class*="-breadcrumb"] span,
+  body [class*="-sep"],
+  body [class*="-crumb-active"] {
+    text-align: left !important;
+  }
+
+  /* 3. Header & Footer Logo Size Scaling for Large & 4K Displays */
+  body .nav-logo,
+  body a.brand img,
+  body a.wwd-brand img,
+  body .wwd-brand .nav-logo {
+    height: 68px !important;
+    width: auto !important;
+  }
+
+  body .site-footer .nav-logo,
+  body .wwd-footer .nav-logo,
+  body .site-footer a.brand img,
+  body .wwd-footer a.wwd-brand img {
+    height: 68px !important;
+    width: auto !important;
+  }
+}
+
+
+/* ==============================================================================
+   PRECISION BREADCRUMB STACKING ORDER UNDER PROMPT NEXT LOGO
+   ============================================================================== */
+@media (min-width: 1441px) {
+  body .gov-hero-inner,
+  body .mfg-hero-inner,
+  body .health-hero-inner,
+  body .bfsi-hero-inner,
+  body .hosp-hero-inner,
+  body .telecom-hero-inner,
+  body [class*="-page"] [class*="-hero-inner"] {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    text-align: left !important;
+    width: min(1480px, calc(100% - 96px)) !important;
+    max-width: 1480px !important;
+    margin-inline: auto !important;
+    padding-left: 0 !important;
+  }
+
+  body [class*="-breadcrumb"],
+  body .gov-breadcrumb,
+  body .mfg-breadcrumb,
+  body .health-breadcrumb,
+  body .bfsi-breadcrumb,
+  body .hosp-breadcrumb,
+  body .telecom-breadcrumb {
+    width: 100% !important;
+    text-align: left !important;
+    align-self: flex-start !important;
+    margin-left: 0 !important;
+    margin-right: auto !important;
+    padding-left: 0 !important;
+    margin-bottom: clamp(16px, 1.8vw, 32px) !important;
+    display: block !important;
+  }
+
+  body [class*="-breadcrumb"] a,
+  body [class*="-breadcrumb"] span,
+  body [class*="-sep"],
+  body [class*="-crumb-active"] {
+    text-align: left !important;
+    display: inline !important;
+  }
+
+  /* Keep hero title content centered inside the container */
+  body .gov-hero-content,
+  body .mfg-hero-content,
+  body .health-hero-content,
+  body .bfsi-hero-content,
+  body .hosp-hero-content,
+  body .telecom-hero-content,
+  body [class*="-hero-content"] {
+    width: 100% !important;
+    text-align: center !important;
+    margin-inline: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  body .gov-hero-content h1,
+  body .mfg-hero-content h1,
+  body .health-hero-content h1,
+  body .bfsi-hero-content h1,
+  body .hosp-hero-content h1,
+  body .telecom-hero-content h1,
+  body [class*="-hero-content"] h1 {
+    text-align: center !important;
+    margin-inline: auto !important;
+  }
+
+  /* Healthcare period inline fix */
+  body .health-hero-period,
+  body [class*="-hero-period"] {
+    display: inline !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+}
+
+
+/* ==============================================================================
+   PROPORTIONAL TYPOGRAPHY SCALING FOR LARGE & ULTRA-WIDE / 4K MONITORS (> 1440px)
+   ============================================================================== */
+
+/* Tier 1: 1441px - 1919px */
+@media (min-width: 1441px) {
+  /* Navigation */
+  body .nav-links a,
+  body .wwd-nav-links a {
+    font-size: 16px !important;
+  }
+  body .wwd-top-button,
+  body .button-small {
+    font-size: 14px !important;
+    height: 48px !important;
+  }
+
+  /* Breadcrumbs */
+  body [class*="-breadcrumb"],
+  body [class*="-breadcrumb"] a,
+  body [class*="-breadcrumb"] span {
+    font-size: 16px !important;
+  }
+
+  /* Hero Title & Subtitle */
+  body section[class*="-hero"] h1,
+    body [class*="-hero-inner"] h1,
+  body [class*="-hero-content"] h1 {
+    font-size: clamp(52px, 3.8vw, 70px) !important;
+    line-height: 1.15 !important;
+    max-width: 1400px !important;
+  }
+
+  body section[class*="-hero"] p:not([class*="breadcrumb"]):not([class*="crumb"]),
+    body [class*="-hero-inner"] p:not([class*="breadcrumb"]):not([class*="crumb"]) {
+    font-size: clamp(18px, 1.25vw, 22px) !important;
+    line-height: 1.55 !important;
+    max-width: 1200px !important;
+  }
+
+  /* Healthcare Hero Specific Lines */
+  body .healthcare-page .health-hero-l1 {
+    display: block !important;
+    margin-bottom: 6px !important;
+  }
+  body .healthcare-page .health-hero-period {
+    display: inline !important;
+    margin: 0 !important;
+  }
+  body .healthcare-page .health-hero-l2 {
+    display: block !important;
+    color: #858895 !important;
+    font-weight: 400 !important;
+  }
+
+  /* Section Headings */
+  body h2,
+  body section h2,
+  body [class*="-context-copy"] h2,
+  body [class*="-section"] h2 {
+    font-size: clamp(38px, 2.6vw, 48px) !important;
+    line-height: 1.2 !important;
+  }
+
+  /* Card Headings & Body */
+  body h3,
+  body [class*="-card"] h3,
+  body [class*="-card"] h2 {
+    font-size: clamp(22px, 1.5vw, 26px) !important;
+    line-height: 1.3 !important;
+  }
+
+  body [class*="-card"] p,
+  body [class*="-context-copy"] p,
+  body section p:not([class*="hero"]):not([class*="breadcrumb"]) {
+    font-size: clamp(16px, 1.1vw, 18px) !important;
+    line-height: 1.6 !important;
+  }
+}
+
+/* Tier 2: 1920px - 2559px (QHD / 1440p) */
+@media (min-width: 1920px) {
+  body .nav-links a,
+  body .wwd-nav-links a {
+    font-size: 17px !important;
+  }
+  body .wwd-top-button,
+  body .button-small {
+    font-size: 15px !important;
+    height: 50px !important;
+  }
+
+  body [class*="-breadcrumb"],
+  body [class*="-breadcrumb"] a,
+  body [class*="-breadcrumb"] span {
+    font-size: 18px !important;
+  }
+
+  body section[class*="-hero"] h1,
+    body [class*="-hero-inner"] h1,
+  body [class*="-hero-content"] h1 {
+    font-size: clamp(66px, 4.2vw, 84px) !important;
+    line-height: 1.12 !important;
+    max-width: 1600px !important;
+  }
+
+  body section[class*="-hero"] p:not([class*="breadcrumb"]):not([class*="crumb"]),
+    body [class*="-hero-inner"] p:not([class*="breadcrumb"]):not([class*="crumb"]) {
+    font-size: clamp(20px, 1.3vw, 25px) !important;
+    line-height: 1.6 !important;
+    max-width: 1400px !important;
+  }
+
+  body h2,
+  body section h2,
+  body [class*="-context-copy"] h2 {
+    font-size: clamp(46px, 3vw, 56px) !important;
+    line-height: 1.2 !important;
+  }
+
+  body h3,
+  body [class*="-card"] h3 {
+    font-size: clamp(24px, 1.6vw, 30px) !important;
+  }
+
+  body [class*="-card"] p,
+  body [class*="-context-copy"] p {
+    font-size: clamp(17px, 1.15vw, 20px) !important;
+    line-height: 1.65 !important;
+  }
+}
+
+/* Tier 3: 2560px+ (4K UHD) */
+@media (min-width: 2560px) {
+  body .nav-links a,
+  body .wwd-nav-links a {
+    font-size: 19px !important;
+  }
+  body .wwd-top-button,
+  body .button-small {
+    font-size: 16px !important;
+    height: 54px !important;
+  }
+
+  body [class*="-breadcrumb"],
+  body [class*="-breadcrumb"] a,
+  body [class*="-breadcrumb"] span {
+    font-size: 20px !important;
+  }
+
+  body section[class*="-hero"] h1,
+    body [class*="-hero-inner"] h1,
+  body [class*="-hero-content"] h1 {
+    font-size: clamp(78px, 4.5vw, 96px) !important;
+    line-height: 1.1 !important;
+    max-width: 1800px !important;
+  }
+
+  body section[class*="-hero"] p:not([class*="breadcrumb"]):not([class*="crumb"]),
+    body [class*="-hero-inner"] p:not([class*="breadcrumb"]):not([class*="crumb"]) {
+    font-size: clamp(24px, 1.4vw, 30px) !important;
+    line-height: 1.65 !important;
+    max-width: 1600px !important;
+  }
+
+  body h2,
+  body section h2,
+  body [class*="-context-copy"] h2 {
+    font-size: clamp(54px, 3.4vw, 68px) !important;
+    line-height: 1.18 !important;
+  }
+
+  body h3,
+  body [class*="-card"] h3 {
+    font-size: clamp(28px, 1.8vw, 34px) !important;
+  }
+
+  body [class*="-card"] p,
+  body [class*="-context-copy"] p {
+    font-size: clamp(19px, 1.2vw, 22px) !important;
+    line-height: 1.7 !important;
+  }
+}
+
+
+/* ==============================================================================
+   COMPREHENSIVE CONTENT & DESCRIPTION TYPOGRAPHY SCALING (> 1440px)
+   ============================================================================== */
+
+/* Tier 1: 1441px - 1919px (Active on user's 1784px viewport) */
+@media (min-width: 1441px) {
+  /* 1. All Card Content & Descriptions */
+  body [class*="-card"] p,
+  body .industries-card p,
+  body .health-card p,
+  body .bfsi-card p,
+  body .gov-card p,
+  body .hosp-card p,
+  body .mfg-card p,
+  body .telecom-card p,
+  body .about-values-card p,
+  body .about-proof-card p,
+  body .about-mission-card p,
+  body .hww-process-card p,
+  body .hww-stage-copy p,
+  body .contact-card p,
+  body .strategy-subtext,
+  body .strat-line,
+  body .method-card p,
+  body .pillar-card p {
+    font-size: 19px !important;
+    line-height: 1.65 !important;
+  }
+
+  /* 2. Section Context Copy & Leading Paragraphs */
+  body [class*="-context-copy"] p,
+  body [class*="-context-p1"],
+  body [class*="-context-p2"],
+  body [class*="-env-col"],
+  body [class*="-env-grid"] p,
+  body [class*="-delivery-copy"] p,
+  body [class*="-delivery-card"] p,
+  body [class*="-practice-card"] p,
+  body [class*="-practice-l1"],
+  body [class*="-practice-l2"],
+  body .about-lead-copy p,
+  body .wwd-lead,
+  body .wwd-capability-copy p {
+    font-size: 22px !important;
+    line-height: 1.65 !important;
+  }
+
+  /* 3. List Items, Bullets & Practice Details */
+  body ul li,
+  body ol li,
+  body .wwd-capability-copy ul li,
+  body .wwd-capability-copy ul li span,
+  body .wwd-practice-line {
+    font-size: 18px !important;
+    line-height: 1.65 !important;
+  }
+
+  /* 4. Hero Subtitle / Description */
+  body section[class*="-hero"] p:not([class*="breadcrumb"]):not([class*="crumb"]),
+    body [class*="-hero-inner"] p:not([class*="breadcrumb"]):not([class*="crumb"]),
+  body .industries-hero p,
+  body .wwd-hero p,
+  body .hww-hero p,
+  body .contact-hero-inner p,
+  body .about-hero p {
+    font-size: 22px !important;
+    line-height: 1.6 !important;
+    max-width: 1240px !important;
+  }
+
+  /* 5. General Body Paragraphs Across Entire Application */
+  body main p:not([class*="breadcrumb"]):not([class*="crumb"]),
+  body article p,
+  body .container p {
+    font-size: 19px !important;
+    line-height: 1.65 !important;
+  }
+}
+
+/* Tier 2: 1920px - 2559px (QHD / 1440p) */
+@media (min-width: 1920px) {
+  /* 1. All Card Content & Descriptions */
+  body [class*="-card"] p,
+  body .industries-card p,
+  body .health-card p,
+  body .bfsi-card p,
+  body .gov-card p,
+  body .hosp-card p,
+  body .mfg-card p,
+  body .telecom-card p,
+  body .about-values-card p,
+  body .about-proof-card p,
+  body .hww-process-card p,
+  body .contact-card p,
+  body .strategy-subtext,
+  body .strat-line {
+    font-size: 21px !important;
+    line-height: 1.7 !important;
+  }
+
+  /* 2. Section Context Copy & Leading Paragraphs */
+  body [class*="-context-copy"] p,
+  body [class*="-context-p1"],
+  body [class*="-context-p2"],
+  body [class*="-env-col"],
+  body [class*="-env-grid"] p,
+  body [class*="-delivery-copy"] p,
+  body [class*="-practice-card"] p,
+  body .wwd-lead,
+  body .wwd-capability-copy p {
+    font-size: 24px !important;
+    line-height: 1.7 !important;
+  }
+
+  /* 3. List Items & Bullets */
+  body ul li,
+  body ol li,
+  body .wwd-capability-copy ul li,
+  body .wwd-capability-copy ul li span,
+  body .wwd-practice-line {
+    font-size: 20px !important;
+    line-height: 1.7 !important;
+  }
+
+  /* 4. Hero Subtitle / Description */
+  body section[class*="-hero"] p:not([class*="breadcrumb"]):not([class*="crumb"]),
+    body [class*="-hero-inner"] p:not([class*="breadcrumb"]):not([class*="crumb"]),
+  body .industries-hero p,
+  body .wwd-hero p,
+  body .hww-hero p,
+  body .contact-hero-inner p {
+    font-size: 25px !important;
+    line-height: 1.65 !important;
+    max-width: 1440px !important;
+  }
+
+  /* 5. General Body Paragraphs Across Entire Application */
+  body main p:not([class*="breadcrumb"]):not([class*="crumb"]),
+  body article p,
+  body .container p {
+    font-size: 21px !important;
+    line-height: 1.7 !important;
+  }
+}
+
+/* Tier 3: 2560px+ (4K UHD) */
+@media (min-width: 2560px) {
+  /* 1. All Card Content & Descriptions */
+  body [class*="-card"] p,
+  body .industries-card p,
+  body .health-card p,
+  body .bfsi-card p,
+  body .gov-card p,
+  body .hosp-card p,
+  body .mfg-card p,
+  body .telecom-card p,
+  body .about-values-card p,
+  body .about-proof-card p,
+  body .hww-process-card p,
+  body .contact-card p,
+  body .strategy-subtext,
+  body .strat-line {
+    font-size: 24px !important;
+    line-height: 1.7 !important;
+  }
+
+  /* 2. Section Context Copy & Leading Paragraphs */
+  body [class*="-context-copy"] p,
+  body [class*="-context-p1"],
+  body [class*="-context-p2"],
+  body [class*="-env-col"],
+  body [class*="-env-grid"] p,
+  body [class*="-delivery-copy"] p,
+  body [class*="-practice-card"] p,
+  body .wwd-lead,
+  body .wwd-capability-copy p {
+    font-size: 28px !important;
+    line-height: 1.75 !important;
+  }
+
+  /* 3. List Items & Bullets */
+  body ul li,
+  body ol li,
+  body .wwd-capability-copy ul li,
+  body .wwd-capability-copy ul li span,
+  body .wwd-practice-line {
+    font-size: 23px !important;
+    line-height: 1.7 !important;
+  }
+
+  /* 4. Hero Subtitle / Description */
+  body section[class*="-hero"] p:not([class*="breadcrumb"]):not([class*="crumb"]),
+    body [class*="-hero-inner"] p:not([class*="breadcrumb"]):not([class*="crumb"]),
+  body .industries-hero p,
+  body .wwd-hero p,
+  body .hww-hero p,
+  body .contact-hero-inner p {
+    font-size: 28px !important;
+    line-height: 1.65 !important;
+    max-width: 1600px !important;
+  }
+
+  /* 5. General Body Paragraphs Across Entire Application */
+  body main p:not([class*="breadcrumb"]):not([class*="crumb"]),
+  body article p,
+  body .container p {
+    font-size: 24px !important;
+    line-height: 1.7 !important;
+  }
+}
+
+
+/* ==============================================================================
+   GENEROUS BREATHING SPACE SYSTEM FOR LARGE & ULTRA-WIDE / 4K MONITORS (> 1440px)
+   Restores and expands vertical padding, row gaps, card breathing space and section buffers.
+   ============================================================================== */
+@media (min-width: 1441px) {
+  /* 1. What We Do - Capability Rows & Section Padding */
+  body.what-we-do-page .wwd-capabilities,
+  body .wwd-capabilities {
+    padding-top: clamp(60px, 5vw, 100px) !important;
+    padding-bottom: clamp(90px, 7vw, 140px) !important;
+  }
+
+  body.what-we-do-page .wwd-capability-row,
+  body .wwd-capability-row {
+    padding: clamp(90px, 7vw, 140px) 0 !important;
+    column-gap: clamp(80px, 6vw, 120px) !important;
+    min-height: 640px !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  body.what-we-do-page .wwd-capability-row:last-of-type,
+  body .wwd-capability-row:last-of-type {
+    border-bottom: 0;
+  }
+
+  body .wwd-capability-copy h2 {
+    margin-bottom: 24px !important;
+  }
+
+  body .wwd-capability-copy .wwd-lead {
+    margin-bottom: 36px !important;
+  }
+
+  body .wwd-capability-copy ul {
+    margin-top: 24px !important;
+  }
+
+  body .wwd-capability-copy ul li {
+    margin-bottom: 18px !important;
+  }
+
+  /* 2. All Sub-Industry Sections (BFSI, Healthcare, Gov, Hosp, Mfg, Telecom) */
+  body [class*="-page"] [class*="-context-wrap"],
+  body [class*="-page"] [class*="-context-section"] {
+    padding-top: clamp(90px, 7vw, 140px) !important;
+    padding-bottom: clamp(90px, 7vw, 140px) !important;
+  }
+
+  body [class*="-page"] [class*="-pillars-wrap"],
+  body [class*="-page"] [class*="-pillars"] {
+    padding-top: clamp(80px, 6vw, 120px) !important;
+    padding-bottom: clamp(90px, 7vw, 140px) !important;
+    gap: clamp(32px, 2.5vw, 44px) !important;
+  }
+
+  body [class*="-page"] [class*="-practice-wrap"],
+  body [class*="-page"] [class*="-practice"] {
+    padding-top: clamp(90px, 7vw, 140px) !important;
+    padding-bottom: clamp(90px, 7vw, 140px) !important;
+  }
+
+  body [class*="-page"] [class*="-delivery-wrap"],
+  body [class*="-page"] [class*="-delivery"] {
+    padding-top: clamp(80px, 6vw, 120px) !important;
+    padding-bottom: clamp(90px, 7vw, 140px) !important;
+  }
+
+  body [class*="-page"] [class*="-cta-wrap"],
+  body [class*="-page"] [class*="-cta-section"] {
+    padding-top: clamp(90px, 7vw, 140px) !important;
+    padding-bottom: clamp(100px, 8vw, 160px) !important;
+  }
+
+  /* 3. About Us Sections Breathing Space */
+  body .about-us-page .about-lead-grid {
+    padding-top: clamp(90px, 7vw, 140px) !important;
+    padding-bottom: clamp(80px, 6vw, 120px) !important;
+  }
+
+  body .about-us-page .about-values-grid {
+    padding-top: clamp(70px, 5.5vw, 110px) !important;
+    padding-bottom: clamp(80px, 6.5vw, 130px) !important;
+    gap: clamp(32px, 2.5vw, 44px) !important;
+  }
+
+  body .about-us-page .about-mission-grid {
+    padding-top: clamp(80px, 6vw, 120px) !important;
+    padding-bottom: clamp(80px, 6vw, 120px) !important;
+  }
+
+  body .about-us-page .about-timeline {
+    padding-top: clamp(80px, 6vw, 120px) !important;
+    padding-bottom: clamp(80px, 6vw, 120px) !important;
+  }
+
+  body .about-us-page .about-proof-grid {
+    padding-top: clamp(70px, 5.5vw, 110px) !important;
+    padding-bottom: clamp(90px, 7vw, 140px) !important;
+    gap: clamp(32px, 2.5vw, 44px) !important;
+  }
+
+  /* 4. How We Work Sections Breathing Space */
+  body .how-we-work-page .hww-stages-container {
+    padding-top: clamp(90px, 7vw, 140px) !important;
+    padding-bottom: clamp(80px, 6vw, 120px) !important;
+  }
+
+  body .how-we-work-page .hww-process-grid {
+    padding-top: clamp(80px, 6vw, 120px) !important;
+    padding-bottom: clamp(90px, 7vw, 140px) !important;
+    gap: clamp(32px, 2.5vw, 44px) !important;
+  }
+
+  /* 5. Industries Main Page Grid */
+  body .industries-page .industries-grid {
+    padding-top: clamp(90px, 7vw, 140px) !important;
+    padding-bottom: clamp(100px, 8vw, 160px) !important;
+    gap: clamp(32px, 2.5vw, 44px) !important;
+  }
+
+  /* 6. Card Inner Luxurious Padding */
+  body [class*="-card"],
+  body .industries-card,
+  body .health-card,
+  body .bfsi-card,
+  body .gov-card,
+  body .hosp-card,
+  body .mfg-card,
+  body .telecom-card,
+  body .about-values-card,
+  body .about-proof-card,
+  body .about-mission-card,
+  body .hww-process-card,
+  body .pillar-card {
+    padding: clamp(36px, 2.6vw, 52px) clamp(30px, 2.2vw, 44px) !important;
+  }
+
+  /* 7. Pages WITH Hero Description - Restore Full Hero Breathing Space */
+  body.what-we-do-page section.wwd-hero,
+  body.how-we-work-page section.hww-hero,
+  body.industries-page section.industries-hero {
+    aspect-ratio: auto !important;
+    min-height: clamp(660px, calc(100vw * 477 / 1024), 840px) !important;
+    padding-top: clamp(140px, 9vw, 190px) !important;
+    padding-bottom: clamp(70px, 5vw, 100px) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+
+  body.what-we-do-page .wwd-hero-inner,
+  body.how-we-work-page .hww-hero-inner,
+  body.industries-page .industries-hero-inner {
+    margin: auto !important;
+    text-align: center !important;
+    align-items: center !important;
+  }
+
+  body.what-we-do-page .wwd-hero-inner h1,
+  body.how-we-work-page .hww-hero-inner h1,
+  body.industries-page .industries-hero-inner h1 {
+    margin: 0 auto 24px !important;
+    text-align: center !important;
+    max-width: 1300px !important;
+  }
+
+  body.what-we-do-page .wwd-hero-inner p,
+  body.how-we-work-page .hww-hero-inner p,
+  body.industries-page .industries-hero-inner p {
+    margin: 0 auto !important;
+    text-align: center !important;
+    max-width: 1100px !important;
+  }
+}
+
+
+/* ==============================================================================
+   HOMEPAGE (LANDING) HERO - STRICTLY LEFT-ALIGNED AS USUAL (> 1440px)
+   Aligns left with logo and navbar margin, leaving chevron arrows on right.
+   ============================================================================== */
+@media (min-width: 1441px) {
+  body section.hero,
+  section.hero {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    text-align: left !important;
+    aspect-ratio: auto !important;
+    min-height: clamp(660px, calc(100vw * 477 / 1024), 840px) !important;
+    padding-top: clamp(140px, 8.5vw, 190px) !important;
+    padding-bottom: clamp(70px, 4.5vw, 100px) !important;
+    box-sizing: border-box !important;
+  }
+
+  body .hero-inner,
+  .hero-inner {
+    width: min(1480px, calc(100% - 96px)) !important;
+    max-width: 1480px !important;
+    margin-inline: auto !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    text-align: left !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  body .hero-copy,
+  .hero-copy {
+    margin-left: 0 !important;
+    margin-right: auto !important;
+    text-align: left !important;
+    align-items: flex-start !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    max-width: clamp(800px, 52vw, 1200px) !important;
+    padding-top: 0 !important;
+    width: auto !important;
+  }
+
+  body section.hero h1,
+  body .hero-copy h1,
+  body #hero-title {
+    text-align: left !important;
+    margin-left: 0 !important;
+    margin-right: auto !important;
+    align-self: flex-start !important;
+    max-width: 1100px !important;
+    white-space: normal !important;
+  }
+
+  body section.hero p,
+  body .hero-copy p {
+    text-align: left !important;
+    margin-left: 0 !important;
+    margin-right: auto !important;
+    align-self: flex-start !important;
+    max-width: clamp(680px, 45vw, 920px) !important;
+  }
+
+  body .hero-actions,
+  .hero-actions {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    margin-left: 0 !important;
+    margin-right: auto !important;
+    align-self: flex-start !important;
+    margin-top: 36px !important;
+  }
+}
+
+@media (min-width: 1920px) {
+  body .hero-inner,
+  .hero-inner {
+    width: min(1800px, calc(100% - 140px)) !important;
+    max-width: 1800px !important;
+  }
+  body .hero-copy,
+  .hero-copy {
+    max-width: clamp(900px, 52vw, 1350px) !important;
+  }
+  body section.hero p,
+  body .hero-copy p {
+    max-width: clamp(750px, 45vw, 1050px) !important;
+  }
+}
+
+@media (min-width: 2400px) {
+  body .hero-inner,
+  .hero-inner {
+    width: min(2160px, calc(100% - 180px)) !important;
+    max-width: 2160px !important;
+  }
+  body .hero-copy,
+  .hero-copy {
+    max-width: clamp(1050px, 52vw, 1550px) !important;
+  }
+  body section.hero p,
+  body .hero-copy p {
+    max-width: clamp(850px, 45vw, 1200px) !important;
+  }
+}

@@ -1,0 +1,22 @@
+.container {
+  width: min(var(--container), calc(100% - 64px));
+  margin-inline: auto;
+}
+
+@media (max-width: 600px) {
+  .container {
+    width: min(var(--container), calc(100% - 32px));
+  }
+}
+
+.narrow {
+  max-width: 950px;
+}
+
+.about-container,
+.contact-container {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 24px;
+}

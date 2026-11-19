@@ -1,0 +1,782 @@
+/* ==========================================================================
+   CONTACT US PAGE STYLES (.contact-us-page)
+   ========================================================================== */
+.contact-us-page {
+  background: #060709;
+  color: #d1d5db;
+}
+
+.contact-us-page .wwd-nav-links {
+  gap: 35px;
+  margin-left: 16px;
+}
+
+.contact-us-page .wwd-nav-links a {
+  padding: 8px 0;
+}
+
+.contact-us-page .wwd-nav-links a::after {
+  bottom: -6px;
+  height: 3px;
+}
+
+.contact-us-page .contact-container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 clamp(24px, 5.5vw, 80px);
+  box-sizing: border-box;
+}
+
+.contact-us-page .contact-hero {
+  padding: 100px 0 20px !important;
+  text-align: center;
+}
+
+.contact-us-page .contact-hero-inner {
+  max-width: 780px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-us-page .contact-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: #9ea3b0;
+  margin-bottom: 22px;
+}
+
+.contact-us-page .contact-badge .badge-icon {
+  width: 14px;
+  height: 14px;
+  object-fit: contain;
+}
+
+.contact-us-page .contact-hero-inner h1 {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 70px;
+  line-height: 88px;
+  letter-spacing: 0px;
+  text-align: center;
+  color: #ffffff;
+  margin: 0 0 16px;
+}
+
+.contact-us-page .contact-hero-inner p {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 32px;
+  letter-spacing: 0px;
+  text-align: center;
+  color: #B0B0B0;
+  margin: 0;
+}
+
+/* Two Cards Grid */
+.contact-us-page .contact-main-section {
+  padding-top: clamp(30px, 4.8vw, 70px) !important;
+  padding-bottom: clamp(40px, 6.9vw, 100px) !important;
+}
+
+.contact-us-page .contact-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: clamp(32px, 5.5vw, 98px) !important;
+  align-items: stretch !important;
+}
+
+.contact-us-page .contact-card {
+  background: #111317;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 7px !important;
+  padding: 31px 34px !important;
+  min-height: 795px;
+  min-width: 0 !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-us-page .contact-card-header {
+  position: relative;
+  width: 100%;
+  min-height: 133px;
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.contact-us-page .contact-header-text {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.contact-us-page .strat-line {
+  display: inline !important;
+  white-space: normal !important;
+  overflow-wrap: break-word !important;
+}
+
+.contact-us-page .card-tag-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 141px;
+  height: 34px;
+  box-sizing: border-box;
+  background: #D6DAE6;
+  border: 1px solid #1652F0;
+  border-radius: 20px;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 25.6px;
+  letter-spacing: 0px;
+  color: #1652F0;
+  text-transform: none;
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+.contact-us-page .contact-card-header h2 {
+  font-family: var(--font-sans);
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 41.6px;
+  letter-spacing: 0px;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+.contact-us-page .contact-card-header p {
+  font-family: var(--font-sans);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 25.6px;
+  letter-spacing: 0px;
+  color: #B0B0B0;
+  margin: 0;
+  text-align: left !important;
+}
+
+/* Strategy Card Inner Box */
+.contact-us-page .strategy-card-inner {
+  background: #0b0c10;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1;
+}
+
+/* Calendar Widget */
+.contact-us-page .calendar-widget {
+  width: 100%;
+}
+
+.contact-us-page .calendar-top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.contact-us-page .cal-session-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #E5E2E1;
+}
+
+.contact-us-page .cal-icon-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  padding: 0;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.contact-us-page .cal-icon-btn:hover {
+  transform: scale(1.08);
+  filter: brightness(1.2);
+}
+
+.contact-us-page .cal-native-date-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+}
+
+.contact-us-page .cal-header-icon {
+  width: 18px;
+  height: 20px;
+  display: block;
+  flex-shrink: 0;
+  pointer-events: none;
+}
+
+.contact-us-page .cal-tz-label {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #A1A1AA;
+}
+
+.contact-us-page .cal-divider {
+  width: 100%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.08);
+  margin-bottom: 16px;
+}
+
+.contact-us-page .calendar-days-row {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+  text-align: center;
+}
+
+.contact-us-page .cal-day-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.contact-us-page .cal-day-cell .day-name {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  color: #A1A1AA;
+  text-align: center;
+}
+
+.contact-us-page .cal-day-cell .day-num {
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  color: #FFFFFF;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.contact-us-page .cal-day-cell .day-num.muted {
+  color: #52525B;
+}
+
+.contact-us-page .cal-day-cell.active .day-num,
+.contact-us-page .cal-day-cell:hover .day-num {
+  background: #1652F0;
+  color: #FFFFFF;
+}
+
+/* Forms - Shared Across Both Cards */
+.contact-us-page .contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contact-us-page .message-card .contact-form {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.contact-us-page .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.contact-us-page .form-group label {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  color: #A1A1AA;
+}
+
+.contact-us-page .form-group input {
+  width: 100%;
+  height: 52px;
+  background: #0D0E11;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 14px 16px;
+  font-family: var(--font-sans);
+  font-size: 16px;
+  font-weight: 400;
+  color: #FFFFFF;
+  box-sizing: border-box;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.contact-us-page .form-group textarea {
+  width: 100%;
+  background: #0D0E11;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 14px 16px;
+  font-family: var(--font-sans);
+  font-size: 16px;
+  font-weight: 400;
+  color: #FFFFFF;
+  box-sizing: border-box;
+  resize: vertical;
+  min-height: 110px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.contact-us-page .form-group input::placeholder,
+.contact-us-page .form-group textarea::placeholder {
+  color: rgba(161, 161, 170, 0.3);
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0px;
+}
+
+.contact-us-page .form-group input:focus,
+.contact-us-page .form-group textarea:focus {
+  outline: none;
+  border-color: #1652F0;
+  box-shadow: 0 0 0 3px rgba(22, 82, 240, 0.2);
+}
+
+.contact-us-page .contact-submit-btn {
+  width: 100%;
+  height: 52px;
+  background: #1652F0;
+  color: #FFFFFF;
+  font-family: var(--font-sans);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0px;
+  text-transform: none;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease, transform 0.2s ease;
+  margin-top: 8px;
+}
+
+.contact-us-page .contact-submit-btn:hover {
+  background: #2563eb;
+  transform: translateY(-1px);
+}
+
+/* Contact Info Strip - Single Unified Card */
+.contact-us-page .contact-info-strip-section {
+  padding: 30px 0 100px;
+}
+
+.contact-us-page .contact-info-strip-card {
+  background: #111317;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 40px 48px;
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  justify-content: space-between;
+  align-items: flex-start;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+}
+
+.contact-us-page .contact-info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.contact-us-page .contact-info-item.center-align {
+  align-items: center;
+}
+
+.contact-us-page .info-icon {
+  width: 35px;
+  height: 35px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-us-page .info-icon img {
+  width: 35px;
+  height: 35px;
+  display: block;
+}
+
+.contact-us-page .info-text-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.contact-us-page .info-heading {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 26px;
+  letter-spacing: 0px;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+.contact-us-page .info-underlined-link {
+  color: #FFFFFF;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1px;
+  transition: color 0.2s ease;
+}
+
+.contact-us-page .info-underlined-link:hover {
+  color: #1652F0;
+}
+
+.contact-us-page .info-content-link {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 20px;
+  color: #B0B0B0;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.contact-us-page .info-content-link:hover {
+  color: #FFFFFF;
+}
+
+.contact-us-page .info-content-address {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 20px;
+  color: #B0B0B0;
+  font-style: normal;
+  margin: 0;
+}
+
+@media (max-width: 960px) {
+  .contact-us-page .contact-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .contact-us-page .contact-card-header {
+    min-height: auto;
+  }
+  .contact-us-page .contact-info-strip-card {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 32px;
+  }
+  .contact-us-page .wwd-nav-links {
+    display: none;
+  }
+  .contact-us-page .wwd-nav {
+    justify-content: space-between;
+  }
+  .contact-us-page .wwd-top-button {
+    margin-left: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .contact-us-page .wwd-header {
+    height: 62px;
+  }
+  .contact-us-page .wwd-nav {
+    width: calc(100% - 34px);
+    height: 62px;
+  }
+  .contact-us-page .wwd-top-button {
+    display: none;
+  }
+  .contact-us-page .contact-hero {
+  padding: 100px 0 20px !important;
+  text-align: center;
+}
+  .contact-us-page .contact-hero-inner {
+    width: calc(100% - 34px);
+  }
+  .contact-us-page .contact-hero-inner h1 {
+    font-size: 28px;
+    line-height: 1.2;
+    margin-bottom: 14px;
+  }
+  .contact-us-page .contact-hero-inner p {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  .contact-us-page .contact-card {
+    padding: 28px 20px;
+  }
+  .contact-us-page .calendar-days-row {
+    gap: 4px;
+  }
+  .contact-us-page .cal-day-cell .day-num {
+    width: 32px;
+    height: 32px;
+    font-size: 13px;
+  }
+  .contact-us-page .contact-info-strip-card {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 28px 20px;
+  }
+}
+
+/* ==========================================================================
+   Figma Uniform Hero Typography System
+   ========================================================================== */
+.contact-us-page .contact-hero-inner h1 {
+  font-family: var(--font-sans) !important;
+  font-size: 70px !important;
+  line-height: 88px !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+  letter-spacing: 0px !important;
+}
+
+.contact-us-page .contact-hero-inner p {
+  font-family: var(--font-sans) !important;
+  font-size: 20px !important;
+  line-height: 32px !important;
+  font-weight: 400 !important;
+  color: #b0b0b0 !important;
+  letter-spacing: 0px !important;
+}
+
+@media (max-width: 1050px) {
+  .contact-us-page .contact-hero-inner h1 {
+    font-size: clamp(48px, 5vw, 58px) !important;
+    line-height: 1.15 !important;
+  }
+  .contact-us-page .contact-hero-inner p {
+    font-size: 18px !important;
+    line-height: 28px !important;
+  }
+}
+
+@media (max-width: 800px) {
+  .contact-us-page .contact-hero-inner h1 {
+    font-size: clamp(40px, 5.5vw, 50px) !important;
+    line-height: 1.15 !important;
+  }
+  .contact-us-page .contact-hero-inner p {
+    font-size: 16px !important;
+    line-height: 26px !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .contact-us-page .contact-hero-inner h1 {
+    font-size: clamp(34px, 8vw, 42px) !important;
+    line-height: 1.15 !important;
+  }
+  .contact-us-page .contact-hero-inner p {
+    font-size: 14px !important;
+    line-height: 22px !important;
+  }
+  .contact-us-page .contact-card-header {
+    flex-direction: column;
+    gap: 12px;
+    min-height: auto;
+  }
+  .contact-us-page .contact-header-text {
+    max-width: 100%;
+  }
+  .contact-us-page .strat-line {
+    display: inline;
+    white-space: normal;
+  }
+  .contact-us-page .card-tag-badge {
+    align-self: flex-start;
+    margin-top: 0;
+  }
+}
+
+/* ==========================================================================
+   Custom Confirmation Dialog Modal
+   ========================================================================== */
+.contact-us-page .custom-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: rgba(4, 5, 8, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.contact-us-page .custom-modal-backdrop.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.contact-us-page .custom-modal-box {
+  background: #111317;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  padding: 36px 32px 32px;
+  width: 100%;
+  max-width: 440px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6), 0 0 40px rgba(22, 82, 240, 0.12);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transform: scale(0.92);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-sizing: border-box;
+}
+
+.contact-us-page .custom-modal-backdrop.active .custom-modal-box {
+  transform: scale(1);
+}
+
+.contact-us-page .modal-icon-badge {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: rgba(22, 82, 240, 0.12);
+  border: 1px solid #1652F0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  color: #1652F0;
+}
+
+.contact-us-page .modal-icon-badge svg {
+  display: block;
+}
+
+.contact-us-page .modal-title {
+  font-family: var(--font-sans);
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 28px;
+  color: #FFFFFF;
+  margin: 0 0 10px;
+}
+
+.contact-us-page .modal-message {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 22px;
+  color: #B0B0B0;
+  margin: 0 0 28px;
+  max-width: 360px;
+}
+
+.contact-us-page .modal-confirm-btn {
+  width: 100%;
+  height: 48px;
+  background: #1652F0;
+  color: #FFFFFF;
+  font-family: var(--font-sans);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.contact-us-page .modal-confirm-btn:hover {
+  background: #2563eb;
+  transform: translateY(-1px);
+}
+
+.contact-us-page .modal-confirm-btn:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 480px) {
+  .contact-us-page .custom-modal-backdrop {
+    padding: 16px;
+  }
+  .contact-us-page .custom-modal-box {
+    padding: 28px 20px 24px;
+    border-radius: 16px;
+  }
+  .contact-us-page .modal-title {
+    font-size: 20px;
+    line-height: 26px;
+  }
+  .contact-us-page .modal-message {
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 24px;
+  }
+}

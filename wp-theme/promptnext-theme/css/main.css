@@ -1,0 +1,98 @@
+/* Prompt Next - Master Shared Core */
+@import url("base/variables.css");
+@import url("base/reset.css");
+@import url("layout/container.css");
+@import url("layout/header.css");
+@import url("layout/footer.css");
+@import url("layout/mobile-nav.css");
+@import url("components/buttons.css");
+@import url("components/badges.css");
+@import url("components/forms.css");
+@import url("layout/responsive-large.css");
+
+
+/* ==============================================================================
+   UNIFIED BRAND LOGO SIZING (HEADER == FOOTER ACROSS ALL DEVICES)
+   ============================================================================== */
+body .nav-logo,
+body .brand .nav-logo,
+body .wwd-brand .nav-logo,
+body .site-header .nav-logo,
+body .wwd-header .nav-logo,
+body .site-footer .nav-logo,
+body .wwd-footer .nav-logo,
+body .site-footer a.brand img,
+body .site-footer a.wwd-brand img,
+body .wwd-footer a.brand img,
+body .wwd-footer a.wwd-brand img {
+  height: 64px !important;
+  width: auto !important;
+  object-fit: contain !important;
+}
+
+@media (max-width: 600px) {
+  body .nav-logo,
+  body .brand .nav-logo,
+  body .wwd-brand .nav-logo,
+  body .site-header .nav-logo,
+  body .wwd-header .nav-logo,
+  body .site-footer .nav-logo,
+  body .wwd-footer .nav-logo,
+  body .site-footer a.brand img,
+  body .site-footer a.wwd-brand img,
+  body .wwd-footer a.brand img,
+  body .wwd-footer a.wwd-brand img {
+    height: 64px !important;
+    width: auto !important;
+  }
+}
+
+@media (min-width: 1600px) {
+  body .nav-logo,
+  body .brand .nav-logo,
+  body .wwd-brand .nav-logo,
+  body .site-header .nav-logo,
+  body .wwd-header .nav-logo,
+  body .site-footer .nav-logo,
+  body .wwd-footer .nav-logo,
+  body .site-footer a.brand img,
+  body .site-footer a.wwd-brand img,
+  body .wwd-footer a.brand img,
+  body .wwd-footer a.wwd-brand img {
+    height: 68px !important;
+    width: auto !important;
+  }
+}
+
+
+/* ==============================================================================
+   FIGMA EXACT CONTACT US FORM GRID (50/50 EQUAL ORDER FROM 961px TO 4K 2560px+)
+   ============================================================================== */
+@media (min-width: 961px) {
+  body .contact-us-page .contact-cards-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: clamp(32px, 5.5vw, 98px) !important;
+    align-items: stretch !important;
+    width: 100% !important;
+    max-width: 1440px !important;
+    margin-inline: auto !important;
+  }
+
+  body .contact-us-page .contact-card {
+    min-width: 0 !important;
+    width: 100% !important;
+    min-height: 795px !important;
+    border-radius: 7px !important;
+    padding: 31px 34px !important;
+    box-sizing: border-box !important;
+  }
+
+  body .contact-us-page .strat-line,
+  body .contact-us-page .strategy-subtext {
+    display: inline !important;
+    white-space: normal !important;
+    overflow-wrap: break-word !important;
+    word-break: normal !important;
+  }
+}

@@ -1,0 +1,252 @@
+/* Landing Page Header */
+.site-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  height: 78px;
+  background: linear-gradient(180deg, rgba(0, 4, 28, 0.65), transparent);
+}
+
+/* Sticky-on-scroll state, toggled by interaction.js.
+   Header is already out of flow (absolute), so going fixed causes no reflow.
+   body prefix outranks page-scoped ".<page> .wwd-header" overrides. */
+body .site-header.is-stuck,
+body .wwd-header.is-stuck {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 1000 !important;
+  background: rgba(8, 9, 11, 0.75) !important;
+  -webkit-backdrop-filter: blur(16px) saturate(150%) !important;
+  backdrop-filter: blur(16px) saturate(150%) !important;
+  border-bottom: 1px solid var(--line) !important;
+  transition: background 0.3s ease, backdrop-filter 0.3s ease;
+}
+
+html {
+  scroll-padding-top: 100px !important;
+}
+
+[id],
+h1,
+h2,
+h3,
+section,
+article {
+  scroll-margin-top: 100px !important;
+}
+
+/* Laptop tier: keep 7 links + CTA inside the container at ~1024px.
+   body + doubled class = specificity (0,2,1), which beats page-scoped
+   (0,2,0) rules like .industries-page .wwd-nav-links { gap:35px }. */
+@media (max-width: 1100px) {
+  body .nav-links.nav-links {
+    gap: 22px;
+    margin-left: 8px;
+  }
+
+  body .wwd-nav-links.wwd-nav-links {
+    gap: 18px;
+    margin-left: 10px;
+  }
+
+  body .nav-links a,
+  body .wwd-nav-links.wwd-nav-links a {
+    font-size: 13px;
+  }
+
+  body .nav-wrap.nav-wrap,
+  body .wwd-nav.wwd-nav {
+    gap: 10px;
+  }
+
+  body .wwd-top-button.wwd-top-button,
+  body .button-small.button-small {
+    min-width: 180px;
+    width: auto;
+    padding: 0 16px;
+    font-size: 12px;
+  }
+}
+
+
+.nav-wrap {
+  height: 78px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 0.9;
+  letter-spacing: -0.5px;
+  white-space: nowrap;
+}
+
+
+.nav-logo {
+  display: block;
+  height: 64px !important;
+  width: auto !important;
+  object-fit: contain !important;
+}
+
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 35px;
+  margin-left: 16px;
+  flex: 1;
+}
+
+
+.nav-links a {
+  color: #858895;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 400;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+
+.nav-links a::after {
+  position: absolute;
+  right: 0;
+  bottom: -6px;
+  left: 0;
+  height: 2px;
+  content: "";
+  border-radius: 2px;
+  background: #1f6cff;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+
+.nav-links a:hover::after,
+.nav-links a:focus::after,
+.nav-links a:focus-visible::after,
+.nav-links a[aria-current="page"]::after {
+  opacity: 1;
+}
+
+
+.nav-links a:hover,
+.nav-links a[aria-current="page"] {
+  color: #fff;
+}
+
+
+/* Global WWD Header Navigation */
+.wwd-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  height: 78px;
+  background: transparent;
+}
+
+
+.wwd-nav {
+  width: min(1280px, calc(100% - 64px));
+  height: 78px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+
+.wwd-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: #f6f7fa;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 0.9;
+  letter-spacing: -0.5px;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+
+.wwd-brand .nav-logo {
+  height: 64px !important;
+  width: auto !important;
+  object-fit: contain !important;
+}
+
+
+.wwd-nav-links {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 32px;
+  margin-left: 24px;
+}
+
+
+.wwd-nav-links a {
+  position: relative;
+  color: #92949a;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 400;
+  white-space: nowrap;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  padding: 8px 0;
+}
+
+
+.wwd-nav-links a::after {
+  position: absolute;
+  right: 0;
+  bottom: -6px;
+  left: 0;
+  height: 3px;
+  content: "";
+  border-radius: 2px;
+  background: #1f6cff;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+
+.wwd-nav-links a:hover,
+.wwd-nav-links a:focus-visible,
+.wwd-nav-links a[aria-current="page"] {
+  color: #ffffff;
+}
+
+
+.wwd-nav-links a:hover::after,
+.wwd-nav-links a:focus-visible::after,
+.wwd-nav-links a[aria-current="page"]::after {
+  opacity: 1;
+}
+
+@media (max-width: 600px) {
+  .nav-logo,
+  .wwd-brand .nav-logo {
+    height: 64px !important;
+  }
+}

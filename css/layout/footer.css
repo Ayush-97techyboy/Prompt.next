@@ -7,11 +7,11 @@
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.25fr 1fr 1.15fr 1.15fr 0.8fr;
+  grid-template-columns: 1.35fr 1fr 1.15fr 1.4fr;
   gap: 38px;
-  max-width: 1360px;
+  max-width: 1280px;
   margin: 0 auto;
-  width: calc(100% - 80px);
+  width: min(1280px, calc(100% - 64px));
   align-items: start;
 }
 
@@ -28,7 +28,7 @@
 .wwd-footer .wwd-footer-grid a.brand img,
 .site-footer .nav-logo,
 .wwd-footer .nav-logo {
-  height: 52px !important;
+  height: 64px !important;
   width: auto !important;
   object-fit: contain;
   display: block;
@@ -54,7 +54,7 @@
 }
 
 .footer-column a {
-  color: #777980;
+  color: #B0B0B0;
   font-size: 14px;
   line-height: 1.25;
   transition: color 0.2s ease;
@@ -71,9 +71,9 @@
   margin-top: 37px;
   padding-top: 20px;
   border-top: 1px solid rgba(255, 255, 255, 0.04);
-  color: #858895;
+  color: #B0B0B0;
   font-size: 14px;
-  max-width: 1360px;
+  max-width: 1280px;
   margin-left: auto;
   margin-right: auto;
   width: calc(100% - 80px);
@@ -118,20 +118,19 @@
     grid-column: span 1;
   }
 
-  .footer-grid > div:nth-child(4),
-  .footer-grid > div:nth-child(5) {
-    grid-column: span 1;
+  .footer-grid > div:nth-child(4) {
+    grid-column: span 2;
   }
 }
 
 @media (max-width: 600px) {
   .footer-grid {
-    grid-template-columns: 1fr;
-    gap: 24px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 32px 20px;
   }
 
-  .footer-grid > div {
-    grid-column: span 1;
+  .footer-grid > div:first-child {
+    grid-column: 1 / -1;
   }
 }
 
@@ -143,9 +142,9 @@
 }
 
 .wwd-footer-grid {
-  width: min(1360px, calc(100% - 80px));
+  width: min(1280px, calc(100% - 64px));
   display: grid;
-  grid-template-columns: 1.25fr 1fr 1.15fr 1.15fr 0.8fr;
+  grid-template-columns: 1.35fr 1fr 1.15fr 1.4fr;
   gap: 38px;
   margin: 0 auto;
 }
@@ -172,20 +171,19 @@
     grid-column: span 1;
   }
 
-  .wwd-footer-grid > div:nth-child(4),
-  .wwd-footer-grid > div:nth-child(5) {
-    grid-column: span 1;
+  .wwd-footer-grid > div:nth-child(4) {
+    grid-column: span 2;
   }
 }
 
 @media (max-width: 600px) {
   .wwd-footer-grid {
-    grid-template-columns: 1fr;
-    gap: 24px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 32px 20px;
   }
 
-  .wwd-footer-grid > div {
-    grid-column: span 1;
+  .wwd-footer-grid > div:first-child {
+    grid-column: 1 / -1;
   }
 }
 
@@ -197,7 +195,7 @@
 }
 
 .wwd-footer-grid a:not(.wwd-brand) {
-  color: #777980;
+  color: #B0B0B0;
   font-size: 14px;
   line-height: 1.35;
   text-decoration: none;
@@ -210,14 +208,14 @@
 }
 
 .wwd-footer-bottom {
-  width: min(1360px, calc(100% - 80px));
+  width: min(1280px, calc(100% - 64px));
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin: 36px auto 0;
   padding-top: 20px;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
-  color: #858895;
+  color: #B0B0B0;
   font-size: 13px;
 }
 
@@ -235,4 +233,40 @@
 .wwd-footer-bottom span:last-child {
   display: flex;
   gap: 20px;
+}
+
+
+/* ==============================================================================
+   ALL FOOTER LINKS - COLOR #B0B0B0 ACROSS ALL PAGES
+   ============================================================================== */
+footer a:not(.brand):not(.wwd-brand),
+.site-footer a:not(.brand):not(.wwd-brand),
+.wwd-footer a:not(.brand):not(.wwd-brand),
+.footer-column a,
+.footer-grid a:not(.brand):not(.wwd-brand),
+.wwd-footer-grid a:not(.brand):not(.wwd-brand),
+.industries-footer-column a,
+.footer-bottom a,
+.wwd-footer-bottom a,
+body [class*="-page"] .wwd-footer-grid a:not(.wwd-brand):not(.brand),
+body [class*="-page"] .wwd-footer-bottom a,
+body [class*="-page"] .footer-column a,
+body [class*="-page"] .footer-bottom a {
+  color: #B0B0B0 !important;
+}
+
+footer a:not(.brand):not(.wwd-brand):hover,
+.site-footer a:not(.brand):not(.wwd-brand):hover,
+.wwd-footer a:not(.brand):not(.wwd-brand):hover,
+.footer-column a:hover,
+.footer-grid a:not(.brand):not(.wwd-brand):hover,
+.wwd-footer-grid a:not(.brand):not(.wwd-brand):hover,
+.industries-footer-column a:hover,
+.footer-bottom a:hover,
+.wwd-footer-bottom a:hover,
+body [class*="-page"] .wwd-footer-grid a:not(.wwd-brand):not(.brand):hover,
+body [class*="-page"] .wwd-footer-bottom a:hover,
+body [class*="-page"] .footer-column a:hover,
+body [class*="-page"] .footer-bottom a:hover {
+  color: #ffffff !important;
 }

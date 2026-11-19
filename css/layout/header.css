@@ -27,7 +27,16 @@ body .wwd-header.is-stuck {
 }
 
 html {
-  scroll-padding-top: 86px;
+  scroll-padding-top: 100px !important;
+}
+
+[id],
+h1,
+h2,
+h3,
+section,
+article {
+  scroll-margin-top: 100px !important;
 }
 
 /* Laptop tier: keep 7 links + CTA inside the container at ~1024px.
@@ -87,9 +96,9 @@ html {
 
 .nav-logo {
   display: block;
-  height: 46px;
-  width: auto;
-  object-fit: contain;
+  height: 64px !important;
+  width: auto !important;
+  object-fit: contain !important;
 }
 
 
@@ -179,9 +188,9 @@ html {
 
 
 .wwd-brand .nav-logo {
-  height: 46px;
-  width: auto;
-  object-fit: contain;
+  height: 64px !important;
+  width: auto !important;
+  object-fit: contain !important;
 }
 
 
@@ -233,4 +242,11 @@ html {
 .wwd-nav-links a:focus-visible::after,
 .wwd-nav-links a[aria-current="page"]::after {
   opacity: 1;
+}
+
+@media (max-width: 600px) {
+  .nav-logo,
+  .wwd-brand .nav-logo {
+    height: 64px !important;
+  }
 }

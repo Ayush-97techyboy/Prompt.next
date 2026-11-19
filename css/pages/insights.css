@@ -41,7 +41,7 @@
 }
 
 .insights-page .wwd-brand .nav-logo {
-  height: 46px;
+  height: 64px !important;
   width: auto;
   object-fit: contain;
 }
