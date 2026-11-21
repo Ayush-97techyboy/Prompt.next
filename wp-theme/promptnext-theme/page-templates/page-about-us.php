@@ -15,7 +15,7 @@ get_header(); ?>
           <img src="<?php echo get_template_directory_uri(); ?>/assets/images/badge-what-icon.png" alt="" class="badge-icon" />
           <span>ABOUT US</span>
         </div> -->
-        <h1>We exist because intent without execution is just planning.</h1>
+        <h1><?php echo esc_html(promptnext_get_text('about_hero_headline', 'We exist because intent without execution is just planning.')); ?></h1>
       </div>
     </section>
 
@@ -23,7 +23,7 @@ get_header(); ?>
     <section class="about-story-section about-company-section" aria-label="The Company">
       <div class="about-container about-story-grid">
         <div class="about-story-text about-story-text--company">
-          <span class="about-eyebrow">THE COMPANY</span>
+          <span class="about-eyebrow"><?php echo esc_html(promptnext_get_text('about_company_eyebrow', 'THE COMPANY')); ?></span>
           <p>Prompt Next Group was founded to solve the gap between technology decisions and real-world outcomes. We
             take technology initiatives from decision to working outcome, across regulated and complex industries
             throughout the Asia-Pacific region.</p>
@@ -43,7 +43,7 @@ get_header(); ?>
             <img src="<?php echo get_template_directory_uri(); ?>/assets/Correct_PIxalate/landing_pg_icons/vision.svg" alt="Vision Icon" />
           </div>
           <span class="about-value-tag">VISION</span>
-          <h3>A world where technology execution is no longer the bottleneck to business growth.</h3>
+          <h3><?php echo esc_html(promptnext_get_text('about_vision_text', 'A world where technology execution is no longer the bottleneck to business growth.')); ?></h3>
         </article>
 
         <!-- Mission Card -->

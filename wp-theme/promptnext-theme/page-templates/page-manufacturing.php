@@ -13,7 +13,7 @@ get_header(); ?>
       <div class="mfg-hero-inner">
         <p class="mfg-breadcrumb"><a href="<?php echo esc_url(home_url('/industries/')); ?>">Industries</a> <span class="mfg-sep">&gt;&gt;</span> <span class="mfg-crumb-active">Manufacturing</span></p>
         <div class="mfg-hero-content">
-          <h1>Smarter operations. Connected plants. AI that actually works on the factory floor. All delivered without stopping what keeps your business running</h1>
+          <h1><?php echo esc_html(promptnext_get_text('manufacturing_hero_h1', 'Smart manufacturing architectures connecting legacy OT environments with real-time AI analytics.')); ?></h1>
         </div>
       </div>
     </section>

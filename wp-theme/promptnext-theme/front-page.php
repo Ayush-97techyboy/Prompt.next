@@ -8,8 +8,8 @@ get_header(); ?>
       <div class="hero-chevron chevron-three"></div>
       <div class="container hero-inner">
         <div class="hero-copy">
-          <h1>From Intent <span id="mobile-view"> To Outcome</h1>
-          <p>We run complex technology programmes for enterprises, coordinating every party from decision to live production.</p>
+          <h1><?php echo esc_html(promptnext_get_text('home_hero_title', 'From Intent To Outcome')); ?></h1>
+          <p><?php echo esc_html(promptnext_get_text('home_hero_sub', 'We run complex technology programmes for enterprises, coordinating every party from decision to live production.')); ?></p>
           <div class="hero-actions">
             <a class="button button-light" href="<?php echo esc_url(home_url('/contact-us/')); ?>">START A CONVERSATION</a>
             <a class="text-link" href="<?php echo esc_url(home_url('/how-we-work/')); ?>">SEE HOW WE WORK <span class="down-arrow"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="m2 4 4 4 4-4"/></svg></span></a>
@@ -19,18 +19,18 @@ get_header(); ?>
     </section>
 
     <section class="stat-strip container" aria-label="Company statistics">
-      <div class="stat"><strong>$2.3T</strong><span>Lost to failed technology programmes globally, every year.</span><small>Gartner</small></div>
-      <div class="stat"><strong>70%</strong><span>Enterprise technology programmes fail to meet original objectives.</span><small>McKinsey Global Institute</small></div>
-      <div class="stat"><strong>52%</strong><span>AI initiatives in regulated industries never reach production.</span><small>IDC, 2024</small></div>
-      <div class="stat"><strong>$1.4T</strong><span>APAC ICT spending in 2025, growing at 5.8% annually.</span><small>IDC, March 2025</small></div>
+      <div class="stat"><strong><?php echo esc_html(promptnext_get_text('home_stat1_num', '$2.3T')); ?></strong><span><?php echo esc_html(promptnext_get_text('home_stat1_text', 'Lost to failed technology programmes globally, every year.')); ?></span><small>Gartner</small></div>
+      <div class="stat"><strong><?php echo esc_html(promptnext_get_text('home_stat2_num', '70%')); ?></strong><span><?php echo esc_html(promptnext_get_text('home_stat2_text', 'Enterprise technology programmes fail to meet original objectives.')); ?></span><small>McKinsey Global Institute</small></div>
+      <div class="stat"><strong><?php echo esc_html(promptnext_get_text('home_stat3_num', '52%')); ?></strong><span><?php echo esc_html(promptnext_get_text('home_stat3_text', 'AI initiatives in regulated industries never reach production.')); ?></span><small>IDC, 2024</small></div>
+      <div class="stat"><strong><?php echo esc_html(promptnext_get_text('home_stat4_num', '$1.4T')); ?></strong><span><?php echo esc_html(promptnext_get_text('home_stat4_text', 'APAC ICT spending in 2025, growing at 5.8% annually.')); ?></span><small>IDC, March 2025</small></div>
     </section>
 
     <section class="section section-strategy" id="strategy">
       <div class="container">
         <p class="section-kicker"><img class="kicker-image" src="<?php echo get_template_directory_uri(); ?>/assets/Correct_PIxalate/landing_pg_icons/why_programmes_fail.svg" alt="" />Why programmes fail</p>
-        <h2>THE STRATEGY IS CLEAR. THE EXECUTION IS NOT.</h2>
+        <h2><?php echo esc_html(promptnext_get_text('home_strat_title', 'THE STRATEGY IS CLEAR. THE EXECUTION IS NOT.')); ?></h2>
         <div class="intro-grid">
-          <p>Technology programs rarely fail because the code doesn't work; they fail on execution. Once the architecture is approved and budgets are released, the real operational trauma begins. Unforeseen regulations, integration friction, and compressed timelines inevitably stall the final mile.</p>
+          <p><?php echo esc_html(promptnext_get_text('home_strat_p1', 'Technology programs rarely fail because the code doesn\'t work; they fail on execution. Once the architecture is approved and budgets are released, the real operational trauma begins. Unforeseen regulations, integration friction, and compressed timelines inevitably stall the final mile.')); ?></p>
           <p>You can hire consultants to study the problem. Or you can bring in a partner who has executed your type of programme, in your regulatory environment, before.</p>
         </div>
         <div class="evidence-grid">
@@ -169,7 +169,7 @@ get_header(); ?>
     <section class="section contact-point" id="about">
       <div class="container narrow">
         <p class="section-kicker"><img class="kicker-image" src="<?php echo get_template_directory_uri(); ?>/assets/Correct_PIxalate/landing_pg_icons/partner_ecosystem.svg" alt="" />Partner Ecosystem</p>
-        <h2>WE COORDINATE THE TEAM. YOU GET ONE POINT OF CONTACT.</h2>
+        <h2><?php echo esc_html(promptnext_get_text('home_partner_title', 'WE COORDINATE THE TEAM. YOU GET ONE POINT OF CONTACT.')); ?></h2>
         <p class="section-subtitle">Prompt Next does not carry every capability in-house, and we do not pretend to. We coordinate a vetted network of partner firms across cloud and infrastructure, enterprise software, data integration, regulatory compliance, and AI deployment, alongside your internal teams and existing vendors. You manage one relationship. We hold accountability for the outcome of all of it, with shared responsibility agreed on day one.</p>
       </div>
     </section>

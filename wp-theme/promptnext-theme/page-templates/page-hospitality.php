@@ -13,7 +13,7 @@ get_header(); ?>
       <div class="hosp-hero-inner">
         <p class="hosp-breadcrumb"><a href="<?php echo esc_url(home_url('/industries/')); ?>">Industries</a> <span class="hosp-sep">&gt;&gt;</span> <span class="hosp-crumb-active">Hospitality</span></p>
         <div class="hosp-hero-content">
-          <h1>Guest experience is the product. The technology behind it is fragmented, complex, and mostly invisible. We keep it that way</h1>
+          <h1><?php echo esc_html(promptnext_get_text('hospitality_hero_h1', 'Real-time booking and guest intelligence architectures engineered for zero-downtime peak demand.')); ?></h1>
         </div>
       </div>
     </section>

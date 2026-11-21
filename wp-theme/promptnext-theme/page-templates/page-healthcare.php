@@ -14,7 +14,7 @@ get_header(); ?>
       <div class="health-hero-inner">
         <p class="health-breadcrumb"><a href="<?php echo esc_url(home_url('/industries/')); ?>">Industries</a> <span class="health-sep">&gt;&gt;</span> <span class="health-crumb-active">Healthcare</span></p>
         <div class="health-hero-content">
-          <h1><span class="health-hero-l1">Patient care depends on systems that work<span class="health-hero-period">.</span></span> <span class="health-hero-l2">We deliver them</span></h1>
+          <h1><?php echo esc_html(promptnext_get_text('healthcare_hero_h1', 'Connected healthcare delivery where patient data integrity and clinical availability are non-negotiable.')); ?></h1>
         </div>
       </div>
     </section>

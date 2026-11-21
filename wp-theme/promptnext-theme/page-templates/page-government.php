@@ -15,7 +15,7 @@ get_header(); ?>
         <p class="gov-breadcrumb"><a href="<?php echo esc_url(home_url('/industries/')); ?>">Industries</a> <span class="gov-sep">&gt;&gt;</span> <span
             class="gov-crumb-active">Government and Public Sector</span></p>
         <div class="gov-hero-content">
-          <h1>Digital public services that work for every citizen. Delivered within the constraints that only government programmes carry.</h1>
+          <h1><?php echo esc_html(promptnext_get_text('government_hero_h1', 'Public sector transformation where security, sovereign cloud compliance, and scale meet strict accountability.')); ?></h1>
         </div>
       </div>
     </section>

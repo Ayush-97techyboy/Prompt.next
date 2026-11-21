@@ -1,6 +1,6 @@
-# amplify
-node_modules
-.amplify
+# Amplify
+node_modules/
+.amplify/
 amplify_outputs*
 amplifyconfiguration*
 
@@ -33,12 +33,18 @@ yarn-error.log*
 .claude/
 .codex/
 
-# Local diagnostic & inspect scripts
+# Local diagnostic, inspection & scratch scripts
+scratch/
 check_*.ps1
 inspect_*.ps1
+check_*.py
+inspect_*.py
+scratch_*.py
 devices.json
 
 # Compressed theme and deployment archives
 *.zip
 *.rar
-
+*.tar.gz
+*.tgz
+*.7z

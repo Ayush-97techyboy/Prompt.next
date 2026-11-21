@@ -14,7 +14,7 @@ get_header(); ?>
         <p class="bfsi-breadcrumb"><a href="<?php echo esc_url(home_url('/industries/')); ?>">Industries</a> <span class="bfsi-sep">&gt;&gt;</span> <span
             class="bfsi-crumb-active">Banking, Financial Services &amp; Insurance</span></p>
         <div class="bfsi-hero-content">
-          <h1>Core banking doesn't pause for upgrades. Compliance doesn't pause for transformation. We execute in both, concurrently.</h1>
+          <h1><?php echo esc_html(promptnext_get_text('bfsi_hero_h1', 'Core banking doesn\'t pause for upgrades. Compliance doesn\'t pause for transformation. We execute inside the operating envelope.')); ?></h1>
         </div>
       </div>
     </section>

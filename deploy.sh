@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # ==============================================================================
-# Deployment Script for macOS / Linux
-# Prompt.next (Git Repo) -> Prompt.next_deploy (AWS Lightsail / Static Hosting)
+# Deployment & Sync Script for macOS / Linux
+# Prompt.next (Git Repo) -> Prompt.next_deploy & Prompt.next_deployment_lightsail
 # Supports:
 #   1. Static Web Hosting Package (HTML5 / CSS3 / ES6+)
 #   2. WordPress Theme Package (promptnext-theme & promptnext-theme.zip)
@@ -14,7 +14,10 @@ set -euo pipefail
 TARGET="${1:-All}"
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 SOURCE_DIR="$SCRIPT_DIR"
-DEPLOY_DIR="$(dirname "$SOURCE_DIR")/Prompt.next_deploy"
+PARENT_DIR="$(dirname "$SOURCE_DIR")"
+DEPLOY_DIR="$PARENT_DIR/Prompt.next_deploy"
+LIGHTSAIL_DIR="$PARENT_DIR/Prompt.next_deployment_lightsail"
+
 THEME_SRC_DIR="$SOURCE_DIR/wp-theme/promptnext-theme"
 THEME_DEST_DIR="$DEPLOY_DIR/promptnext-theme"
 THEME_ZIP_DEST="$DEPLOY_DIR/promptnext-theme.zip"
@@ -22,13 +25,15 @@ THEME_ZIP_SRC="$SOURCE_DIR/wp-theme/promptnext-theme.zip"
 
 echo "======================================================"
 echo " Prompt Next Deployment & Synchronization Engine"
-echo " OS:         macOS / Unix (zsh/bash)"
-echo " Mode:       Target = $TARGET"
-echo " Source:     $SOURCE_DIR"
-echo " Deploy Dir: $DEPLOY_DIR"
+echo " OS:            macOS / Unix (zsh/bash)"
+echo " Mode:          Target = $TARGET"
+echo " Source:        $SOURCE_DIR"
+echo " Deploy Dir:    $DEPLOY_DIR"
+echo " Lightsail Dir: $LIGHTSAIL_DIR"
 echo "======================================================"
 
 mkdir -p "$DEPLOY_DIR"
+mkdir -p "$LIGHTSAIL_DIR"
 
 # ------------------------------------------------------------------------------
 # PART A: STATIC DEPLOYMENT BUILD
@@ -39,45 +44,52 @@ if [ "$TARGET" = "All" ] || [ "$TARGET" = "Static" ]; then
     # A1. Copy root index.html
     if [ -f "$SOURCE_DIR/index.html" ]; then
         cp "$SOURCE_DIR/index.html" "$DEPLOY_DIR/index.html"
+        cp "$SOURCE_DIR/index.html" "$LIGHTSAIL_DIR/index.html"
         echo "[OK] Copied: index.html"
     fi
 
     # A2. Sync core folders: css, assets, js
     for folder in css assets js; do
         if [ -d "$SOURCE_DIR/$folder" ]; then
-            rm -rf "$DEPLOY_DIR/$folder"
+            rm -rf "$DEPLOY_DIR/$folder" "$LIGHTSAIL_DIR/$folder"
             cp -R "$SOURCE_DIR/$folder" "$DEPLOY_DIR/$folder"
-            echo "[OK] Synced folder: $folder -> $DEPLOY_DIR/$folder"
+            cp -R "$SOURCE_DIR/$folder" "$LIGHTSAIL_DIR/$folder"
+            echo "[OK] Synced folder: $folder -> $DEPLOY_DIR/$folder & $LIGHTSAIL_DIR/$folder"
         fi
     done
 
-    # A3. Copy subpages from Pages/* directly into DEPLOY_DIR root
+    # A3. Copy subpages from Pages/* directly into DEPLOY_DIR & LIGHTSAIL_DIR roots
     if [ -d "$SOURCE_DIR/Pages" ]; then
         for page_dir in "$SOURCE_DIR"/Pages/*/; do
             if [ -d "$page_dir" ]; then
                 page_name="$(basename "$page_dir")"
-                rm -rf "$DEPLOY_DIR/$page_name"
+                rm -rf "$DEPLOY_DIR/$page_name" "$LIGHTSAIL_DIR/$page_name"
                 cp -R "$page_dir" "$DEPLOY_DIR/$page_name"
+                cp -R "$page_dir" "$LIGHTSAIL_DIR/$page_name"
                 echo "[OK] Synced subpage: Pages/$page_name -> $page_name"
             fi
         done
     fi
 
     # A4. Normalize links in deploy root index.html
-    if [ -f "$DEPLOY_DIR/index.html" ]; then
-        sed -i '' 's|href="Pages/|href="|g' "$DEPLOY_DIR/index.html"
-        echo "[OK] Normalized root links in index.html"
-    fi
+    for dest in "$DEPLOY_DIR" "$LIGHTSAIL_DIR"; do
+        if [ -f "$dest/index.html" ]; then
+            sed -i '' 's|href="Pages/|href="|g' "$dest/index.html"
+            echo "[OK] Normalized root links in: $(basename "$dest")/index.html"
+        fi
+    done
 
     # A5. Normalize relative paths in all flattened subpages (../../ -> ../)
-    for sub_dir in "$DEPLOY_DIR"/*/; do
-        dir_name="$(basename "$sub_dir")"
-        if [ "$dir_name" != "css" ] && [ "$dir_name" != "assets" ] && [ "$dir_name" != "js" ] && [ "$dir_name" != "promptnext-theme" ]; then
-            if [ -f "$sub_dir/index.html" ]; then
-                sed -i '' 's|\.\./\.\./|../|g' "$sub_dir/index.html"
-                echo "[OK] Normalized paths in: $dir_name/index.html"
+    for target_dir in "$DEPLOY_DIR" "$LIGHTSAIL_DIR"; do
+        for sub_dir in "$target_dir"/*/; do
+            dir_name="$(basename "$sub_dir")"
+            if [ "$dir_name" != "css" ] && [ "$dir_name" != "assets" ] && [ "$dir_name" != "js" ] && [ "$dir_name" != "promptnext-theme" ]; then
+                if [ -f "$sub_dir/index.html" ]; then
+                    sed -i '' 's|\.\./\.\./|../|g' "$sub_dir/index.html"
+                    echo "[OK] Normalized paths in: $(basename "$target_dir")/$dir_name/index.html"
+                fi
             fi
-        fi
+        done
     done
 fi
 
@@ -116,6 +128,7 @@ echo ""
 echo "======================================================"
 echo " DEPLOYMENT AND SYNCHRONIZATION COMPLETED!"
 echo " Static Site:    $DEPLOY_DIR"
+echo " Lightsail Site: $LIGHTSAIL_DIR"
 echo " WP Theme Dir:   $THEME_DEST_DIR"
 echo " WP Theme Zip:   $THEME_ZIP_DEST"
 echo "======================================================"

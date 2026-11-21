@@ -13,7 +13,7 @@ get_header(); ?>
       <div class="telecom-hero-inner">
         <p class="telecom-breadcrumb"><a href="<?php echo esc_url(home_url('/industries/')); ?>">Industries</a> <span class="telecom-sep">&gt;&gt;</span> <span class="telecom-crumb-active">Telecommunications</span></p>
         <div class="telecom-hero-content">
-          <h1>Always-on infrastructure. Evolving customer platforms. Executed without interruption</h1>
+          <h1><?php echo esc_html(promptnext_get_text('telecommunication_hero_h1', 'Next-generation telecom infrastructures engineered for 5G low-latency routing and carrier-grade billing.')); ?></h1>
         </div>
       </div>
     </section>

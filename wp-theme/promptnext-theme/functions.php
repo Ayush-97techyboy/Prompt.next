@@ -156,3 +156,10 @@ function promptnext_register_elementor_caps() {
 }
 add_action('admin_init', 'promptnext_register_elementor_caps');
 
+
+/**
+ * Include Native Meta Boxes (Zero-Plugin Editing Support)
+ */
+if (file_exists(get_template_directory() . '/inc/admin-meta-boxes.php')) {
+    require_once get_template_directory() . '/inc/admin-meta-boxes.php';
+}
