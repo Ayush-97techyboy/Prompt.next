@@ -7,11 +7,11 @@
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.25fr 1fr 1.15fr 1.15fr 0.8fr;
+  grid-template-columns: 1.35fr 1fr 1.15fr 1.4fr;
   gap: 38px;
-  max-width: 1360px;
+  max-width: 1280px;
   margin: 0 auto;
-  width: calc(100% - 80px);
+  width: min(1280px, calc(100% - 64px));
   align-items: start;
 }
 
@@ -73,7 +73,7 @@
   border-top: 1px solid rgba(255, 255, 255, 0.04);
   color: #B0B0B0;
   font-size: 14px;
-  max-width: 1360px;
+  max-width: 1280px;
   margin-left: auto;
   margin-right: auto;
   width: calc(100% - 80px);
@@ -118,20 +118,19 @@
     grid-column: span 1;
   }
 
-  .footer-grid > div:nth-child(4),
-  .footer-grid > div:nth-child(5) {
-    grid-column: span 1;
+  .footer-grid > div:nth-child(4) {
+    grid-column: span 2;
   }
 }
 
 @media (max-width: 600px) {
   .footer-grid {
-    grid-template-columns: 1fr;
-    gap: 24px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 32px 20px;
   }
 
-  .footer-grid > div {
-    grid-column: span 1;
+  .footer-grid > div:first-child {
+    grid-column: 1 / -1;
   }
 }
 
@@ -143,9 +142,9 @@
 }
 
 .wwd-footer-grid {
-  width: min(1360px, calc(100% - 80px));
+  width: min(1280px, calc(100% - 64px));
   display: grid;
-  grid-template-columns: 1.25fr 1fr 1.15fr 1.15fr 0.8fr;
+  grid-template-columns: 1.35fr 1fr 1.15fr 1.4fr;
   gap: 38px;
   margin: 0 auto;
 }
@@ -172,20 +171,19 @@
     grid-column: span 1;
   }
 
-  .wwd-footer-grid > div:nth-child(4),
-  .wwd-footer-grid > div:nth-child(5) {
-    grid-column: span 1;
+  .wwd-footer-grid > div:nth-child(4) {
+    grid-column: span 2;
   }
 }
 
 @media (max-width: 600px) {
   .wwd-footer-grid {
-    grid-template-columns: 1fr;
-    gap: 24px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 32px 20px;
   }
 
-  .wwd-footer-grid > div {
-    grid-column: span 1;
+  .wwd-footer-grid > div:first-child {
+    grid-column: 1 / -1;
   }
 }
 
@@ -210,7 +208,7 @@
 }
 
 .wwd-footer-bottom {
-  width: min(1360px, calc(100% - 80px));
+  width: min(1280px, calc(100% - 64px));
   display: flex;
   align-items: center;
   justify-content: space-between;

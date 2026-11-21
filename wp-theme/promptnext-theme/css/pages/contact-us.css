@@ -91,11 +91,13 @@
   padding-bottom: clamp(40px, 6.9vw, 100px) !important;
 }
 
-.contact-us-page .contact-cards-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-  gap: clamp(32px, 5.5vw, 98px) !important;
-  align-items: stretch !important;
+@media (min-width: 961px) {
+  .contact-us-page .contact-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: clamp(32px, 5.5vw, 98px) !important;
+    align-items: stretch !important;
+  }
 }
 
 .contact-us-page .contact-card {
@@ -132,9 +134,8 @@
 }
 
 .contact-us-page .strat-line {
-  display: inline !important;
-  white-space: normal !important;
-  overflow-wrap: break-word !important;
+  display: block;
+  white-space: nowrap;
 }
 
 .contact-us-page .card-tag-badge {
@@ -516,15 +517,21 @@
 
 @media (max-width: 960px) {
   .contact-us-page .contact-cards-grid {
-    grid-template-columns: 1fr;
-    gap: 32px;
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+  .contact-us-page .contact-card {
+    width: 100% !important;
+    min-height: auto !important;
+    padding: 31px 24px !important;
   }
   .contact-us-page .contact-card-header {
-    min-height: auto;
+    min-height: auto !important;
   }
   .contact-us-page .contact-info-strip-card {
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-    gap: 32px;
+    gap: 32px !important;
   }
   .contact-us-page .wwd-nav-links {
     display: none;
@@ -564,8 +571,14 @@
     font-size: 16px;
     line-height: 1.5;
   }
+  .contact-us-page .contact-cards-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
   .contact-us-page .contact-card {
-    padding: 28px 20px;
+    padding: 24px 18px !important;
+    min-height: auto !important;
   }
   .contact-us-page .calendar-days-row {
     gap: 4px;
@@ -576,9 +589,9 @@
     font-size: 13px;
   }
   .contact-us-page .contact-info-strip-card {
-    grid-template-columns: 1fr;
-    gap: 24px;
-    padding: 28px 20px;
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+    padding: 28px 20px !important;
   }
 }
 

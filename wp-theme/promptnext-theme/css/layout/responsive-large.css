@@ -175,7 +175,7 @@
   }
 
   /* 3. Contact Us Page Containers */
-  body .contact-us-page .contact-container,
+  body .contact-container, body .contact-us-page .contact-container,
   body .contact-us-page .contact-cards-grid,
   body .contact-us-page .contact-info-strip-card,
   body .contact-us-page .contact-info-strip-container {
@@ -200,7 +200,7 @@
   }
 
   /* 4. About Us Page Containers */
-  body .about-us-page .about-container,
+  body .about-container, body .about-us-page .about-container, body .about-story-grid, body .about-us-page .about-story-grid,
   body .about-us-page .about-lead-grid,
   body .about-us-page .about-values-grid,
   body .about-us-page .about-mission-grid,
@@ -213,7 +213,7 @@
   }
 
   /* 5. How We Work Page Containers */
-  body .how-we-work-page .hww-stages-container,
+  body .hww-stages-container, body .how-we-work-page .hww-stages-container,
   body .how-we-work-page .hww-process-grid {
     width: min(1480px, calc(100% - 96px)) !important;
     max-width: 1480px !important;
@@ -247,7 +247,9 @@
   /* 8. What We Do & Homepage Containers */
   body .container:not(.nav-wrap),
   body .wwd-capabilities,
-  body [class*="-page"] .wwd-capabilities {
+  body [class*="-page"] .wwd-capabilities,
+  body .wwd-model-grid,
+  body [class*="-page"] .wwd-model-grid {
     width: min(1480px, calc(100% - 96px)) !important;
     max-width: 1480px !important;
     margin-inline: auto !important;
@@ -352,7 +354,7 @@
   }
 
   /* 3. Contact Us Page Containers */
-  body .contact-us-page .contact-container,
+  body .contact-container, body .contact-us-page .contact-container,
   body .contact-us-page .contact-cards-grid,
   body .contact-us-page .contact-info-strip-card,
   body .contact-us-page .contact-info-strip-container {
@@ -377,7 +379,7 @@
   }
 
   /* 4. About Us Page Containers */
-  body .about-us-page .about-container,
+  body .about-container, body .about-us-page .about-container, body .about-story-grid, body .about-us-page .about-story-grid,
   body .about-us-page .about-lead-grid,
   body .about-us-page .about-values-grid,
   body .about-us-page .about-mission-grid,
@@ -390,7 +392,7 @@
   }
 
   /* 5. How We Work Page Containers */
-  body .how-we-work-page .hww-stages-container,
+  body .hww-stages-container, body .how-we-work-page .hww-stages-container,
   body .how-we-work-page .hww-process-grid {
     width: min(1800px, calc(100% - 140px)) !important;
     max-width: 1800px !important;
@@ -424,7 +426,9 @@
   /* 8. What We Do & Homepage Containers */
   body .container:not(.nav-wrap),
   body .wwd-capabilities,
-  body [class*="-page"] .wwd-capabilities {
+  body [class*="-page"] .wwd-capabilities,
+  body .wwd-model-grid,
+  body [class*="-page"] .wwd-model-grid {
     width: min(1800px, calc(100% - 140px)) !important;
     max-width: 1800px !important;
     margin-inline: auto !important;
@@ -534,7 +538,7 @@
   }
 
   /* 3. Contact Us Page Containers */
-  body .contact-us-page .contact-container,
+  body .contact-container, body .contact-us-page .contact-container,
   body .contact-us-page .contact-cards-grid,
   body .contact-us-page .contact-info-strip-card,
   body .contact-us-page .contact-info-strip-container {
@@ -559,7 +563,7 @@
   }
 
   /* 4. About Us Page Containers */
-  body .about-us-page .about-container,
+  body .about-container, body .about-us-page .about-container, body .about-story-grid, body .about-us-page .about-story-grid,
   body .about-us-page .about-lead-grid,
   body .about-us-page .about-values-grid,
   body .about-us-page .about-mission-grid,
@@ -572,7 +576,7 @@
   }
 
   /* 5. How We Work Page Containers */
-  body .how-we-work-page .hww-stages-container,
+  body .hww-stages-container, body .how-we-work-page .hww-stages-container,
   body .how-we-work-page .hww-process-grid {
     width: min(2160px, calc(100% - 180px)) !important;
     max-width: 2160px !important;
@@ -606,7 +610,9 @@
   /* 8. What We Do & Homepage Containers */
   body .container:not(.nav-wrap),
   body .wwd-capabilities,
-  body [class*="-page"] .wwd-capabilities {
+  body [class*="-page"] .wwd-capabilities,
+  body .wwd-model-grid,
+  body [class*="-page"] .wwd-model-grid {
     width: min(2160px, calc(100% - 180px)) !important;
     max-width: 2160px !important;
     margin-inline: auto !important;
@@ -906,7 +912,7 @@
   body a.brand img,
   body a.wwd-brand img,
   body .wwd-brand .nav-logo {
-    height: 68px !important;
+    height: 64px !important;
     width: auto !important;
   }
 
@@ -914,7 +920,7 @@
   body .wwd-footer .nav-logo,
   body .site-footer a.brand img,
   body .wwd-footer a.wwd-brand img {
-    height: 68px !important;
+    height: 64px !important;
     width: auto !important;
   }
 }
@@ -1086,6 +1092,7 @@
 
 /* Tier 2: 1920px - 2559px (QHD / 1440p) */
 @media (min-width: 1920px) {
+
   body .nav-links a,
   body .wwd-nav-links a {
     font-size: 17px !important;
@@ -1138,6 +1145,7 @@
 
 /* Tier 3: 2560px+ (4K UHD) */
 @media (min-width: 2560px) {
+
   body .nav-links a,
   body .wwd-nav-links a {
     font-size: 19px !important;
@@ -1195,9 +1203,38 @@
 
 /* Tier 1: 1441px - 1919px (Active on user's 1784px viewport) */
 @media (min-width: 1441px) {
+  /* Industries Main Page 6-Card Grid Perfect Baseline Alignment (1441px - 1919px) */
+  body .industries-card {
+    min-height: 360px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    padding: 32px 32px 28px !important;
+    box-sizing: border-box !important;
+  }
+  body .industries-card h2 {
+    font-size: 28px !important;
+    line-height: 1.25 !important;
+    min-height: 72px !important;
+    margin: 0 0 16px !important;
+    flex-shrink: 0 !important;
+  }
+  body .industries-card p {
+    font-size: 16px !important;
+    line-height: 1.6 !important;
+    min-height: 58px !important;
+    margin: 0 0 20px !important;
+    flex: 1 1 auto !important;
+  }
+  body .industries-card-bottom {
+    margin-top: auto !important;
+    padding-top: 18px !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.13) !important;
+    width: 100% !important;
+    flex-shrink: 0 !important;
+  }
+
   /* 1. All Card Content & Descriptions */
   body [class*="-card"] p,
-  body .industries-card p,
   body .health-card p,
   body .bfsi-card p,
   body .gov-card p,
@@ -1270,9 +1307,38 @@
 
 /* Tier 2: 1920px - 2559px (QHD / 1440p) */
 @media (min-width: 1920px) {
+  /* Industries Main Page 6-Card Grid Perfect Baseline Alignment (1920px - 2559px) */
+  body .industries-card {
+    min-height: 380px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    padding: 34px 34px 30px !important;
+    box-sizing: border-box !important;
+  }
+  body .industries-card h2 {
+    font-size: 32px !important;
+    line-height: 1.25 !important;
+    min-height: 78px !important;
+    margin: 0 0 16px !important;
+    flex-shrink: 0 !important;
+  }
+  body .industries-card p {
+    font-size: 17px !important;
+    line-height: 1.6 !important;
+    min-height: 64px !important;
+    margin: 0 0 22px !important;
+    flex: 1 1 auto !important;
+  }
+  body .industries-card-bottom {
+    margin-top: auto !important;
+    padding-top: 18px !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.13) !important;
+    width: 100% !important;
+    flex-shrink: 0 !important;
+  }
+
   /* 1. All Card Content & Descriptions */
   body [class*="-card"] p,
-  body .industries-card p,
   body .health-card p,
   body .bfsi-card p,
   body .gov-card p,
@@ -1336,9 +1402,38 @@
 
 /* Tier 3: 2560px+ (4K UHD) */
 @media (min-width: 2560px) {
+  /* Industries Main Page 6-Card Grid Perfect Baseline Alignment (2560px+ 4K) */
+  body .industries-card {
+    min-height: 410px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    padding: 38px 36px 32px !important;
+    box-sizing: border-box !important;
+  }
+  body .industries-card h2 {
+    font-size: 36px !important;
+    line-height: 1.25 !important;
+    min-height: 86px !important;
+    margin: 0 0 18px !important;
+    flex-shrink: 0 !important;
+  }
+  body .industries-card p {
+    font-size: 19px !important;
+    line-height: 1.65 !important;
+    min-height: 72px !important;
+    margin: 0 0 24px !important;
+    flex: 1 1 auto !important;
+  }
+  body .industries-card-bottom {
+    margin-top: auto !important;
+    padding-top: 20px !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.13) !important;
+    width: 100% !important;
+    flex-shrink: 0 !important;
+  }
+
   /* 1. All Card Content & Descriptions */
   body [class*="-card"] p,
-  body .industries-card p,
   body .health-card p,
   body .bfsi-card p,
   body .gov-card p,
@@ -1521,22 +1616,7 @@
     gap: clamp(32px, 2.5vw, 44px) !important;
   }
 
-  /* 6. Card Inner Luxurious Padding */
-  body [class*="-card"],
-  body .industries-card,
-  body .health-card,
-  body .bfsi-card,
-  body .gov-card,
-  body .hosp-card,
-  body .mfg-card,
-  body .telecom-card,
-  body .about-values-card,
-  body .about-proof-card,
-  body .about-mission-card,
-  body .hww-process-card,
-  body .pillar-card {
-    padding: clamp(36px, 2.6vw, 52px) clamp(30px, 2.2vw, 44px) !important;
-  }
+  /* 6. Card Inner Padding: Managed per component in Tier 1, 2, and 3 to preserve card proportions across viewports */
 
   /* 7. Pages WITH Hero Description - Restore Full Hero Breathing Space */
   body.what-we-do-page section.wwd-hero,

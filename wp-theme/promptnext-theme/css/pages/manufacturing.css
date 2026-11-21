@@ -297,11 +297,9 @@
 }
 @media (min-width: 1200px) {
   .manufacturing-page .mfg-cta-wrap h2 {
-    font-size: 61px;
-    width: 100%;
-    text-align: justify;
-    text-align-last: justify;
-    white-space: nowrap;
+    font-size: 56px;
+    text-align: center;
+    text-align-last: center;
   }
 }
 @media (max-width: 1199px) {
@@ -349,9 +347,9 @@
   background: #08090b;
 }
 .manufacturing-page .wwd-footer-grid {
-  width: min(1360px, calc(100% - 80px));
+  width: min(1280px, calc(100% - 64px));
   display: grid;
-  grid-template-columns: 1.25fr 1fr 1.15fr 1.15fr 0.8fr;
+  grid-template-columns: 1.35fr 1fr 1.15fr 1.4fr;
   gap: 38px;
   margin: 0 auto;
 }
@@ -376,7 +374,7 @@
   color: #fff;
 }
 .manufacturing-page .wwd-footer-bottom {
-  width: min(1360px, calc(100% - 80px));
+  width: min(1280px, calc(100% - 64px));
   display: flex;
   justify-content: space-between;
   margin: 37px auto 0;

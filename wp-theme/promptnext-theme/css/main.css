@@ -47,6 +47,7 @@ body .wwd-footer a.wwd-brand img {
   }
 }
 
+/* High-DPI screens maintain exact 64px logo standard */
 @media (min-width: 1600px) {
   body .nav-logo,
   body .brand .nav-logo,
@@ -59,16 +60,18 @@ body .wwd-footer a.wwd-brand img {
   body .site-footer a.wwd-brand img,
   body .wwd-footer a.brand img,
   body .wwd-footer a.wwd-brand img {
-    height: 68px !important;
+    height: 64px !important;
     width: auto !important;
+    object-fit: contain !important;
   }
+}
 }
 
 
 /* ==============================================================================
    FIGMA EXACT CONTACT US FORM GRID (50/50 EQUAL ORDER FROM 961px TO 4K 2560px+)
    ============================================================================== */
-@media (min-width: 961px) {
+@media (min-width: 961px) and (max-width: 1440px) {
   body .contact-us-page .contact-cards-grid {
     display: grid !important;
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
@@ -77,6 +80,14 @@ body .wwd-footer a.wwd-brand img {
     width: 100% !important;
     max-width: 1440px !important;
     margin-inline: auto !important;
+  }
+}
+
+@media (min-width: 961px) {
+  body .contact-us-page .contact-cards-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    align-items: stretch !important;
   }
 
   body .contact-us-page .contact-card {
@@ -94,5 +105,391 @@ body .wwd-footer a.wwd-brand img {
     white-space: normal !important;
     overflow-wrap: break-word !important;
     word-break: normal !important;
+  }
+}
+
+@media (max-width: 960px) {
+  body .contact-us-page .contact-cards-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+    width: 100% !important;
+  }
+
+  body .contact-us-page .contact-card {
+    min-width: 0 !important;
+    width: 100% !important;
+    min-height: auto !important;
+    border-radius: 7px !important;
+    padding: 31px 24px !important;
+    box-sizing: border-box !important;
+  }
+
+  body .contact-us-page .contact-info-strip-card {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 32px !important;
+  }
+}
+
+@media (max-width: 600px) {
+  body .contact-us-page .contact-cards-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+
+  body .contact-us-page .contact-card {
+    padding: 24px 18px !important;
+    min-height: auto !important;
+  }
+
+  body .contact-us-page .contact-info-strip-card {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+    padding: 28px 20px !important;
+  }
+}
+
+/* ==============================================================================
+   MASTER HEADER & FOOTER UNIFIED VERTICAL ALIGNMENT (PERFECT 1:1 X-AXIS AXIS)
+   ============================================================================== */
+@media (min-width: 601px) and (max-width: 1440px) {
+  body .nav-wrap,
+  body .wwd-nav,
+  body [class*="-page"] .wwd-nav,
+  body .industries-nav,
+  body [class*="-page"] .industries-nav,
+  body .footer-grid,
+  body .wwd-footer-grid,
+  body [class*="-page"] .wwd-footer-grid,
+  body .industries-footer-grid,
+  body .footer-bottom,
+  body .wwd-footer-bottom,
+  body [class*="-page"] .wwd-footer-bottom,
+  body .industries-footer-bottom {
+    width: min(var(--container, 1280px), calc(100% - 64px)) !important;
+    max-width: 1280px !important;
+    margin-inline: auto !important;
+    box-sizing: border-box !important;
+  }
+}
+
+/* Ensure Zero Offsets on Brand Containers */
+body .brand,
+body .wwd-brand,
+body [class*="-page"] .brand,
+body [class*="-page"] .wwd-brand {
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+}
+
+body .footer-grid > div:first-child,
+body .wwd-footer-grid > div:first-child,
+body [class*="-page"] .wwd-footer-grid > div:first-child,
+body .industries-footer-grid > div:first-child {
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+}
+
+/* Mobile Alignment (<= 600px) */
+@media (max-width: 600px) {
+  body .nav-wrap,
+  body .wwd-nav,
+  body [class*="-page"] .wwd-nav,
+  body .industries-nav,
+  body [class*="-page"] .industries-nav,
+  body .footer-grid,
+  body .wwd-footer-grid,
+  body [class*="-page"] .wwd-footer-grid,
+  body .industries-footer-grid,
+  body .footer-bottom,
+  body .wwd-footer-bottom,
+  body [class*="-page"] .wwd-footer-bottom,
+  body .industries-footer-bottom {
+    width: calc(100% - 36px) !important;
+    max-width: none !important;
+    margin-inline: auto !important;
+  }
+}
+
+
+/* ==============================================================================
+   PROMPT NEXT ABSOLUTE PRECISION UNIFICATION (ALL PAGES, SIZES & DEPLOYMENT)
+   ============================================================================== */
+
+/* 1. Logo Sizing: Exactly 64px everywhere without exception */
+body .nav-logo,
+body .brand .nav-logo,
+body .wwd-brand .nav-logo,
+body [class*="-page"] .nav-logo,
+body [class*="-page"] .wwd-brand .nav-logo,
+body .site-header .nav-logo,
+body .wwd-header .nav-logo,
+body .site-footer .nav-logo,
+body .wwd-footer .nav-logo,
+body .site-footer a.brand img,
+body .site-footer a.wwd-brand img,
+body .wwd-footer a.brand img,
+body .wwd-footer a.wwd-brand img {
+  height: 64px !important;
+  width: auto !important;
+  object-fit: contain !important;
+  display: block !important;
+}
+
+/* 2. Brand Positioning: Zero left offset across Header and Footer */
+body .brand,
+body .wwd-brand,
+body [class*="-page"] .brand,
+body [class*="-page"] .wwd-brand {
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  flex-shrink: 0 !important;
+}
+
+body .footer-grid > div:first-child,
+body .wwd-footer-grid > div:first-child,
+body [class*="-page"] .wwd-footer-grid > div:first-child,
+body .industries-footer-grid > div:first-child {
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+  margin-top: 0 !important;
+}
+
+body .footer-grid > div:first-child img,
+body .wwd-footer-grid > div:first-child img {
+  margin-top: 0 !important;
+}
+
+/* 3. Header Navbar Structure: 100% Identical on Homepage & ALL Subpages */
+body .site-header,
+body .wwd-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 78px;
+  background: transparent;
+  box-sizing: border-box;
+}
+
+body .site-header.is-stuck,
+body .wwd-header.is-stuck {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 1000 !important;
+  height: 78px !important;
+  background: rgba(8, 9, 11, 0.85) !important;
+  -webkit-backdrop-filter: blur(16px) saturate(150%) !important;
+  backdrop-filter: blur(16px) saturate(150%) !important;
+  border-bottom: 1px solid var(--line) !important;
+}
+
+/* WordPress Admin Bar Alignment (avoids 32px displacement when logged in) */
+body.admin-bar .site-header,
+body.admin-bar .wwd-header {
+  top: 32px !important;
+}
+@media screen and (max-width: 782px) {
+  body.admin-bar .site-header,
+  body.admin-bar .wwd-header {
+    top: 46px !important;
+  }
+}
+
+body .nav-wrap,
+body .wwd-nav,
+body [class*="-page"] .wwd-nav,
+body .industries-nav {
+  height: 78px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 20px !important;
+  box-sizing: border-box !important;
+}
+
+/* Desktop Navigation (>= 961px) - strictly active on desktop only */
+@media (min-width: 961px) {
+  body .nav-links,
+  body .wwd-nav-links,
+  body [class*="-page"] .wwd-nav-links,
+  body .industries-nav-links {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 32px !important;
+    margin-left: 20px !important;
+    margin-right: auto !important;
+    flex: 1 !important;
+  }
+
+  body .button-small,
+  body .wwd-top-button {
+    display: inline-flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 214px !important;
+    min-width: 214px !important;
+    height: 44px !important;
+    padding: 0 !important;
+    border: 0 !important;
+    border-radius: 8px !important;
+    background: #1f5cf1 !important;
+    color: #ffffff !important;
+    font-family: var(--font-sans) !important;
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.02em !important;
+    white-space: nowrap !important;
+    text-decoration: none !important;
+    box-sizing: border-box !important;
+    margin-left: 0 !important;
+    transition: background 0.2s ease, transform 0.2s ease !important;
+  }
+
+  body .button-small:hover,
+  body .wwd-top-button:hover {
+    background: #0056e0 !important;
+    transform: translateY(-1px) !important;
+  }
+
+  body .menu-button {
+    display: none !important;
+  }
+}
+
+/* Mobile & Tablet Navigation (<= 960px) - hamburger button active, CTA hidden, drawer closes properly */
+@media (max-width: 960px) {
+  body .button-small,
+  body .wwd-top-button,
+  body .site-header .button-small,
+  body .wwd-header .wwd-top-button {
+    display: none !important;
+  }
+
+  body .menu-button {
+    display: block !important;
+    margin-left: auto !important;
+    z-index: 100 !important;
+  }
+
+  /* Closed drawer state */
+  body .wwd-nav-links,
+  body .nav-links,
+  body [class*="-page"] .wwd-nav-links,
+  body [class*="-page"] .nav-links {
+    display: none !important;
+  }
+
+  /* Open drawer state when toggled by interaction.js */
+  body .wwd-nav-links.nav-active,
+  body .nav-links.nav-active,
+  body [class*="-page"] .wwd-nav-links.nav-active,
+  body [class*="-page"] .nav-links.nav-active {
+    display: flex !important;
+  }
+}
+
+/* 5. Footer Grid: Universal Layout Across ALL Pages */
+/* Desktop (>= 961px): Universal 4-Column Layout */
+@media (min-width: 961px) {
+  body .footer-grid,
+  body .wwd-footer-grid,
+  body [class*="-page"] .wwd-footer-grid,
+  body .industries-footer-grid {
+    display: grid !important;
+    grid-template-columns: 1.35fr 1fr 1.15fr 1.4fr !important;
+    gap: clamp(32px, 3.5vw, 60px) !important;
+    align-items: start !important;
+    box-sizing: border-box !important;
+  }
+}
+
+/* Mobile & Tablet (<= 960px): Exact 2-Column Structured Layout (Image 1 Reference) */
+@media (max-width: 960px) {
+  body .footer-grid,
+  body .wwd-footer-grid,
+  body [class*="-page"] .wwd-footer-grid,
+  body .industries-footer-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 36px 24px !important;
+    align-items: start !important;
+    box-sizing: border-box !important;
+  }
+
+  /* 1. Logo spans entire top row */
+  body .footer-grid > div:first-child,
+  body .wwd-footer-grid > div:first-child,
+  body [class*="-page"] .wwd-footer-grid > div:first-child,
+  body .industries-footer-grid > div:first-child {
+    grid-column: 1 / -1 !important;
+    margin-bottom: 8px !important;
+    display: flex !important;
+    align-items: flex-start !important;
+  }
+
+  /* 2. Company sits in Column 1 */
+  body .footer-grid > div:nth-child(2),
+  body .wwd-footer-grid > div:nth-child(2),
+  body [class*="-page"] .wwd-footer-grid > div:nth-child(2),
+  body .industries-footer-grid > div:nth-child(2) {
+    grid-column: 1 !important;
+  }
+
+  /* 3. Services sits in Column 2 right next to Company */
+  body .footer-grid > div:nth-child(3),
+  body .wwd-footer-grid > div:nth-child(3),
+  body [class*="-page"] .wwd-footer-grid > div:nth-child(3),
+  body .industries-footer-grid > div:nth-child(3) {
+    grid-column: 2 !important;
+  }
+
+  /* 4. Industries sits in Column 1 on the next row */
+  body .footer-grid > div:nth-child(4),
+  body .wwd-footer-grid > div:nth-child(4),
+  body [class*="-page"] .wwd-footer-grid > div:nth-child(4),
+  body .industries-footer-grid > div:nth-child(4) {
+    grid-column: 1 !important;
+  }
+
+  body .footer-bottom,
+  body .wwd-footer-bottom,
+  body [class*="-page"] .wwd-footer-bottom,
+  body .industries-footer-bottom {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    gap: 16px !important;
+    padding-top: 24px !important;
+    margin-top: 36px !important;
+  }
+
+  body .footer-bottom > span:first-child,
+  body .wwd-footer-bottom > span:first-child,
+  body [class*="-page"] .wwd-footer-bottom > span:first-child,
+  body .industries-footer-bottom > span:first-child {
+    text-align: center !important;
+    width: 100% !important;
+  }
+
+  body .footer-bottom span:last-child,
+  body .wwd-footer-bottom span:last-child,
+  body [class*="-page"] .wwd-footer-bottom span:last-child,
+  body .industries-footer-bottom span:last-child {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 20px !important;
+    width: 100% !important;
   }
 }

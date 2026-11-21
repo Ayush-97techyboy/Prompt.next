@@ -188,12 +188,13 @@
 }
 
 .industries-card {
-  min-height: 387px;
-  display: flex;
-  flex-direction: column;
+  min-height: 360px;
+  display: flex !important;
+  flex-direction: column !important;
   padding: 32px;
   border-radius: 22px;
   background: #111216;
+  box-sizing: border-box;
 }
 
 .industries-card>img {
@@ -201,23 +202,26 @@
   height: 52px;
   object-fit: contain;
   object-position: left center;
-  margin: 0 0 31px;
+  margin: 0 0 24px;
+  flex-shrink: 0;
 }
 
 .industries-card h2 {
-  min-height: 80px;
-  margin: 0;
+  min-height: 76px;
+  margin: 0 0 16px;
   color: #ffffff;
   font-family: var(--font-sans);
   font-weight: 700;
-  font-size: 32px;
-  line-height: 40px;
+  font-size: 28px;
+  line-height: 36px;
   letter-spacing: 0px;
+  flex-shrink: 0;
 }
 
 .industries-card p {
-  min-height: 72px;
-  margin: 16px 0 0;
+  flex: 1 1 auto !important;
+  min-height: 60px !important;
+  margin: 0 0 20px !important;
   color: #B0B0B0;
   font-family: var(--font-sans);
   font-weight: 400;
@@ -227,9 +231,11 @@
 }
 
 .industries-card-bottom {
-  padding-top: 16px;
-  margin-top: auto;
-  border-top: 1px solid rgba(255, 255, 255, .13);
+  padding-top: 18px !important;
+  margin-top: auto !important;
+  border-top: 1px solid rgba(255, 255, 255, .13) !important;
+  flex-shrink: 0 !important;
+  width: 100% !important;
 }
 
 .industries-card-bottom a,
@@ -260,9 +266,9 @@
 }
 
 .industries-footer-grid {
-  width: min(1360px, calc(100% - 80px));
+  width: min(1280px, calc(100% - 64px));
   display: grid;
-  grid-template-columns: 1.28fr 1.25fr 1.25fr 1.37fr .9fr;
+  grid-template-columns: 1.35fr 1fr 1.15fr 1.4fr;
   gap: 30px;
   margin: 0 auto;
 }
@@ -447,9 +453,9 @@
 }
 
 .industries-page .wwd-footer-grid {
-  width: min(1360px, calc(100% - 80px));
+  width: min(1280px, calc(100% - 64px));
   display: grid;
-  grid-template-columns: 1.25fr 1fr 1.15fr 1.15fr .8fr;
+  grid-template-columns: 1.35fr 1fr 1.15fr 1.4fr;
   gap: 38px;
   margin: 0 auto;
 }
@@ -480,7 +486,7 @@
 
 
 .industries-page .wwd-footer-bottom {
-  width: min(1360px, calc(100% - 80px));
+  width: min(1280px, calc(100% - 64px));
   display: flex;
   justify-content: space-between;
   margin: 37px auto 0;
